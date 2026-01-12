@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { 
   Book, 
@@ -67,23 +66,23 @@ export const Facilities: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-6 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {facilityList.map((f, i) => (
             <div key={i} className="group bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all">
-              <div className="h-64 overflow-hidden relative">
+              <div className="h-56 overflow-hidden relative">
                 <img src={f.img} alt={f.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute top-6 left-6 w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary shadow-lg">
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary shadow-lg">
                   <f.icon className="w-6 h-6" />
                 </div>
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-serif font-bold text-primary mb-4">{f.title}</h3>
-                <p className="text-customText leading-relaxed mb-6">{f.desc}</p>
-                <div className="flex gap-4 border-t pt-6">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+              <div className="p-6">
+                <h3 className="text-xl font-serif font-bold text-primary mb-3">{f.title}</h3>
+                <p className="text-sm text-customText leading-relaxed mb-5">{f.desc}</p>
+                <div className="flex gap-4 border-t pt-5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider">
                     <ShieldCheck className="w-3 h-3 text-secondary"/> Secure
                   </div>
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider">
                     <Wifi className="w-3 h-3 text-secondary"/> High-Speed
                   </div>
                 </div>
@@ -92,12 +91,12 @@ export const Facilities: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-24 bg-gray-50 rounded-[4rem] p-12 md:p-20 text-center">
+        <div className="mt-24 bg-gray-50 rounded-3xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-serif font-bold text-primary mb-8">Virtual Campus Tour</h2>
-          <div className="aspect-video max-w-4xl mx-auto bg-black rounded-3xl overflow-hidden shadow-2xl relative">
+          <div className="aspect-video max-w-4xl mx-auto bg-black rounded-2xl overflow-hidden shadow-2xl relative">
              <div className="absolute inset-0 flex items-center justify-center bg-black/40 group cursor-pointer">
-                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white transform group-hover:scale-110 transition-transform">
-                   <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-2"/>
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white transform group-hover:scale-110 transition-transform">
+                   <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-white border-b-[8px] border-b-transparent ml-1.5"/>
                 </div>
              </div>
              <img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover opacity-60" />

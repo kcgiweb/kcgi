@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AboutLayout } from '../../components/AboutLayout';
 import { Globe, Building2, BookOpen, Users, Award } from 'lucide-react';
@@ -20,7 +19,7 @@ export const AboutOverview: React.FC = () => (
           { label: 'Alumni Network', value: '50,000+', desc: 'Placed globally in top firms.' },
           { label: 'Campus Area', value: '25 Acres', desc: 'Modern integrated facilities.' }
         ].map((stat, i) => (
-          <div key={i} className="p-8 bg-gray-50 rounded-3xl border border-gray-100 text-center">
+          <div key={i} className="p-6 bg-gray-50 rounded-3xl border border-gray-100 text-center">
             <span className="block text-3xl font-bold text-primary mb-2">{stat.value}</span>
             <span className="block text-sm font-bold text-secondary uppercase tracking-widest mb-2">{stat.label}</span>
             <p className="text-xs text-gray-400">{stat.desc}</p>

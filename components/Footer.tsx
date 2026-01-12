@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -20,7 +19,7 @@ export const Footer: React.FC = () => {
                 className="h-16 w-auto" 
               />
             </div>
-            <p className="text-white/60 leading-relaxed">
+            <p className="text-white/60 leading-relaxed text-sm">
               Providing world-class education for over three decades across multiple disciplines, fostering innovation and professional excellence.
             </p>
             <div className="flex gap-4">
@@ -35,7 +34,7 @@ export const Footer: React.FC = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-secondary font-bold uppercase tracking-wider mb-6">Quick Links</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-sm">
               <li><Link to="/" className="text-white/60 hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-white/60 hover:text-white transition-colors">About the Group</Link></li>
               <li><Link to="/admissions" className="text-white/60 hover:text-white transition-colors">Admissions</Link></li>
@@ -47,7 +46,7 @@ export const Footer: React.FC = () => {
           {/* Accreditations */}
           <div>
             <h4 className="text-secondary font-bold uppercase tracking-wider mb-6">Accreditations</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-sm">
               <li className="text-white/60">Approved by AICTE & PCI</li>
               <li className="text-white/60">Affiliated to RGUHS</li>
               <li className="text-white/60">Recognized by Govt of Karnataka</li>
@@ -59,7 +58,7 @@ export const Footer: React.FC = () => {
           {/* Contact */}
           <div>
             <h4 className="text-secondary font-bold uppercase tracking-wider mb-6">Bengaluru Campus</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary flex-shrink-0" />
                 <div>
@@ -75,9 +74,9 @@ export const Footer: React.FC = () => {
                     href={externalMapsLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-[10px] font-black uppercase tracking-widest text-secondary mt-2 flex items-center gap-1"
+                    className="text-xs font-black uppercase tracking-widest text-secondary mt-2 flex items-center gap-1"
                   >
-                    Get Directions <ExternalLink className="w-2.5 h-2.5" />
+                    Get Directions <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
               </li>

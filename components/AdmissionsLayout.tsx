@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -23,7 +22,7 @@ export const AdmissionsLayout: React.FC<AdmissionsLayoutProps> = ({ title, subti
       {/* Dynamic Admission Banner */}
       <div className="bg-primary py-24 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-white">
-          <nav className="flex items-center gap-2 text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+          <nav className="flex items-center gap-2 text-white/60 text-xs font-bold uppercase tracking-widest mb-6">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3" />
             <Link to="/admissions" className="hover:text-white transition-colors">Admissions</Link>
@@ -59,7 +58,7 @@ export const AdmissionsLayout: React.FC<AdmissionsLayoutProps> = ({ title, subti
             </Link>
             <Link 
               to="/admissions/enquiry" 
-              className="bg-primary text-white px-8 py-3 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-secondary transition-all shadow-lg"
+              className="bg-primary text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg"
             >
               Start Your Application
             </Link>

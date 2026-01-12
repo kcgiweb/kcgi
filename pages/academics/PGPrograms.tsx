@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AcademicsLayout } from '../../components/AcademicsLayout';
 import { BookOpen, ArrowRight } from 'lucide-react';
@@ -15,7 +14,7 @@ export const PGPrograms: React.FC = () => (
         <p>Our PG programs are designed for professionals who wish to specialize and lead in their respective fields. We emphasize high-level academic research, clinical expertise, and strategic management frameworks.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {[
           { 
             title: 'MBA (Master of Business Admin)', 
@@ -42,14 +41,14 @@ export const PGPrograms: React.FC = () => (
             path: '/institution/physiotherapy'
           }
         ].map((prog, i) => (
-          <div key={i} className="group p-10 bg-white border border-gray-100 rounded-[3rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+          <div key={i} className="group p-8 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
             <div className="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-all">
               <BookOpen className="w-7 h-7" />
             </div>
-            <h3 className="text-2xl font-serif font-bold text-primary mb-3">{prog.title}</h3>
-            <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">{prog.inst}</p>
-            <p className="text-sm text-gray-500 leading-relaxed mb-10">{prog.desc}</p>
-            <Link to={prog.path} className="inline-flex items-center gap-2 text-primary font-black text-xs uppercase tracking-widest hover:gap-4 transition-all">
+            <h3 className="text-2xl font-serif font-bold text-primary mb-2">{prog.title}</h3>
+            <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-6">{prog.inst}</p>
+            <p className="text-sm text-gray-500 leading-relaxed mb-8">{prog.desc}</p>
+            <Link to={prog.path} className="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
               Program Details <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

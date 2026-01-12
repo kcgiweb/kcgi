@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AcademicsLayout } from '../../components/AcademicsLayout';
 import { GraduationCap, ChevronRight, ArrowRight } from 'lucide-react';
@@ -60,10 +59,10 @@ export const UGPrograms: React.FC = () => (
             path: '/institution/allied-health'
           }
         ].map((prog, i) => (
-          <div key={i} className="group p-10 bg-gray-50 rounded-[3rem] border border-gray-100 hover:bg-white hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+          <div key={i} className="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700" />
             <h3 className="text-2xl font-serif font-bold text-primary mb-2">{prog.title}</h3>
-            <p className="text-[10px] font-black uppercase tracking-widest text-secondary mb-6">{prog.inst}</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-secondary mb-6">{prog.inst}</p>
             <p className="text-sm text-gray-500 leading-relaxed mb-8">{prog.desc}</p>
             <div className="flex items-center justify-between pt-6 border-t border-gray-100">
               <span className="text-xs font-bold text-gray-400">Duration: {prog.duration}</span>

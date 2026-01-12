@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AboutLayout } from '../../components/AboutLayout';
 import { Network } from 'lucide-react';
@@ -20,11 +19,11 @@ export const AboutGoverning: React.FC = () => (
           image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767687679/download_2_cbxmzc.png' 
         }
       ].map((m, i) => (
-        <div key={i} className="flex-1 p-10 bg-gray-50 rounded-[3rem] border border-gray-100 text-center hover:bg-white hover:shadow-2xl transition-all duration-500 group">
-          <div className="w-48 h-48 rounded-[2.5rem] overflow-hidden mx-auto mb-8 border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-500">
+        <div key={i} className="flex-1 p-8 bg-gray-50 rounded-3xl border border-gray-100 text-center hover:bg-white hover:shadow-2xl transition-all duration-500 group">
+          <div className="w-40 h-40 rounded-3xl overflow-hidden mx-auto mb-8 border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-500">
             <img src={m.image} alt={m.name} className="w-full h-full object-cover" />
           </div>
-          <h4 className="text-xl md:text-2xl font-bold text-primary mb-2 leading-tight uppercase tracking-tight">{m.name}</h4>
+          <h4 className="text-xl font-bold text-primary mb-2 leading-tight uppercase tracking-tight">{m.name}</h4>
           <div className="space-y-1">
             <p className="text-sm font-black uppercase text-secondary tracking-widest">{m.role}</p>
             <p className="text-xs text-gray-400 font-medium leading-relaxed">{m.org}</p>

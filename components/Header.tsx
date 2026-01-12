@@ -168,10 +168,10 @@ export const Header: React.FC = () => {
 
     return (
       <div className={`absolute top-full left-1/2 -translate-x-1/2 w-[900px] xl:w-[1100px] bg-white text-customText shadow-2xl rounded-b-3xl border-t-4 ${borderColor} transition-all duration-300 ${activeMenu === nav.title ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'}`}>
-        <div className="grid grid-cols-3 p-8 xl:p-10 gap-8 xl:gap-10">
+        <div className="grid grid-cols-3 p-8 gap-8">
           {sections.map((sectionKey) => (
             <div key={sectionKey}>
-              <h4 className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">
+              <h4 className="text-primary font-black uppercase text-xs tracking-widest mb-4 border-b border-gray-100 pb-2">
                 {sectionKey.replace(/([A-Z])/g, ' $1').trim()}
               </h4>
               <div className="space-y-2">
@@ -181,8 +181,8 @@ export const Header: React.FC = () => {
                       <item.icon className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="block font-bold text-[11px] group-hover/sub:text-primary leading-tight">{item.label}</span>
-                      <span className="text-[9px] text-gray-400 font-medium">{item.desc}</span>
+                      <span className="block font-bold text-sm group-hover/sub:text-primary leading-tight">{item.label}</span>
+                      <span className="text-xs text-gray-400 font-medium">{item.desc}</span>
                     </div>
                   </Link>
                 ))}
@@ -196,12 +196,12 @@ export const Header: React.FC = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-[100] header-transition ${getHeaderClasses()}`}>
-      <div className="container mx-auto px-4 md:px-6 h-16 md:h-20 lg:h-24 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center relative z-[110]">
           <img 
             src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg" 
             alt="Logo" 
-            className={`h-8 md:h-12 lg:h-16 transition-all`}
+            className={`h-10 md:h-12 transition-all`}
           />
         </Link>
 
@@ -215,46 +215,46 @@ export const Header: React.FC = () => {
               onMouseLeave={() => setActiveMenu(null)}
             >
               {nav.mega ? (
-                <button className={`px-2 xl:px-3 py-2 font-bold text-[9px] xl:text-[11px] uppercase tracking-wider transition-colors hover:text-secondary flex items-center gap-1 whitespace-nowrap`}>
+                <button className={`px-2 xl:px-3 py-2 font-bold text-xs uppercase tracking-wider transition-colors hover:text-secondary flex items-center gap-1 whitespace-nowrap`}>
                   {nav.title} <ChevronDown className="w-3 h-3" />
                 </button>
               ) : (
-                <Link to={nav.path} className="px-2 xl:px-3 py-2 font-bold text-[9px] xl:text-[11px] uppercase tracking-wider transition-colors hover:text-secondary whitespace-nowrap">{nav.title}</Link>
+                <Link to={nav.path} className="px-2 xl:px-3 py-2 font-bold text-xs uppercase tracking-wider transition-colors hover:text-secondary whitespace-nowrap">{nav.title}</Link>
               )}
 
               {/* Institutions Mega */}
               {nav.mega && nav.type === 'institutions' && (
                 <div className={`absolute top-full left-1/2 -translate-x-1/2 w-[900px] xl:w-[1100px] bg-white text-customText shadow-2xl rounded-b-3xl border-t-4 border-accent1 transition-all duration-300 ${activeMenu === nav.title ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'}`}>
-                  <div className="grid grid-cols-3 p-8 xl:p-10 gap-8 xl:gap-10">
+                  <div className="grid grid-cols-3 p-8 gap-8">
                     <div>
-                      <h4 className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">Professional</h4>
+                      <h4 className="text-primary font-black uppercase text-xs tracking-widest mb-4 border-b border-gray-100 pb-2">Professional</h4>
                       <div className="space-y-2">
                         {instMegaMenu.professional.map(item => (
                           <Link key={item.id} to={`/institution/${item.id}`} className="flex gap-3 group/sub hover:bg-primary/5 p-2 rounded-xl transition-all">
                             <item.icon className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                            <div><span className="block font-bold text-[11px] group-hover/sub:text-primary">{item.label}</span><span className="text-[9px] text-gray-400">{item.desc}</span></div>
+                            <div><span className="block font-bold text-sm group-hover/sub:text-primary">{item.label}</span><span className="text-xs text-gray-400">{item.desc}</span></div>
                           </Link>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">Healthcare</h4>
+                      <h4 className="text-primary font-black uppercase text-xs tracking-widest mb-4 border-b border-gray-100 pb-2">Healthcare</h4>
                       <div className="space-y-2">
                         {instMegaMenu.healthcare.map(item => (
                           <Link key={item.id} to={`/institution/${item.id}`} className="flex gap-3 group/sub hover:bg-secondary/5 p-2 rounded-xl transition-all">
                             <item.icon className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
-                            <div><span className="block font-bold text-[11px] group-hover/sub:text-secondary">{item.label}</span><span className="text-[9px] text-gray-400">{item.desc}</span></div>
+                            <div><span className="block font-bold text-sm group-hover/sub:text-secondary">{item.label}</span><span className="text-xs text-gray-400">{item.desc}</span></div>
                           </Link>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-4 border-b border-gray-100 pb-2">School Education</h4>
+                      <h4 className="text-primary font-black uppercase text-xs tracking-widest mb-4 border-b border-gray-100 pb-2">School Education</h4>
                       <div className="space-y-2">
                         {instMegaMenu.schools.map(item => (
                           <Link key={item.id} to={`/institution/${item.id}`} className="flex gap-3 group/sub hover:bg-accent1/5 p-2 rounded-xl transition-all">
                             <item.icon className="w-4 h-4 text-accent1 shrink-0 mt-0.5" />
-                            <div><span className="block font-bold text-[11px] group-hover/sub:text-accent1">{item.label}</span><span className="text-[9px] text-gray-400">{item.desc}</span></div>
+                            <div><span className="block font-bold text-sm group-hover/sub:text-accent1">{item.label}</span><span className="text-xs text-gray-400">{item.desc}</span></div>
                           </Link>
                         ))}
                       </div>
@@ -296,7 +296,7 @@ export const Header: React.FC = () => {
                     <div>
                       <button 
                         onClick={() => setMobileExpanded(mobileExpanded === nav.title ? null : nav.title)}
-                        className="w-full flex items-center justify-between py-3 text-[13px] font-bold text-primary uppercase tracking-wider"
+                        className="w-full flex items-center justify-between py-3 text-sm font-bold text-primary uppercase tracking-wider"
                       >
                         {nav.title}
                         <ChevronRight className={`w-4 h-4 transition-transform ${mobileExpanded === nav.title ? 'rotate-90' : ''}`} />
@@ -306,21 +306,21 @@ export const Header: React.FC = () => {
                           {nav.type === 'institutions' ? (
                             <div className="space-y-3">
                               {[...instMegaMenu.professional, ...instMegaMenu.healthcare, ...instMegaMenu.schools].map((inst) => (
-                                <Link key={inst.id} to={`/institution/${inst.id}`} className="block text-[12px] text-gray-500 font-medium">{inst.label}</Link>
+                                <Link key={inst.id} to={`/institution/${inst.id}`} className="block text-xs text-gray-500 font-medium">{inst.label}</Link>
                               ))}
                             </div>
                           ) : (
                             <div className="space-y-3">
-                              {nav.type === 'about' && aboutMegaMenu.identity.map((m, si) => <Link key={si} to={m.path} className="block text-[12px] text-gray-500 font-medium">{m.label}</Link>)}
-                              {nav.type === 'academics' && academicsMegaMenu.streams.map((m, si) => <Link key={si} to={m.path} className="block text-[12px] text-gray-500 font-medium">{m.label}</Link>)}
-                              {nav.type === 'admissions' && admissionsMegaMenu.guidelines.map((m, si) => <Link key={si} to={m.path} className="block text-[12px] text-gray-500 font-medium">{m.label}</Link>)}
+                              {nav.type === 'about' && aboutMegaMenu.identity.map((m, si) => <Link key={si} to={m.path} className="block text-xs text-gray-500 font-medium">{m.label}</Link>)}
+                              {nav.type === 'academics' && academicsMegaMenu.streams.map((m, si) => <Link key={si} to={m.path} className="block text-xs text-gray-500 font-medium">{m.label}</Link>)}
+                              {nav.type === 'admissions' && admissionsMegaMenu.guidelines.map((m, si) => <Link key={si} to={m.path} className="block text-xs text-gray-500 font-medium">{m.label}</Link>)}
                             </div>
                           )}
                         </div>
                       </div>
                     </div>
                   ) : (
-                    <Link to={nav.path} className="block py-3 text-[13px] font-bold text-primary uppercase tracking-wider">{nav.title}</Link>
+                    <Link to={nav.path} className="block py-3 text-sm font-bold text-primary uppercase tracking-wider">{nav.title}</Link>
                   )}
                 </div>
               ))}

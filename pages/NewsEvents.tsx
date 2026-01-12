@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { 
   Calendar, 
@@ -41,7 +40,7 @@ export const NewsEvents: React.FC = () => {
                     <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
                   </div>
                   <div className="md:w-2/3 flex flex-col justify-center space-y-3">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-secondary">{item.category} • {item.date}</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-secondary">{item.category} • {item.date}</span>
                     <h3 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors">{item.title}</h3>
                     <p className="text-sm text-gray-500 line-clamp-2">Detailed report on the recent achievements and upcoming initiatives from the group management.</p>
                     <button className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">Read More <ArrowRight className="w-4 h-4"/></button>
@@ -61,24 +60,24 @@ export const NewsEvents: React.FC = () => {
                 <div key={i} className="p-6 bg-gray-50 rounded-2xl border border-gray-100 flex gap-6 items-center">
                   <div className="text-center bg-primary text-white w-20 py-3 rounded-xl">
                     <span className="block text-xl font-bold leading-none">{e.date.split(' ')[1]}</span>
-                    <span className="text-[10px] uppercase font-bold">{e.date.split(' ')[0]}</span>
+                    <span className="text-xs uppercase font-bold">{e.date.split(' ')[0]}</span>
                   </div>
                   <div>
                     <h4 className="font-bold text-primary">{e.title}</h4>
-                    <div className="flex items-center gap-2 text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">
+                    <div className="flex items-center gap-2 text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">
                       <MapPin className="w-3 h-3"/> {e.loc}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="bg-secondary/5 p-8 rounded-[2rem] border border-secondary/10">
+            <div className="bg-secondary/5 p-8 rounded-2xl border border-secondary/10">
               <h4 className="text-primary font-bold mb-4">Gallery Highlights</h4>
               <div className="grid grid-cols-2 gap-2">
                 <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover"/></div>
                 <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover"/></div>
               </div>
-              <button className="w-full mt-6 py-3 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2"><ImageIcon className="w-4 h-4"/> View Photo Gallery</button>
+              <button className="w-full mt-6 py-3 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 text-sm"><ImageIcon className="w-4 h-4"/> View Photo Gallery</button>
             </div>
           </div>
         </div>
