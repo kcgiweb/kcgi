@@ -127,20 +127,21 @@ export const Header: React.FC = () => {
 
   const instMegaMenu = {
     professional: [
-      { id: 'pharmacy', label: 'Pharmacy', icon: Pill, desc: 'B.Pharm, Pharm.D' },
-      { id: 'management', label: 'Management', icon: Briefcase, desc: 'MBA, BBA, B.Com' },
-      { id: 'mgmt-science', label: 'Management & Sci', icon: LayoutDashboard, desc: 'B.Sc & Commerce' },
-      { id: 'law', label: 'College of Law', icon: Scale, desc: 'Integrated LLB' },
+      { id: 'pharmacy', label: 'Pharmacy', icon: Pill, desc: 'B.Pharm, Pharm.D, Ph.D' },
+      { id: 'management-science', label: 'Management & Sci', icon: LayoutDashboard, desc: 'BCA, BCA AI, B.Com' },
+      { id: 'management', label: 'Management (MBA)', icon: Briefcase, desc: 'Corporate MBA & SCM' },
+      { id: 'law', label: 'College of Law', icon: Scale, desc: '3 Year LL.B' },
+      { id: 'education', label: 'Education', icon: BookOpen, desc: 'B.Ed Program' },
     ],
     healthcare: [
-      { id: 'nursing-college', label: 'Nursing College', icon: Stethoscope, desc: 'B.Sc/M.Sc Nursing' },
-      { id: 'nursing-school', label: 'Nursing School', icon: Award, desc: 'GNM Diploma' },
+      { id: 'nursing', label: 'Nursing', icon: Stethoscope, desc: 'B.Sc, M.Sc, Ph.D' },
       { id: 'physiotherapy', label: 'Physiotherapy', icon: Activity, desc: 'BPT & MPT' },
-      { id: 'allied-health', label: 'Allied Health', icon: GraduationCap, desc: 'Diagnostics' },
+      { id: 'allied-health', label: 'Allied Health', icon: Microscope, desc: 'B.Sc MLT, MIT, Dialysis' },
+      { id: 'paramedical', label: 'Paramedical', icon: Award, desc: 'Diploma Programs' },
     ],
     schools: [
-      { id: 'pre-university', label: 'PU College', icon: BookOpen, desc: 'Science & Commerce' },
-      { id: 'public-school', label: 'Public School', icon: School, desc: 'K-12 Holistic' },
+      { id: 'pu-college', label: 'Composite PU', icon: Layers, desc: 'Science & Commerce' },
+      { id: 'public-school', label: 'Public School', icon: School, desc: 'LKG to 10th Grade' },
     ]
   };
 

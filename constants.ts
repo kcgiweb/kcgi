@@ -1,197 +1,314 @@
-
 import { Institution, InstitutionCategory } from './types';
 
 export const INSTITUTIONS: Institution[] = [
   {
-    id: 'pharmacy',
-    name: 'Karnataka College of Pharmacy',
+    id: 'management-science',
+    name: 'Karnataka College of Management & Science',
     category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Empowering Pharmaceutical Innovations',
-    overview: 'Karnataka College of Pharmacy stands at the forefront of pharmaceutical education in India. We emphasize research-led learning and industry-integrated training.',
+    tagline: 'Empowering Future Leaders in Technology and Commerce',
+    overview: 'Karnataka College of Management and Science provides a modern learning environment for students interested in business and technology. We focus on teaching skills that help students succeed in the global job market.',
     courses: [
-      { name: 'B.Pharm', duration: '4 Years', eligibility: '10+2 with PCM/PCB' },
-      { name: 'M.Pharm (Pharmaceutics)', duration: '2 Years', eligibility: 'B.Pharm with 55%' },
-      { name: 'Pharm.D', duration: '6 Years', eligibility: '10+2 with PCM/PCB' }
+      { name: 'B.Com' },
+      { name: 'BBA' },
+      { name: 'BBA Aviation Management' },
+      { name: 'BCA' },
+      { name: 'BCA Artificial Intelligence & Machine Learning' },
+      { name: 'BCA Digital Forensic Data Science' },
+      { name: 'BTTM' },
+      { name: 'M.Com' },
+      { name: 'MTTM' }
     ],
-    departments: ['Pharmaceutics', 'Pharmacology', 'Pharmaceutical Chemistry', 'Pharmacognosy', 'Pharmacy Practice'],
-    faculty: [
-      { name: 'Dr. Ramesh Kumar', designation: 'Principal', qualification: 'Ph.D in Pharmacy', image: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=400' }
+    specialCourses: [
+      'BCA Cloud Computing and Cyber Security',
+      'BBA Logistics and Supply Chain Management'
     ],
-    facilities: ['Medicinal Garden', 'Advanced Analytics Lab', 'Animal House (CPCSEA Approved)', 'Research Center'],
-    admissions: 'Selection is based on KCET/CET scores and academic merit.',
-    placements: ['Pfizer', 'Biocon', 'Sun Pharma', 'Dr. Reddys'],
-    gallery: [],
-    contact: { address: 'Thirumenahalli, Bangalore', phone: '+91 80 1234 5678', email: 'admissions.pharmacy@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
-  },
-  {
-    id: 'pre-university',
-    name: 'Karnataka College of Pre-University',
-    category: InstitutionCategory.SCHOOL_EDUCATION,
-    tagline: 'Bridging Dreams and Careers',
-    overview: 'A premier PU college offering integrated coaching for NEET, JEE, and CET alongside the state curriculum.',
-    courses: [
-      { name: 'PUC Science (PCMB/PCMC)', duration: '2 Years', eligibility: '10th SSLC/CBSE/ICSE' },
-      { name: 'PUC Commerce (CEBA/HEBA)', duration: '2 Years', eligibility: '10th SSLC/CBSE/ICSE' }
+    whyChoose: [
+      'Focus on practical training and industry needs',
+      'Modern labs for Artificial Intelligence and Computing',
+      'Experienced teachers from both academic and corporate backgrounds',
+      'Placement support for students in top technology companies',
+      'Regular workshops and seminars on latest digital trends'
     ],
-    departments: ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Computer Science', 'Accountancy'],
+    departments: ['Management', 'Computer Science', 'Commerce', 'Aviation'],
     faculty: [],
-    facilities: ['Integrated Coaching Labs', 'Study Hall', 'Language Lab'],
-    admissions: 'Based on 10th standard board results and counseling.',
-    placements: ['Higher Education Career Guidance'],
+    facilities: ['Advanced Computing Lab', 'Digital Library', 'Aviation Mock-up Room'],
+    admissions: 'Admissions are based on merit and entrance eligibility.',
+    placements: ['TCS', 'Infosys', 'Wipro', 'Indigo'],
     gallery: [],
-    contact: { address: '33/2, Hegde Nagar, Bangalore', phone: '+91 80 1234 5679', email: 'admissions.pu@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1523050335102-c325091422f9?auto=format&fit=crop&q=80&w=1200'
-  },
-  {
-    id: 'nursing-college',
-    name: 'Karnataka College of Nursing',
-    category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Caring with Competence',
-    overview: 'Our degree nursing program focuses on clinical excellence and compassionate healthcare delivery.',
-    courses: [
-      { name: 'B.Sc Nursing', duration: '4 Years', eligibility: '10+2 with PCB' },
-      { name: 'M.Sc Nursing', duration: '2 Years', eligibility: 'B.Sc Nursing' }
-    ],
-    departments: ['Medical Surgical', 'Obstetrics & Gynecology', 'Pediatrics'],
-    faculty: [],
-    facilities: ['Simulated Nursing Lab', 'Hospital Internships', 'Clinical Postings'],
-    admissions: 'Through merit and selection interview.',
-    placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis'],
-    gallery: [],
-    contact: { address: 'Bangalore', phone: '+91 80 1234 5680', email: 'nursing@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dad99901?auto=format&fit=crop&q=80&w=1200'
-  },
-  {
-    id: 'nursing-school',
-    name: 'Karnataka School of Nursing',
-    category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'The Foundation of Healthcare',
-    overview: 'Specialized diploma programs in nursing for immediate professional certification.',
-    courses: [
-      { name: 'GNM (Diploma)', duration: '3 Years', eligibility: '10+2 Any Stream' }
-    ],
-    departments: ['General Nursing'],
-    faculty: [],
-    facilities: ['Nursing Skills Lab', 'Community Postings'],
-    admissions: 'Merit-based direct admission.',
-    placements: ['Local Nursing Homes', 'Clinics', 'Home Care Services'],
-    gallery: [],
-    contact: { address: 'Bangalore', phone: '+91 80 1234 5681', email: 'schoolnursing@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=1200'
+    contact: { address: '33/2, Hegde Nagar Main Rd, Bengaluru', phone: '+91 80 1234 5678', email: 'info@karnatakacollege.edu' },
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200'
   },
   {
     id: 'management',
     name: 'Karnataka College of Management',
     category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Global Leaders for a Digital Era',
-    overview: 'A world-class B-School focusing on leadership, innovation, and ethical business practices.',
+    tagline: 'Excellence in Strategic Business Leadership',
+    overview: 'Karnataka College of Management is a premier business school dedicated to training students for leadership roles. Our MBA program is designed to develop sharp business minds and ethical managers.',
     courses: [
-      { name: 'MBA', duration: '2 Years', eligibility: 'Graduate Degree with 50%' },
-      { name: 'BBA', duration: '3 Years', eligibility: '10+2' }
+      { name: 'MBA' }
     ],
-    departments: ['Finance', 'Marketing', 'Human Resources', 'Supply Chain', 'Business Analytics'],
+    specialCourses: [
+      'MBA Advance Certificate Program in Logistics and Supply Chain Management'
+    ],
+    whyChoose: [
+      'Corporate training integrated with the MBA curriculum',
+      'Strong focus on logistics and supply chain specializations',
+      'Regular industry visits and corporate interactions',
+      'Assistance in building a professional network',
+      'Focus on soft skills and personality development'
+    ],
+    departments: ['MBA Department'],
     faculty: [],
-    facilities: ['Digital Classrooms', 'Incubation Lab', 'Corporate Board Room'],
-    admissions: 'Based on CAT/MAT/KMAT scores and Group Discussion.',
-    placements: ['Amazon', 'Deloitte', 'HDFC', 'TCS'],
+    facilities: ['Business Seminar Hall', 'Corporate Board Room', 'Research Center'],
+    admissions: 'Admission through KMAT, MAT, or PGCET scores.',
+    placements: ['Amazon', 'Deloitte', 'HDFC Bank', 'FedEx'],
     gallery: [],
-    contact: { address: 'Bangalore', phone: '+91 80 1234 5682', email: 'management@karnatakacollege.edu' },
+    contact: { address: 'Yelahanka, Bengaluru', phone: '+91 80 1234 5679', email: 'mba@karnatakacollege.edu' },
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200'
   },
   {
-    id: 'mgmt-science',
-    name: 'Karnataka College of Management & Science',
-    category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Where Science Meets Business',
-    overview: 'Integrating scientific methodologies into management frameworks for technical industries.',
-    courses: [
-      { name: 'B.Sc Computer Science', duration: '3 Years', eligibility: '10+2 Science' },
-      { name: 'B.Com with Analytics', duration: '3 Years', eligibility: '10+2' }
-    ],
-    departments: ['Computer Applications', 'Data Science', 'Commerce'],
-    faculty: [],
-    facilities: ['IoT Lab', 'Advanced Computing Center'],
-    admissions: 'Merit-based online application.',
-    placements: ['Infosys', 'Wipro', 'Capgemini'],
-    gallery: [],
-    contact: { address: 'Bangalore', phone: '+91 80 1234 5683', email: 'science@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200'
-  },
-  {
     id: 'law',
-    name: 'Karnataka College of Law',
+    name: 'Karunadu College of Law',
     category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Justice through Legal Excellence',
-    overview: 'A premier legal institution focused on producing advocates of high moral and professional standards.',
+    tagline: 'Advocacy for Justice and Professional Excellence',
+    overview: 'Karunadu College of Law provides a solid foundation for students aiming for a career in the legal field. We focus on developing advocacy skills and a deep understanding of the Indian legal system.',
     courses: [
-      { name: '3-Year LLB', duration: '3 Years', eligibility: 'Graduation' },
-      { name: '5-Year Integrated LLB', duration: '5 Years', eligibility: '10+2' }
+      { name: 'LL.B (3 Years)' }
     ],
-    departments: ['Civil Law', 'Criminal Law', 'Constitutional Law'],
+    whyChoose: [
+      'Modern moot court for practicing legal arguments',
+      'Extensive library with digital law journals and records',
+      'Qualified faculty with years of legal experience',
+      'Regular seminars with practicing lawyers and judges',
+      'Practical exposure through legal aid camps'
+    ],
+    departments: ['Legal Studies'],
     faculty: [],
-    facilities: ['Moot Court', 'Law Library', 'Legal Aid Clinic'],
-    admissions: 'Based on CLAT scores and merit.',
-    placements: ['Law Firms', 'Corporate Legal Cells', 'Litigation'],
+    facilities: ['Moot Court', 'Law Library', 'Legal Aid Cell'],
+    admissions: 'Selection based on merit and academic performance.',
+    placements: ['Legal Firms', 'Corporate Legal Departments', 'Independent Practice Support'],
     gallery: [],
-    contact: { address: 'Bangalore', phone: '+91 80 1234 5684', email: 'law@karnatakacollege.edu' },
+    contact: { address: 'Bengaluru', phone: '+91 80 1234 5680', email: 'law@karnatakacollege.edu' },
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200'
   },
   {
-    id: 'allied-health',
-    name: 'Karnataka College of Allied Health Sciences',
+    id: 'education',
+    name: 'Karnataka College of Education',
     category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'The Pulse of Modern Diagnostics',
-    overview: 'Training professionals for the essential diagnostic and therapeutic departments of healthcare.',
+    tagline: 'Training Educators to Shape the Future',
+    overview: 'Karnataka College of Education focuses on training the next generation of teachers. We provide students with the pedagogical skills and practical experience needed for modern classrooms.',
     courses: [
-      { name: 'B.Sc MLT', duration: '3.5 Years', eligibility: '10+2 Science' },
-      { name: 'B.Sc Imaging Tech', duration: '3.5 Years', eligibility: '10+2 Science' }
+      { name: 'B.Ed' }
     ],
-    departments: ['Pathology', 'Radiology', 'Operation Theater Tech'],
+    whyChoose: [
+      'Comprehensive teacher training programs',
+      'Practical teaching experience in group-run schools',
+      'Workshops on modern teaching technologies',
+      'Focus on psychology and student behavior management',
+      'Preparation for various teaching eligibility tests'
+    ],
+    departments: ['B.Ed Department'],
     faculty: [],
-    facilities: ['Diagnostic Imaging Suite', 'Pathology Lab'],
-    admissions: 'Merit-based enrollment.',
-    placements: ['Diagnostic Chains', 'Govt Healthcare Hubs'],
+    facilities: ['Methodology Labs', 'Education Technology Cell', 'Art and Craft Center'],
+    admissions: 'Admission based on university norms and merit.',
+    placements: ['Reputed Schools', 'Educational Institutions', 'Online Learning Platforms'],
     gallery: [],
-    contact: { address: 'Bangalore', phone: '+91 80 1234 5685', email: 'allied@karnatakacollege.edu' },
+    contact: { address: 'Thirumenahalli, Bengaluru', phone: '+91 80 1234 5681', email: 'bed@karnatakacollege.edu' },
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'pharmacy',
+    name: 'Karnataka College of Pharmacy',
+    category: InstitutionCategory.HIGHER_EDUCATION,
+    tagline: 'Innovation in Pharmaceutical Sciences',
+    overview: 'Karnataka College of Pharmacy is one of the leading institutions for pharmacy studies in India. We offer a range of programs from diplomas to doctorates, focusing on drug research and medicine.',
+    courses: [
+      { name: 'D.Pharm' },
+      { name: 'B.Pharm' },
+      { name: 'M.Pharm' },
+      { name: 'Pharm D' },
+      { name: 'Ph.D in Pharmacy' }
+    ],
+    whyChoose: [
+      'CPCSEA approved animal house for research',
+      'Advanced research labs for drug formulation',
+      'Medicinal garden for pharmacognosy studies',
+      'Partnerships with top pharmaceutical companies',
+      'High placement record in research and production'
+    ],
+    departments: ['Pharmaceutics', 'Pharmacology', 'Pharmaceutical Chemistry', 'Pharmacy Practice'],
+    faculty: [],
+    facilities: ['Medicinal Garden', 'Analytical Lab', 'Research Center'],
+    admissions: 'Admission based on KCET/NEET or academic merit.',
+    placements: ['Pfizer', 'Biocon', 'Sun Pharma', 'Cipla'],
+    gallery: [],
+    contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5682', email: 'pharmacy@karnatakacollege.edu' },
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+  },
+  {
+    id: 'nursing',
+    name: 'Karnataka College of Nursing',
+    category: InstitutionCategory.HIGHER_EDUCATION,
+    tagline: 'Excellence in Healthcare and Compassionate Care',
+    overview: 'Karnataka College of Nursing aims to develop skilled healthcare professionals. We provide rigorous clinical training and a compassionate approach to patient care.',
+    courses: [
+      { name: 'GNM' },
+      { name: 'B.Sc Nursing' },
+      { name: 'P.B B.Sc Nursing' },
+      { name: 'M.Sc Nursing' },
+      { name: 'Ph.D in Nursing' }
+    ],
+    whyChoose: [
+      'Clinical postings in major hospitals in Bengaluru',
+      'Simulated nursing labs for practical learning',
+      'Experienced nursing faculty and healthcare mentors',
+      'High demand for graduates in India and abroad',
+      'Focus on community health and emergency care'
+    ],
+    departments: ['Nursing Education'],
+    faculty: [],
+    facilities: ['Anatomy Lab', 'Nursing Practice Suite', 'Hostel for Girls'],
+    admissions: 'Admission based on merit and counseling.',
+    placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis', 'Global Health Centers'],
+    gallery: [],
+    contact: { address: 'Bengaluru', phone: '+91 80 1234 5683', email: 'nursing@karnatakacollege.edu' },
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dad99901?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'allied-health',
+    name: 'Karunadu College of Allied Health Science',
+    category: InstitutionCategory.HIGHER_EDUCATION,
+    tagline: 'Advance Diagnostic and Laboratory Technology',
+    overview: 'Karunadu College of Allied Health Science offers specialized degree programs for those wanting to work in medical diagnostics and technology support in hospitals.',
+    courses: [
+      { name: 'B.Sc MLT' },
+      { name: 'B.Sc MIT' },
+      { name: 'B.Sc AT & OT' },
+      { name: 'B.Sc Renal Dialysis' }
+    ],
+    whyChoose: [
+      'Modern diagnostic labs for hands-on training',
+      'Curriculum focused on latest medical equipment',
+      'Training in real hospital environments',
+      'Specialized focus on Renal Dialysis and Anesthesia technology',
+      'Career support in diagnostic centers and hospitals'
+    ],
+    departments: ['Diagnostic Sciences'],
+    faculty: [],
+    facilities: ['Pathology Lab', 'Radiology Suite', 'Dialysis Training Center'],
+    admissions: 'Based on 10+2 science scores and interview.',
+    placements: ['Diagnostic Chains', 'Private Hospitals', 'Public Health Centers'],
+    gallery: [],
+    contact: { address: 'Bengaluru', phone: '+91 80 1234 5684', email: 'alliedhealth@karnatakacollege.edu' },
     image: 'https://images.unsplash.com/photo-1581595221475-19912896979a?auto=format&fit=crop&q=80&w=1200'
   },
   {
-    id: 'physiotherapy',
-    name: 'Karnataka College of Physiotherapy',
+    id: 'paramedical',
+    name: 'Kaveri Paramedical College',
     category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Restore, Maintain, Promote',
-    overview: 'A leading center for physical rehabilitation and specialized sports medicine training.',
+    tagline: 'Technical Expertise in Medical Support Services',
+    overview: 'Kaveri Paramedical College provides essential diploma programs for students who wish to enter the healthcare workforce quickly as skilled technicians.',
     courses: [
-      { name: 'BPT', duration: '4.5 Years', eligibility: '10+2 with PCB' },
-      { name: 'MPT', duration: '2 Years', eligibility: 'BPT' }
+      { name: 'Diploma in MLT' },
+      { name: 'Diploma in X-Ray Technology' },
+      { name: 'Diploma in OT' },
+      { name: 'Diploma in OTT' }
     ],
-    departments: ['Musculoskeletal', 'Neurological', 'Cardio-Pulmonary'],
+    whyChoose: [
+      'Short-term professional diploma courses',
+      'Focus on technical clinical skills',
+      'Affordable education for healthcare careers',
+      'Immediate job opportunities in hospital labs',
+      'Small batch sizes for personalized attention'
+    ],
+    departments: ['Diploma Studies'],
     faculty: [],
-    facilities: ['Physiotherapy OPD', 'Hydrotherapy Unit', 'Advanced Rehab Center'],
-    admissions: 'Counseling based on medical entrance rankings.',
-    placements: ['Sports Clinics', 'Rehabilitation Centers', 'Multispecialty Hospitals'],
+    facilities: ['Paramedical Skill Lab', 'Imaging Center', 'Clinical Labs'],
+    admissions: 'Direct admission based on high school results.',
+    placements: ['Private Clinics', 'Medical Labs', 'Surgical Centers'],
     gallery: [],
-    contact: { address: 'Bangalore', phone: '+91 80 1234 5686', email: 'physio@karnatakacollege.edu' },
+    contact: { address: 'Thirumenahalli, Bengaluru', phone: '+91 80 1234 5685', email: 'kaveri@karnatakacollege.edu' },
+    image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'physiotherapy',
+    name: 'Manjunatha College of Physiotherapy',
+    category: InstitutionCategory.HIGHER_EDUCATION,
+    tagline: 'Restoring Movement and Enhancing Health',
+    overview: 'Manjunatha College of Physiotherapy is dedicated to training professionals who help people recover from physical injuries and manage health through exercise and therapy.',
+    courses: [
+      { name: 'BPT' },
+      { name: 'MPT' }
+    ],
+    whyChoose: [
+      'In-house physiotherapy clinic for clinical practice',
+      'Specialized training in sports and neurological rehab',
+      'Expert faculty from the physiotherapy industry',
+      'Regular workshops on modern therapeutic techniques',
+      'Internship opportunities in multispecialty hospitals'
+    ],
+    departments: ['Physiotherapy Department'],
+    faculty: [],
+    facilities: ['Physio OPD', 'Advanced Rehab Center', 'Exercise Therapy Lab'],
+    admissions: 'Based on academic merit and entrance performance.',
+    placements: ['Sports Clinics', 'Rehabilitation Centers', 'Hospitals'],
+    gallery: [],
+    contact: { address: 'Bengaluru', phone: '+91 80 1234 5686', email: 'physio@karnatakacollege.edu' },
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'pu-college',
+    name: 'Karnataka Composite P.U. College',
+    category: InstitutionCategory.SCHOOL_EDUCATION,
+    tagline: 'A Foundation for Professional Success',
+    overview: 'Our PU College provides the critical bridge between school and higher education. We offer integrated coaching to ensure students are ready for both board exams and entrance tests.',
+    courses: [
+      { name: 'Science: PCMB' },
+      { name: 'Science: PCME' },
+      { name: 'Science: PCMCS' },
+      { name: 'Commerce: EBAC' },
+      { name: 'Commerce: HEBA' },
+      { name: 'Commerce: BACsS' }
+    ],
+    whyChoose: [
+      'Integrated coaching for NEET, JEE, and CET',
+      'State-of-the-art science and commerce labs',
+      'Well-stocked library with digital learning resources',
+      'Regular test series for exam preparation',
+      'Strong focus on academic discipline and performance'
+    ],
+    departments: ['Science Department', 'Commerce Department'],
+    faculty: [],
+    facilities: ['Physics Lab', 'Chemistry Lab', 'Biology Lab', 'Computer Hub'],
+    admissions: 'Based on 10th standard SSLC/CBSE/ICSE results.',
+    placements: ['Career Counseling for Higher Education'],
+    gallery: [],
+    contact: { address: '33/2, Hegde Nagar, Bengaluru', phone: '+91 80 1234 5687', email: 'pu@karnatakacollege.edu' },
+    image: 'https://images.unsplash.com/photo-1523050335102-c325091422f9?auto=format&fit=crop&q=80&w=1200'
   },
   {
     id: 'public-school',
     name: 'Karnataka Public School',
     category: InstitutionCategory.SCHOOL_EDUCATION,
-    tagline: 'Nurturing Global Citizens',
-    overview: 'A world-class K-12 school providing a holistic education that balances academics with character development.',
+    tagline: 'Holistic Education for a Global Future',
+    overview: 'Karnataka Public School provides a safe and nurturing environment for students from LKG to 10th Grade. We focus on academic excellence alongside physical and creative growth.',
     courses: [
-      { name: 'Primary Education (Grades 1-5)', duration: 'Annual', eligibility: 'Age Based' },
-      { name: 'High School (Grades 6-10)', duration: 'Annual', eligibility: 'Entrance Test' }
+      { name: 'LKG to 10th Class' }
     ],
-    departments: ['Academics', 'Sports', 'Performing Arts', 'STEM Lab'],
+    whyChoose: [
+      'Student-friendly and safe campus environment',
+      'Balance of academic studies and co-curricular activities',
+      'Well-equipped classrooms and play areas',
+      'Experienced school teachers and supporting staff',
+      'Focus on character building and holistic growth'
+    ],
+    departments: ['Primary Education', 'Secondary Education'],
     faculty: [],
-    facilities: ['Smart Classrooms', 'Olympic-size Pool', 'Computer Science Hub', 'Indoor Sports Hall'],
-    admissions: 'Direct enquiry and entrance interaction.',
-    placements: ['Higher Secondary Career Guidance'],
+    facilities: ['School Playground', 'Activity Rooms', 'Science Lab for Kids'],
+    admissions: 'Direct inquiry and age-based selection.',
+    placements: ['Internal progression to PU College'],
     gallery: [],
-    contact: { address: 'Main Campus, Bangalore', phone: '+91 80 1234 5687', email: 'info@kps.edu' },
+    contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5688', email: 'school@karnatakacollege.edu' },
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200'
   }
 ];

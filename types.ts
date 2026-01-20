@@ -1,4 +1,3 @@
-
 export enum InstitutionCategory {
   HIGHER_EDUCATION = 'Higher Education',
   SCHOOL_EDUCATION = 'School Education'
@@ -6,8 +5,8 @@ export enum InstitutionCategory {
 
 export interface Course {
   name: string;
-  duration: string;
-  eligibility: string;
+  duration?: string;
+  eligibility?: string;
 }
 
 export interface FacultyMember {
@@ -24,6 +23,8 @@ export interface Institution {
   tagline: string;
   overview: string;
   courses: Course[];
+  specialCourses?: string[];
+  whyChoose: string[];
   departments: string[];
   faculty: FacultyMember[];
   facilities: string[];
