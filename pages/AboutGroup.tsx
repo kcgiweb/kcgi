@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 // Import Link from react-router-dom to fix "Cannot find name 'Link'" errors
 import { Link } from 'react-router-dom';
@@ -123,12 +122,12 @@ export const AboutGroup: React.FC = () => {
                     Established in the Silicon Valley of India, Bengaluru, the **Karnataka College Group of Institutions** is a multi-disciplinary educational conglomerate. With a sprawling campus and state-of-the-art infrastructure, we provide an environment that fosters both academic rigor and holistic development.
                   </p>
                   <p>
-                    Our group spans across **10 specialized institutions**, offering a diverse range of programs from primary school education to advanced post-graduate research in Pharmacy, Nursing, Management, and Law. Each institution operates with a shared vision: **Excellence in Education, Integrity in Character.**
+                    Our group spans across **11 specialized institutions**, offering a diverse range of programs from primary school education to advanced post-graduate research in Pharmacy, Nursing, Management, and Law. Each institution operates with a shared vision: **Excellence in Education, Integrity in Character.**
                   </p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   {[
-                    { label: 'Total Institutions', value: '10', icon: Building2 },
+                    { label: 'Total Institutions', value: '11', icon: Building2 },
                     { label: 'Programs Offered', value: '45+', icon: BookOpen },
                     { label: 'Global Alumni', value: '50k+', icon: Users },
                     { label: 'Awards Won', value: '120+', icon: Award },
@@ -181,7 +180,7 @@ export const AboutGroup: React.FC = () => {
                      { 
                        year: 'Present', 
                        title: 'The Global Hub', 
-                       desc: 'A comprehensive educational group with 10 institutions, NAAC accreditation, and a 50,000+ strong global alumni network.',
+                       desc: 'A comprehensive educational group with 11 institutions, NAAC accreditation, and a 50,000+ strong global alumni network.',
                        color: 'bg-primary'
                      }
                    ].map((item, i) => (

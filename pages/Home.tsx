@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
             {[
               { icon: Users, label: 'Global Alumni', value: '55,000+', color: 'text-blue-500' },
               { icon: BookOpen, label: 'Modern Courses', value: '45+', color: 'text-orange-500' },
-              { icon: Building2, label: 'Campus Centers', value: '12', color: 'text-green-500' },
+              { icon: Building2, label: 'Institutions', value: '11', color: 'text-green-500' },
               { icon: Award, label: 'Years of Trust', value: '34', color: 'text-red-500' }
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center p-8 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
@@ -137,7 +137,7 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Our Vibrant Ecosystem</h2>
-            <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">10 Premier Institutions</h3>
+            <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">11 Premier Institutions</h3>
             <p className="mt-4 text-base text-gray-500 font-light">Explore our diverse academic units catering to healthcare, law, management, and schooling.</p>
           </div>
 

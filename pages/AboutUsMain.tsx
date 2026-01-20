@@ -38,7 +38,7 @@ export const AboutUsMain: React.FC = () => {
           </nav>
           <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight animate-in fade-in slide-in-from-left-8 duration-700">A Global Academic <br/> Conglomerate</h1>
           <p className="text-lg text-white/70 font-light max-w-2xl mt-6">
-            Pioneering educational standards in India since 1990 with 10 premier institutions dedicated to professional excellence.
+            Pioneering educational standards in India since 1990 with 11 premier institutions dedicated to professional excellence.
           </p>
         </div>
         <div className="absolute right-0 top-0 h-full w-1/3 bg-secondary/10 -skew-x-12 translate-x-20" />
@@ -83,7 +83,7 @@ export const AboutUsMain: React.FC = () => {
         <div className="container mx-auto px-6">
            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { label: 'Group Institutions', value: '10+', color: 'text-orange-500' },
+                { label: 'Group Institutions', value: '11+', color: 'text-orange-500' },
                 { label: 'Programs & Streams', value: '45+', color: 'text-blue-500' },
                 { label: 'Research Scholars', value: '250+', color: 'text-green-500' },
                 { label: 'Awards of Excellence', value: '120+', color: 'text-red-500' }
@@ -144,7 +144,7 @@ export const AboutUsMain: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-secondary font-bold uppercase tracking-widest mb-4 text-sm">The Academic Universe</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold">10 Premier Institutions</h3>
+            <h3 className="text-4xl md:text-5xl font-serif font-bold">11 Premier Institutions</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {INSTITUTIONS.map((inst) => (
