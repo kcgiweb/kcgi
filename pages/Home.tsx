@@ -73,10 +73,10 @@ export const Home: React.FC = () => {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">Legacy of Excellence</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 leading-tight">
-              Shaping Minds for Three Decades
+              Shaping Minds for Decades
             </h3>
             <p className="text-lg text-customText leading-relaxed font-light">
-              Since 1990, we have been a cornerstone of professional education in Bengaluru, combining traditional values with cutting-edge academic innovation.
+              Since 1970, we have been a cornerstone of professional education in Bengaluru, combining traditional values with cutting-edge academic innovation.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export const Home: React.FC = () => {
               { icon: Users, label: 'Global Alumni', value: '55,000+', color: 'text-blue-500' },
               { icon: BookOpen, label: 'Modern Courses', value: '45+', color: 'text-orange-500' },
               { icon: Building2, label: 'Institutions', value: '11', color: 'text-green-500' },
-              { icon: Award, label: 'Years of Trust', value: '34', color: 'text-red-500' }
+              { icon: Award, label: 'Years of Trust', value: '29', color: 'text-red-500' }
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center p-8 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700" />
@@ -109,7 +109,7 @@ export const Home: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">Empowering Generations Through Quality Education</h2>
               <div className="prose prose-lg text-customText font-light leading-relaxed space-y-6">
                 <p>
-                  Managed by the <strong>Karnataka Educational Trust</strong>, our group has evolved into a powerhouse of knowledge across healthcare, legal, management, and foundational sciences since its inception in 1990.
+                  Managed by the <strong>Karnataka Educational Trust</strong>, our group has evolved into a powerhouse of knowledge across healthcare, legal, management, and foundational sciences since its inception in 1970.
                 </p>
                 <p>
                   Our sprawling 25-acre integrated campus in Bengaluru hosts state-of-the-art research laboratories, digital classrooms, and extensive library systems serving thousands of students from over 20 countries.

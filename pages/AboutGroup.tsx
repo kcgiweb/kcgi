@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// Import Link from react-router-dom to fix "Cannot find name 'Link'" errors
 import { Link } from 'react-router-dom';
 import { 
   History, 
@@ -20,7 +19,6 @@ import {
   Award,
   Medal,
   Star,
-  // Add BookOpen icon to fix "Cannot find name 'BookOpen'" error
   BookOpen
 } from 'lucide-react';
 import { INSTITUTIONS } from '../constants';
@@ -73,7 +71,7 @@ export const AboutGroup: React.FC = () => {
             A Legacy of <br /> Academic Excellence
           </h1>
           <p className="text-xl text-white/80 max-w-2xl font-light leading-relaxed">
-            For over 30 years, the Karnataka College Group has been at the forefront of shaping professional careers in healthcare, law, and management.
+            Founded on a vision in 1970, we have built 29 years of academic trust, beginning our professional journey in 1997.
           </p>
         </div>
       </div>
@@ -113,24 +111,24 @@ export const AboutGroup: React.FC = () => {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/5 rounded-full text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
                   <Globe className="w-4 h-4" /> Group Overview
                 </div>
-                <h2 className="text-4xl font-serif font-bold text-primary">Nurturing Intellect Since 1990</h2>
+                <h2 className="text-4xl font-serif font-bold text-primary">Nurturing Intellect Since 1970</h2>
                 <div className="prose prose-lg max-w-none text-customText space-y-8 font-medium">
                   <p className="text-2xl leading-relaxed text-primary/80 font-light italic">
-                    "We don't just build careers; we cultivate the ethical leaders of tomorrow's global landscape."
+                    "Our educational voyage officially commenced in 1997 with the establishment of Physiotherapy, paving the way for a multi-disciplinary legacy."
                   </p>
                   <p>
-                    Established in the Silicon Valley of India, Bengaluru, the **Karnataka College Group of Institutions** is a multi-disciplinary educational conglomerate. With a sprawling campus and state-of-the-art infrastructure, we provide an environment that fosters both academic rigor and holistic development.
+                    Established in the Silicon Valley of India, Bengaluru, the **Karnataka College Group of Institutions** is a multi-disciplinary educational conglomerate. Managed by the Karnataka Educational Trust, we have built a reputation for excellence over nearly three decades of active academic presence.
                   </p>
                   <p>
-                    Our group spans across **11 specialized institutions**, offering a diverse range of programs from primary school education to advanced post-graduate research in Pharmacy, Nursing, Management, and Law. Each institution operates with a shared vision: **Excellence in Education, Integrity in Character.**
+                    Our group spans across **11 specialized institutions**, offering a diverse range of programs from primary school education to advanced post-graduate research. Each institution operates with a shared vision: **Excellence in Education, Integrity in Character.**
                   </p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   {[
                     { label: 'Total Institutions', value: '11', icon: Building2 },
                     { label: 'Programs Offered', value: '45+', icon: BookOpen },
-                    { label: 'Global Alumni', value: '50k+', icon: Users },
-                    { label: 'Awards Won', value: '120+', icon: Award },
+                    { label: 'Global Alumni', value: '55,000+', icon: Users },
+                    { label: 'Years of Trust', value: '29', icon: Award },
                   ].map((stat, i) => (
                     <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all text-center">
                       <div className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
@@ -149,45 +147,51 @@ export const AboutGroup: React.FC = () => {
               <div className="space-y-16">
                 <div className="text-center max-w-2xl mx-auto space-y-4">
                   <h2 className="text-3xl font-serif font-bold text-primary">Our Historic Journey</h2>
-                  <p className="text-gray-500 font-medium">A timeline of growth, innovation, and unwavering dedication.</p>
+                  <p className="text-gray-500 font-medium">A professional timeline of growth and academic trust.</p>
                 </div>
-                <div className="relative border-l-4 border-primary/10 ml-6 md:ml-12 space-y-20 py-10">
+                <div className="relative border-l border-gray-200 ml-6 md:ml-12 space-y-20 py-10">
                    {[
                      { 
-                       year: '1990', 
-                       title: 'The Seed is Sown', 
-                       desc: 'Inception of the Karnataka Educational Trust in Bengaluru, starting with a vision to provide quality primary education to the community.',
+                       year: '1970', 
+                       title: 'The Legacy Foundation', 
+                       desc: 'Inception of the Karnataka Educational Trust in Bengaluru, setting the stage for future academic landmarks.',
+                       color: 'bg-secondary'
+                     },
+                     { 
+                       year: '1997', 
+                       title: 'Genesis of Professional Education', 
+                       desc: 'The Group launched its academic journey into specialized higher education with the establishment of the Department of Physiotherapy.',
                        color: 'bg-secondary'
                      },
                      { 
                        year: '2003', 
-                       title: 'Professional Expansion', 
-                       desc: 'Establishment of the Karnataka College of Pharmacy, marking our entry into specialized professional healthcare education.',
-                       color: 'bg-primary'
-                     },
-                     { 
-                       year: '2005', 
-                       title: 'Healthcare Milestone', 
-                       desc: 'Launch of the Karnataka College of Nursing to address the global demand for skilled healthcare professionals.',
-                       color: 'bg-accent1'
+                       title: 'Pharmacy & Pharmaceutical Sciences', 
+                       desc: 'Expansion of the medical portfolio with the Karnataka College of Pharmacy, now a top-tier research unit.',
+                       color: 'bg-secondary'
                      },
                      { 
                        year: '2012', 
-                       title: 'Diversified Learning', 
-                       desc: 'Inception of the College of Management and Science, integrating modern business education with scientific methodologies.',
-                       color: 'bg-accent2'
+                       title: 'Multi-Disciplinary Growth', 
+                       desc: 'Launch of Management, Law, and Allied Health sciences, creating a holistic professional campus.',
+                       color: 'bg-secondary'
                      },
                      { 
-                       year: 'Present', 
-                       title: 'The Global Hub', 
-                       desc: 'A comprehensive educational group with 11 institutions, NAAC accreditation, and a 50,000+ strong global alumni network.',
-                       color: 'bg-primary'
+                       year: '2018', 
+                       title: 'NAAC A Grade Recognition', 
+                       desc: 'Achieving excellence in academic audits and ranking among top institutions in Bengaluru.',
+                       color: 'bg-secondary'
+                     },
+                     { 
+                       year: '2024', 
+                       title: 'Modern Excellence', 
+                       desc: 'Transformation into a digital-first enterprise educational group with 11 premier institutions.',
+                       color: 'bg-secondary'
                      }
                    ].map((item, i) => (
                      <div key={i} className="relative pl-12 group">
-                        <div className={`absolute left-[-10px] top-0 w-5 h-5 rounded-full ${item.color} border-4 border-white shadow-lg group-hover:scale-150 transition-transform`} />
-                        <span className={`text-xl font-black mb-2 block ${item.color.replace('bg-', 'text-')}`}>{item.year}</span>
-                        <h4 className="text-2xl font-serif font-bold text-primary mb-3">{item.title}</h4>
+                        <div className={`absolute left-[-6.5px] top-2 w-3 h-3 rounded-full bg-secondary border-2 border-white shadow-[0_0_0_4px_rgba(247,150,30,0.1)] group-hover:scale-150 transition-transform`} />
+                        <span className={`text-2xl font-bold mb-2 block text-primary`}>{item.year}</span>
+                        <h4 className="text-xl font-bold text-[#333333] mb-3">{item.title}</h4>
                         <p className="text-customText leading-relaxed max-w-2xl font-medium">{item.desc}</p>
                      </div>
                    ))}
@@ -248,10 +252,10 @@ export const AboutGroup: React.FC = () => {
                         </div>
                      </div>
                      <div className="w-full md:w-2/3 space-y-8">
-                        <Quote className="w-16 h-16 text-primary/10" />
+                        <QuoteIcon className="w-16 h-16 text-primary/10" />
                         <h3 className="text-3xl font-serif font-bold text-primary">Message from the Chairman</h3>
                         <p className="text-xl text-customText leading-relaxed italic font-light">
-                          "Education is the most powerful weapon which you can use to change the world. At Karnataka College Group, we don't just teach subjects; we inspire minds to question, innovate, and lead with empathy. Our heritage of 30 years is built on the trust of parents and the success of our students across the globe."
+                          "Education is the most powerful weapon which you can use to change the world. At Karnataka College Group, we don't just teach subjects; we inspire minds to question, innovate, and lead with empathy. Our heritage is built on the trust of parents and the success of our students across the globe."
                         </p>
                         <div>
                            <h4 className="text-2xl font-bold text-primary">Prof. Basavaraj Ramanal</h4>
@@ -384,3 +388,11 @@ export const AboutGroup: React.FC = () => {
     </div>
   );
 };
+
+function QuoteIcon(props: any) {
+  return (
+    <svg {...props} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.34315 11.3601 6 13.017 6H19.017C20.6738 6 22.017 7.34315 22.017 9V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91244 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H4.017C3.46472 8 3.017 8.44772 3.017 9V12C3.017 12.5523 2.56928 13 2.017 13H0.017C-0.535279 13 -1.017 12.5523 -1.017 12V9C-1.017 7.34315 0.326142 6 2.017 6H8.017C9.67386 6 11.017 7.34315 11.017 9V15C11.017 18.3137 8.33071 21 5.017 21H3.017Z"/>
+    </svg>
+  );
+}

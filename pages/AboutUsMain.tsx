@@ -38,7 +38,7 @@ export const AboutUsMain: React.FC = () => {
           </nav>
           <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight animate-in fade-in slide-in-from-left-8 duration-700">A Global Academic <br/> Conglomerate</h1>
           <p className="text-lg text-white/70 font-light max-w-2xl mt-6">
-            Pioneering educational standards in India since 1990 with 11 premier institutions dedicated to professional excellence.
+            Pioneering educational standards in India since 1970 with 11 premier institutions dedicated to professional excellence.
           </p>
         </div>
         <div className="absolute right-0 top-0 h-full w-1/3 bg-secondary/10 -skew-x-12 translate-x-20" />
@@ -52,7 +52,7 @@ export const AboutUsMain: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-full text-primary font-bold text-xs uppercase tracking-widest">
                 <Globe className="w-4 h-4 text-secondary" /> Academic Legacy
               </div>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">Nurturing Intellectual Growth Since 1990</h2>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">Nurturing Intellectual Growth Since 1970</h2>
               <div className="prose prose-lg text-customText font-light leading-relaxed space-y-6">
                 <p className="text-xl text-primary font-medium italic">"We represent the future of multi-disciplinary professional training in Bengaluru."</p>
                 <p>
@@ -86,7 +86,7 @@ export const AboutUsMain: React.FC = () => {
                 { label: 'Group Institutions', value: '11+', color: 'text-orange-500' },
                 { label: 'Programs & Streams', value: '45+', color: 'text-blue-500' },
                 { label: 'Research Scholars', value: '250+', color: 'text-green-500' },
-                { label: 'Awards of Excellence', value: '120+', color: 'text-red-500' }
+                { label: 'Years of Trust', value: '29', color: 'text-red-500' }
               ].map((s, i) => (
                 <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 text-center shadow-lg hover:shadow-2xl transition-all group overflow-hidden relative">
                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700" />

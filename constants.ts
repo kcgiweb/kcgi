@@ -2,6 +2,64 @@ import { Institution, InstitutionCategory } from './types';
 
 export const INSTITUTIONS: Institution[] = [
   {
+    id: 'pharmacy',
+    name: 'Karnataka College of Pharmacy',
+    category: InstitutionCategory.HIGHER_EDUCATION,
+    tagline: 'Innovation in Pharmaceutical Sciences',
+    overview: 'Karnataka College of Pharmacy is one of the leading institutions for pharmacy studies in India. We offer a range of programs from diplomas to doctorates, focusing on drug research and medicine.',
+    courses: [
+      { name: 'D.Pharm' },
+      { name: 'B.Pharm' },
+      { name: 'M.Pharm' },
+      { name: 'Pharm D' },
+      { name: 'Ph.D in Pharmacy' }
+    ],
+    whyChoose: [
+      'CPCSEA approved animal house for research',
+      'Advanced research labs for drug formulation',
+      'Medicinal garden for pharmacognosy studies',
+      'Partnerships with top pharmaceutical companies',
+      'High placement record in research and production'
+    ],
+    departments: ['Pharmaceutics', 'Pharmacology', 'Pharmaceutical Chemistry', 'Pharmacy Practice'],
+    faculty: [],
+    facilities: ['Medicinal Garden', 'Analytical Lab', 'Research Center'],
+    admissions: 'Admission based on KCET/NEET or academic merit.',
+    placements: ['Pfizer', 'Biocon', 'Sun Pharma', 'Cipla'],
+    gallery: [],
+    contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5682', email: 'pharmacy@karnatakacollege.edu' },
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+  },
+  {
+    id: 'nursing',
+    name: 'Karnataka College of Nursing',
+    category: InstitutionCategory.HIGHER_EDUCATION,
+    tagline: 'Excellence in Healthcare and Compassionate Care',
+    overview: 'Karnataka College of Nursing aims to develop skilled healthcare professionals. We provide rigorous clinical training and a compassionate approach to patient care.',
+    courses: [
+      { name: 'GNM' },
+      { name: 'B.Sc Nursing' },
+      { name: 'P.B B.Sc Nursing' },
+      { name: 'M.Sc Nursing' },
+      { name: 'Ph.D in Nursing' }
+    ],
+    whyChoose: [
+      'Clinical postings in major hospitals in Bengaluru',
+      'Simulated nursing labs for practical learning',
+      'Experienced nursing faculty and healthcare mentors',
+      'High demand for graduates in India and abroad',
+      'Focus on community health and emergency care'
+    ],
+    departments: ['Nursing Education'],
+    faculty: [],
+    facilities: ['Anatomy Lab', 'Nursing Practice Suite', 'Hostel for Girls'],
+    admissions: 'Admission based on merit and counseling.',
+    placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis', 'Global Health Centers'],
+    gallery: [],
+    contact: { address: 'Bengaluru', phone: '+91 80 1234 5683', email: 'nursing@karnatakacollege.edu' },
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+  },
+  {
     id: 'management-science',
     name: 'Karnataka College of Management & Science',
     category: InstitutionCategory.HIGHER_EDUCATION,
@@ -67,31 +125,6 @@ export const INSTITUTIONS: Institution[] = [
     image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
-    id: 'law',
-    name: 'Karunadu College of Law',
-    category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Advocacy for Justice and Professional Excellence',
-    overview: 'Karunadu College of Law provides a solid foundation for students aiming for a career in the legal field. We focus on developing advocacy skills and a deep understanding of the Indian legal system.',
-    courses: [
-      { name: 'LL.B (3 Years)' }
-    ],
-    whyChoose: [
-      'Modern moot court for practicing legal arguments',
-      'Extensive library with digital law journals and records',
-      'Qualified faculty with years of legal experience',
-      'Regular seminars with practicing lawyers and judges',
-      'Practical exposure through legal aid camps'
-    ],
-    departments: ['Legal Studies'],
-    faculty: [],
-    facilities: ['Moot Court', 'Law Library', 'Legal Aid Cell'],
-    admissions: 'Selection based on merit and academic performance.',
-    placements: ['Legal Firms', 'Corporate Legal Departments', 'Independent Practice Support'],
-    gallery: [],
-    contact: { address: 'Bengaluru', phone: '+91 80 1234 5680', email: 'law@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
-  },
-  {
     id: 'education',
     name: 'Karnataka College of Education',
     category: InstitutionCategory.HIGHER_EDUCATION,
@@ -117,61 +150,83 @@ export const INSTITUTIONS: Institution[] = [
     image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
-    id: 'pharmacy',
-    name: 'Karnataka College of Pharmacy',
-    category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Innovation in Pharmaceutical Sciences',
-    overview: 'Karnataka College of Pharmacy is one of the leading institutions for pharmacy studies in India. We offer a range of programs from diplomas to doctorates, focusing on drug research and medicine.',
+    id: 'public-school',
+    name: 'Karnataka Public School (CBSE)',
+    category: InstitutionCategory.SCHOOL_EDUCATION,
+    tagline: 'Holistic Education for a Global Future',
+    overview: 'Karnataka Public School provides a safe and nurturing environment for students from LKG to 10th Grade. We focus on academic excellence alongside physical and creative growth.',
     courses: [
-      { name: 'D.Pharm' },
-      { name: 'B.Pharm' },
-      { name: 'M.Pharm' },
-      { name: 'Pharm D' },
-      { name: 'Ph.D in Pharmacy' }
+      { name: 'LKG to 10th Class' }
     ],
     whyChoose: [
-      'CPCSEA approved animal house for research',
-      'Advanced research labs for drug formulation',
-      'Medicinal garden for pharmacognosy studies',
-      'Partnerships with top pharmaceutical companies',
-      'High placement record in research and production'
+      'Student-friendly and safe campus environment',
+      'Balance of academic studies and co-curricular activities',
+      'Well-equipped classrooms and play areas',
+      'Experienced school teachers and supporting staff',
+      'Focus on character building and holistic growth'
     ],
-    departments: ['Pharmaceutics', 'Pharmacology', 'Pharmaceutical Chemistry', 'Pharmacy Practice'],
+    departments: ['Primary Education', 'Secondary Education'],
     faculty: [],
-    facilities: ['Medicinal Garden', 'Analytical Lab', 'Research Center'],
-    admissions: 'Admission based on KCET/NEET or academic merit.',
-    placements: ['Pfizer', 'Biocon', 'Sun Pharma', 'Cipla'],
+    facilities: ['School Playground', 'Activity Rooms', 'Science Lab for Kids'],
+    admissions: 'Direct inquiry and age-based selection.',
+    placements: ['Internal progression to PU College'],
     gallery: [],
-    contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5682', email: 'pharmacy@karnatakacollege.edu' },
+    contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5688', email: 'school@karnatakacollege.edu' },
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1768973897/9527slider1_eqzolb.jpg'
+  },
+  {
+    id: 'pu-college',
+    name: 'Karnataka Composite P.U. College',
+    category: InstitutionCategory.PRE_UNIVERSITY,
+    tagline: 'A Foundation for Professional Success',
+    overview: 'Our PU College provides the critical bridge between school and higher education. We offer integrated coaching to ensure students are ready for both board exams and entrance tests.',
+    courses: [
+      { name: 'Science: PCMB' },
+      { name: 'Science: PCME' },
+      { name: 'Science: PCMCS' },
+      { name: 'Commerce: EBAC' },
+      { name: 'Commerce: HEBA' },
+      { name: 'Commerce: BACsS' }
+    ],
+    whyChoose: [
+      'Integrated coaching for NEET, JEE, and CET',
+      'State-of-the-art science and commerce labs',
+      'Well-stocked library with digital learning resources',
+      'Regular test series for exam preparation',
+      'Strong focus on academic discipline and performance'
+    ],
+    departments: ['Science Department', 'Commerce Department'],
+    faculty: [],
+    facilities: ['Physics Lab', 'Chemistry Lab', 'Biology Lab', 'Computer Hub'],
+    admissions: 'Based on 10th standard SSLC/CBSE/ICSE results.',
+    placements: ['Career Counseling for Higher Education'],
+    gallery: [],
+    contact: { address: '33/2, Hegde Nagar, Bengaluru', phone: '+91 80 1234 5687', email: 'pu@karnatakacollege.edu' },
     image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
-    id: 'nursing',
-    name: 'Karnataka College of Nursing',
+    id: 'law',
+    name: 'Karunadu College of Law',
     category: InstitutionCategory.HIGHER_EDUCATION,
-    tagline: 'Excellence in Healthcare and Compassionate Care',
-    overview: 'Karnataka College of Nursing aims to develop skilled healthcare professionals. We provide rigorous clinical training and a compassionate approach to patient care.',
+    tagline: 'Advocacy for Justice and Professional Excellence',
+    overview: 'Karunadu College of Law provides a solid foundation for students aiming for a career in the legal field. We focus on developing advocacy skills and a deep understanding of the Indian legal system.',
     courses: [
-      { name: 'GNM' },
-      { name: 'B.Sc Nursing' },
-      { name: 'P.B B.Sc Nursing' },
-      { name: 'M.Sc Nursing' },
-      { name: 'Ph.D in Nursing' }
+      { name: 'LL.B (3 Years)' }
     ],
     whyChoose: [
-      'Clinical postings in major hospitals in Bengaluru',
-      'Simulated nursing labs for practical learning',
-      'Experienced nursing faculty and healthcare mentors',
-      'High demand for graduates in India and abroad',
-      'Focus on community health and emergency care'
+      'Modern moot court for practicing legal arguments',
+      'Extensive library with digital law journals and records',
+      'Qualified faculty with years of legal experience',
+      'Regular seminars with practicing lawyers and judges',
+      'Practical exposure through legal aid camps'
     ],
-    departments: ['Nursing Education'],
+    departments: ['Legal Studies'],
     faculty: [],
-    facilities: ['Anatomy Lab', 'Nursing Practice Suite', 'Hostel for Girls'],
-    admissions: 'Admission based on merit and counseling.',
-    placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis', 'Global Health Centers'],
+    facilities: ['Moot Court', 'Law Library', 'Legal Aid Cell'],
+    admissions: 'Selection based on merit and academic performance.',
+    placements: ['Legal Firms', 'Corporate Legal Departments', 'Independent Practice Support'],
     gallery: [],
-    contact: { address: 'Bengaluru', phone: '+91 80 1234 5683', email: 'nursing@karnatakacollege.edu' },
+    contact: { address: 'Bengaluru', phone: '+91 80 1234 5680', email: 'law@karnatakacollege.edu' },
     image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
@@ -255,60 +310,5 @@ export const INSTITUTIONS: Institution[] = [
     gallery: [],
     contact: { address: 'Bengaluru', phone: '+91 80 1234 5686', email: 'physio@karnatakacollege.edu' },
     image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
-  },
-  {
-    id: 'pu-college',
-    name: 'Karnataka Composite P.U. College',
-    category: InstitutionCategory.PRE_UNIVERSITY,
-    tagline: 'A Foundation for Professional Success',
-    overview: 'Our PU College provides the critical bridge between school and higher education. We offer integrated coaching to ensure students are ready for both board exams and entrance tests.',
-    courses: [
-      { name: 'Science: PCMB' },
-      { name: 'Science: PCME' },
-      { name: 'Science: PCMCS' },
-      { name: 'Commerce: EBAC' },
-      { name: 'Commerce: HEBA' },
-      { name: 'Commerce: BACsS' }
-    ],
-    whyChoose: [
-      'Integrated coaching for NEET, JEE, and CET',
-      'State-of-the-art science and commerce labs',
-      'Well-stocked library with digital learning resources',
-      'Regular test series for exam preparation',
-      'Strong focus on academic discipline and performance'
-    ],
-    departments: ['Science Department', 'Commerce Department'],
-    faculty: [],
-    facilities: ['Physics Lab', 'Chemistry Lab', 'Biology Lab', 'Computer Hub'],
-    admissions: 'Based on 10th standard SSLC/CBSE/ICSE results.',
-    placements: ['Career Counseling for Higher Education'],
-    gallery: [],
-    contact: { address: '33/2, Hegde Nagar, Bengaluru', phone: '+91 80 1234 5687', email: 'pu@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
-  },
-  {
-    id: 'public-school',
-    name: 'Karnataka Public School',
-    category: InstitutionCategory.SCHOOL_EDUCATION,
-    tagline: 'Holistic Education for a Global Future',
-    overview: 'Karnataka Public School provides a safe and nurturing environment for students from LKG to 10th Grade. We focus on academic excellence alongside physical and creative growth.',
-    courses: [
-      { name: 'LKG to 10th Class' }
-    ],
-    whyChoose: [
-      'Student-friendly and safe campus environment',
-      'Balance of academic studies and co-curricular activities',
-      'Well-equipped classrooms and play areas',
-      'Experienced school teachers and supporting staff',
-      'Focus on character building and holistic growth'
-    ],
-    departments: ['Primary Education', 'Secondary Education'],
-    faculty: [],
-    facilities: ['School Playground', 'Activity Rooms', 'Science Lab for Kids'],
-    admissions: 'Direct inquiry and age-based selection.',
-    placements: ['Internal progression to PU College'],
-    gallery: [],
-    contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5688', email: 'school@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1768973897/9527slider1_eqzolb.jpg'
   }
 ];
