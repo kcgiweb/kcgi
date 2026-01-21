@@ -1,6 +1,7 @@
 export enum InstitutionCategory {
   HIGHER_EDUCATION = 'Higher Education',
-  SCHOOL_EDUCATION = 'School Education'
+  SCHOOL_EDUCATION = 'School Education',
+  PRE_UNIVERSITY = 'Pre-University'
 }
 
 export interface Course {

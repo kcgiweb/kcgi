@@ -1,4 +1,6 @@
+
 import React from 'react';
+/* Fix: Import from the correct layout component file and fix the path */
 import { AdmissionsLayout } from '../../components/AdmissionsLayout';
 import { Send, Phone, Mail, MapPin, ArrowRight, User, PhoneCall, MailSearch, GraduationCap, MessageSquare } from 'lucide-react';
 import { INSTITUTIONS } from '../../constants';
@@ -9,9 +11,9 @@ export const AdmissionEnquiry: React.FC = () => (
     subtitle="Connect with our counselors to start your academic journey for 2026-27." 
     icon={Send}
   >
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
       <div className="lg:col-span-2">
-        <div className="bg-white p-8 md:p-12 rounded-3xl border border-gray-100 shadow-2xl shadow-primary/5">
+        <div className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-2xl shadow-primary/5">
           <h3 className="text-3xl font-serif font-bold text-primary mb-10 flex items-center gap-4">
              <div className="w-1.5 h-10 bg-secondary rounded-full" /> Personal Information
           </h3>
@@ -61,35 +63,47 @@ export const AdmissionEnquiry: React.FC = () => (
         </div>
       </div>
 
-      <div className="space-y-8">
-        <div className="bg-primary p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
-           <h3 className="text-xl font-bold mb-8 text-secondary border-b border-white/10 pb-4">Campus Info</h3>
-           <div className="space-y-6">
-              <div className="flex gap-4">
-                <MapPin className="w-5 h-5 text-secondary shrink-0" />
-                <p className="text-xs font-medium leading-relaxed opacity-70">33/2, Hegde Nagar Main Rd, Yelahanka, Thirumenahalli, Bengaluru, 560064</p>
+      <div className="space-y-10">
+        {/* Redesigned Campus Info Card per Image Reference */}
+        <div className="bg-primary p-10 md:p-12 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden flex flex-col min-h-[450px]">
+           <h3 className="text-2xl font-bold text-secondary mb-8">Campus Info</h3>
+           
+           <div className="h-px bg-white/10 w-full mb-10" />
+
+           <div className="space-y-12 flex-grow">
+              <div className="flex gap-5 items-start">
+                <MapPin className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
+                <p className="text-sm font-semibold leading-relaxed text-white/90">
+                  33/2, Hegde Nagar Main Rd,<br />
+                  Yelahanka, Thirumenahalli,<br />
+                  Bengaluru, 560064
+                </p>
               </div>
-              <div className="flex gap-4">
-                <Phone className="w-5 h-5 text-secondary shrink-0" />
+
+              <div className="flex gap-5 items-start">
+                <Phone className="w-6 h-6 text-secondary shrink-0 mt-1" />
                 <div>
-                  <p className="text-base font-bold">+91 80 1234 5678</p>
-                  <p className="text-xs uppercase font-bold text-white/40 tracking-widest mt-1">Direct Admissions</p>
+                  <p className="text-xl font-bold tracking-tight text-white">+91 80 1234 5678</p>
+                  <p className="text-[10px] font-black uppercase text-white/30 tracking-[0.2em] mt-1.5">Direct Admissions</p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <Mail className="w-5 h-5 text-secondary shrink-0" />
+
+              <div className="flex gap-5 items-start">
+                <Mail className="w-6 h-6 text-secondary shrink-0 mt-1" />
                 <div>
-                  <p className="text-sm font-bold">admissions@karnatakacollege.edu</p>
-                  <p className="text-xs uppercase font-bold text-white/40 tracking-widest mt-1">Official Helpdesk</p>
+                  <p className="text-sm font-bold text-white break-all">admissions@karnatakacollege.edu</p>
+                  <p className="text-[10px] font-black uppercase text-white/30 tracking-[0.2em] mt-1.5">Official Helpdesk</p>
                 </div>
               </div>
            </div>
         </div>
         
-        <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100 flex flex-col items-center text-center">
-           <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm mb-4"><GraduationCap className="w-7 h-7"/></div>
-           <h4 className="font-bold text-primary mb-1">Academic Visit</h4>
-           <p className="text-xs text-gray-500 font-medium leading-relaxed">Book a physical tour of our laboratories and smart classrooms.</p>
+        <div className="p-8 bg-gray-50 rounded-[2.5rem] border border-gray-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+           <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm mb-5 group-hover:bg-primary group-hover:text-white transition-all">
+             <GraduationCap className="w-8 h-8"/>
+           </div>
+           <h4 className="font-bold text-primary mb-2 text-lg">Academic Visit</h4>
+           <p className="text-xs text-gray-500 font-medium leading-relaxed px-4">Book a personalized physical tour of our clinical laboratories and smart classrooms.</p>
         </div>
       </div>
     </div>

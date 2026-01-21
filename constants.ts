@@ -36,7 +36,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['TCS', 'Infosys', 'Wipro', 'Indigo'],
     gallery: [],
     contact: { address: '33/2, Hegde Nagar Main Rd, Bengaluru', phone: '+91 80 1234 5678', email: 'info@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'management',
@@ -64,7 +64,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Amazon', 'Deloitte', 'HDFC Bank', 'FedEx'],
     gallery: [],
     contact: { address: 'Yelahanka, Bengaluru', phone: '+91 80 1234 5679', email: 'mba@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'law',
@@ -89,7 +89,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Legal Firms', 'Corporate Legal Departments', 'Independent Practice Support'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '+91 80 1234 5680', email: 'law@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'education',
@@ -114,7 +114,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Reputed Schools', 'Educational Institutions', 'Online Learning Platforms'],
     gallery: [],
     contact: { address: 'Thirumenahalli, Bengaluru', phone: '+91 80 1234 5681', email: 'bed@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'pharmacy',
@@ -172,7 +172,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis', 'Global Health Centers'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '+91 80 1234 5683', email: 'nursing@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dad99901?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'allied-health',
@@ -200,7 +200,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Diagnostic Chains', 'Private Hospitals', 'Public Health Centers'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '+91 80 1234 5684', email: 'alliedhealth@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1581595221475-19912896979a?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'paramedical',
@@ -228,7 +228,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Private Clinics', 'Medical Labs', 'Surgical Centers'],
     gallery: [],
     contact: { address: 'Thirumenahalli, Bengaluru', phone: '+91 80 1234 5685', email: 'kaveri@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'physiotherapy',
@@ -254,12 +254,12 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Sports Clinics', 'Rehabilitation Centers', 'Hospitals'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '+91 80 1234 5686', email: 'physio@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'pu-college',
     name: 'Karnataka Composite P.U. College',
-    category: InstitutionCategory.SCHOOL_EDUCATION,
+    category: InstitutionCategory.PRE_UNIVERSITY,
     tagline: 'A Foundation for Professional Success',
     overview: 'Our PU College provides the critical bridge between school and higher education. We offer integrated coaching to ensure students are ready for both board exams and entrance tests.',
     courses: [
@@ -284,7 +284,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Career Counseling for Higher Education'],
     gallery: [],
     contact: { address: '33/2, Hegde Nagar, Bengaluru', phone: '+91 80 1234 5687', email: 'pu@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1523050335102-c325091422f9?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
   },
   {
     id: 'public-school',
@@ -309,6 +309,6 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Internal progression to PU College'],
     gallery: [],
     contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5688', email: 'school@karnatakacollege.edu' },
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1768973897/9527slider1_eqzolb.jpg'
   }
 ];

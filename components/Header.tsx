@@ -139,9 +139,9 @@ export const Header: React.FC = () => {
       { id: 'allied-health', label: 'Allied Health', icon: Microscope, desc: 'B.Sc MLT, MIT, Dialysis' },
       { id: 'paramedical', label: 'Paramedical', icon: Award, desc: 'Diploma Programs' },
     ],
-    schools: [
-      { id: 'pu-college', label: 'Composite PU', icon: Layers, desc: 'Science & Commerce' },
-      { id: 'public-school', label: 'Public School', icon: School, desc: 'LKG to 10th Grade' },
+    foundation: [
+      { id: 'pu-college', label: 'Composite PU', icon: Layers, desc: 'Pre-University (Sci & Comm)' },
+      { id: 'public-school', label: 'Public School', icon: School, desc: 'School Education (LKG to 10th)' },
     ]
   };
 
@@ -250,9 +250,9 @@ export const Header: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-primary font-black uppercase text-xs tracking-widest mb-4 border-b border-gray-100 pb-2">School Education</h4>
+                      <h4 className="text-primary font-black uppercase text-xs tracking-widest mb-4 border-b border-gray-100 pb-2">Foundation & Schools</h4>
                       <div className="space-y-2">
-                        {instMegaMenu.schools.map(item => (
+                        {instMegaMenu.foundation.map(item => (
                           <Link key={item.id} to={`/institution/${item.id}`} className="flex gap-3 group/sub hover:bg-accent1/5 p-2 rounded-xl transition-all">
                             <item.icon className="w-4 h-4 text-accent1 shrink-0 mt-0.5" />
                             <div><span className="block font-bold text-sm group-hover/sub:text-accent1">{item.label}</span><span className="text-xs text-gray-400">{item.desc}</span></div>
@@ -306,7 +306,7 @@ export const Header: React.FC = () => {
                         <div className="pl-4 py-2 space-y-3">
                           {nav.type === 'institutions' ? (
                             <div className="space-y-3">
-                              {[...instMegaMenu.professional, ...instMegaMenu.healthcare, ...instMegaMenu.schools].map((inst) => (
+                              {[...instMegaMenu.professional, ...instMegaMenu.healthcare, ...instMegaMenu.foundation].map((inst) => (
                                 <Link key={inst.id} to={`/institution/${inst.id}`} className="block text-xs text-gray-500 font-medium">{inst.label}</Link>
                               ))}
                             </div>
