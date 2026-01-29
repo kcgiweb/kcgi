@@ -43,7 +43,7 @@ export const AcademicsLayout: React.FC<AcademicsLayoutProps> = ({ title, subtitl
       {/* Centered Content Section without Sidebar */}
       <div className="container mx-auto px-6 py-16">
         <div className="max-w-5xl mx-auto">
-          <div className="animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <div className="fade-in-up">
             {children}
           </div>
           

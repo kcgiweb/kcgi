@@ -43,7 +43,7 @@ export const AboutLayout: React.FC<AboutLayoutProps> = ({ title, subtitle, icon:
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-5xl mx-auto">
           {/* Page Content - Center Aligned and Immersive */}
-          <div className="animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <div className="fade-in-up">
             {children}
           </div>
         </div>

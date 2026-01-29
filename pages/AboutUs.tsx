@@ -320,7 +320,7 @@ export const AboutUs: React.FC = () => {
           </aside>
 
           {/* Actual Page Content */}
-          <div className="lg:w-3/4 animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <div className="lg:w-3/4 fade-in-up">
             {page.content}
           </div>
         </div>

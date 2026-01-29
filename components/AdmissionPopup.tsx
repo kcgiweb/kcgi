@@ -23,7 +23,7 @@ export const AdmissionPopup: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-500 px-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 fade-in-simple">
       <div className="bg-white max-w-lg w-full rounded-2xl shadow-2xl overflow-hidden relative border-4 border-primary/10">
         <button 
           onClick={closePopup}

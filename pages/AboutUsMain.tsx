@@ -36,7 +36,7 @@ export const AboutUsMain: React.FC = () => {
             <ChevronRight className="w-3 h-3" />
             <span className="text-secondary">About the Group</span>
           </nav>
-          <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight animate-in fade-in slide-in-from-left-8 duration-700">A Global Academic <br/> Conglomerate</h1>
+          <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight fade-in-left">A Global Academic <br/> Conglomerate</h1>
           <p className="text-lg text-white/70 font-light max-w-2xl mt-6">
             Pioneering educational standards in India since 1970 with 11 premier institutions dedicated to professional excellence.
           </p>
