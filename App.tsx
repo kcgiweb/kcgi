@@ -20,7 +20,6 @@ import { AboutVision } from './pages/about/AboutVision';
 import { AboutValues } from './pages/about/AboutValues';
 import { AboutChairman } from './pages/about/AboutChairman';
 import { AboutGoverning } from './pages/about/AboutGoverning';
-import { AboutStructure } from './pages/about/AboutStructure';
 import { AboutQuality } from './pages/about/AboutQuality';
 import { AboutSocial } from './pages/about/AboutSocial';
 import { AboutFuture } from './pages/about/AboutFuture';
@@ -64,7 +63,6 @@ const App: React.FC = () => {
             <Route path="/about/core-values" element={<AboutValues />} />
             <Route path="/about/chairman-message" element={<AboutChairman />} />
             <Route path="/about/governing-body" element={<AboutGoverning />} />
-            <Route path="/about/org-structure" element={<AboutStructure />} />
             <Route path="/about/quality" element={<AboutQuality />} />
             <Route path="/about/social-responsibility" element={<AboutSocial />} />
             <Route path="/about/future-vision" element={<AboutFuture />} />

@@ -82,7 +82,6 @@ export const Header: React.FC = () => {
     leadership: [
       { label: "Chairman", path: '/about/chairman-message', icon: UserCheck, desc: 'Prof. Basavaraj Ramanal.' },
       { label: 'Governing Body', path: '/about/governing-body', icon: Network, desc: 'Strategic leaders.' },
-      { label: 'Org Structure', path: '/about/org-structure', icon: LayoutDashboard, desc: 'Administrative hierarchy.' },
     ],
     impact: [
       { label: 'Quality', path: '/about/quality', icon: ShieldCheck, desc: 'Global standards.' },

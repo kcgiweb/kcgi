@@ -177,27 +177,6 @@ const ABOUT_CONTENT: Record<string, { title: string, subtitle: string, icon: any
       </div>
     )
   },
-  'org-structure': {
-    title: 'Organizational Structure',
-    subtitle: 'A streamlined hierarchy for institutional efficiency.',
-    icon: Network,
-    content: (
-      <div className="bg-gray-50 p-12 rounded-[3rem] border border-gray-100">
-        <div className="max-w-3xl mx-auto space-y-12">
-          <div className="bg-primary text-white p-6 rounded-2xl text-center font-bold text-xl shadow-lg">Board of Trustees</div>
-          <div className="flex justify-center"><div className="w-1 h-12 bg-primary/20" /></div>
-          <div className="bg-secondary text-white p-6 rounded-2xl text-center font-bold text-xl shadow-lg">Chairman & Managing Trustee</div>
-          <div className="flex justify-center"><div className="w-1 h-12 bg-primary/20" /></div>
-          <div className="grid grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-2xl text-center border-2 border-primary/10 font-bold text-primary">Academic Council</div>
-            <div className="bg-white p-6 rounded-2xl text-center border-2 border-primary/10 font-bold text-primary">Administrative Council</div>
-          </div>
-          <div className="flex justify-center"><div className="w-1 h-12 bg-primary/20" /></div>
-          <div className="bg-white p-6 rounded-2xl text-center border-2 border-primary/10 font-bold text-primary">Heads of Institutions (Principals)</div>
-        </div>
-      </div>
-    )
-  },
   'quality': {
     title: 'Quality Assurance',
     subtitle: 'Rigorous standards for high-value degrees.',
