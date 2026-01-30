@@ -3,7 +3,7 @@ import { AboutLayout } from '../../components/AboutLayout';
 import { Globe, Building2, BookOpen, Users, Award } from 'lucide-react';
 
 export const AboutOverview: React.FC = () => (
-  <AboutLayout title="About the Group" subtitle="Nurturing Intellect and Integrity since 1970." icon={Globe}>
+  <AboutLayout title="About the Group" subtitle="Nurturing Intellect and Integrity since 1997." icon={Globe}>
     <div className="space-y-12">
       <div className="prose prose-lg text-customText max-w-none font-medium leading-relaxed">
         <p>

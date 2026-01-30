@@ -13,10 +13,10 @@ export const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <img 
-                src={logoUrl} 
-                alt="Karnataka College Group of Institutions" 
-                className="h-16 w-auto" 
+              <img
+                src={logoUrl}
+                alt="Karnataka College Group of Institutions"
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-white/60 leading-relaxed text-sm">
@@ -48,7 +48,8 @@ export const Footer: React.FC = () => {
             <h4 className="text-secondary font-bold uppercase tracking-wider mb-6">Accreditations</h4>
             <ul className="space-y-4 text-sm">
               <li className="text-white/60">Approved by AICTE & PCI</li>
-              <li className="text-white/60">Affiliated to RGUHS</li>
+              <li className="text-white/60">Affiliated to RGUHS, KSLU & BCU</li>
+              <li className="text-white/60">CBSE Affiliated</li>
               <li className="text-white/60">Recognized by Govt of Karnataka</li>
               <li className="text-white/60">NAAC Accredited Grade 'A'</li>
               <li className="text-white/60">NMC Recognized</li>
@@ -62,18 +63,18 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary flex-shrink-0" />
                 <div>
-                  <a 
-                    href={externalMapsLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={externalMapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white/60 hover:text-secondary transition-colors leading-relaxed block"
                   >
                     33/2, Hegde Nagar Main Rd, Yelahanka, Thirumenahalli, Bengaluru, Karnataka 560064
                   </a>
-                  <a 
-                    href={externalMapsLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={externalMapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs font-black uppercase tracking-widest text-secondary mt-2 flex items-center gap-1"
                   >
                     Get Directions <ExternalLink className="w-3 h-3" />

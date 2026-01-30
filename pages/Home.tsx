@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Award, 
-  Users, 
-  BookOpen, 
-  Building2, 
-  TrendingUp, 
-  ShieldCheck, 
-  Globe, 
+import {
+  ArrowRight,
+  Award,
+  Users,
+  BookOpen,
+  Building2,
+  TrendingUp,
+  ShieldCheck,
+  Globe,
   Pill,
   HeartPulse,
   Briefcase,
@@ -37,28 +37,30 @@ export const Home: React.FC = () => {
     { name: 'INC', url: 'https://images.seeklogo.com/logo-png/39/1/nic-inc-logo-png_seeklogo-392312.png', desc: 'Recognized by INC' },
     { name: 'KSLU', url: 'https://iras-proxy-assets.s3.ap-south-1.amazonaws.com/60942ff751f89d059ff43066/logo/5-7-2021--4-16-35-am-logo.png', desc: 'Affiliated to KSLU' },
     { name: 'KNC', url: 'https://vidyarthiinstitutions.com/img/affiliations/3.jpg', desc: 'Recognized by KNC' },
-    { name: 'Govt. Karnataka', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSwtz3LdNqfcixXpoz5U1GVZMkrGoZEN8pg&s', desc: 'Govt. of Karnataka' }
+    { name: 'Govt. Karnataka', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSwtz3LdNqfcixXpoz5U1GVZMkrGoZEN8pg&s', desc: 'Govt. of Karnataka' },
+    { name: 'BCU', url: 'https://i.pinimg.com/736x/2f/f6/27/2ff6272871bc45a24cc576502342a9bd.jpg', desc: 'Affiliated to BCU' },
+    { name: 'CBSE', url: 'https://i.pinimg.com/736x/e2/da/ae/e2daaec4c90b8633c90b554b6e205620.jpg', desc: 'Affiliated to CBSE' },
   ];
 
   const officialVideoUrl = "https://res.cloudinary.com/dejcpd56d/video/upload/v1767590647/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez.mp4";
 
   const programCategories = [
-    { icon: Pill, title: 'Pharmacy', text: 'B.Pharm, M.Pharm', color: 'bg-green-50 text-green-600' },
-    { icon: HeartPulse, title: 'Nursing', text: 'B.Sc, M.Sc, GNM', color: 'bg-blue-50 text-blue-600' },
-    { icon: Briefcase, title: 'Management', text: 'MBA, BBA, B.Com', color: 'bg-orange-50 text-orange-600' },
-    { icon: Scale, title: 'Law', text: 'LLB, Integrated', color: 'bg-red-50 text-red-700' },
-    { icon: Microscope, title: 'Allied Health', text: 'Diagnostics', color: 'bg-indigo-50 text-indigo-600' },
-    { icon: Activity, title: 'Physio', text: 'BPT, MPT', color: 'bg-teal-50 text-teal-600' },
+    { icon: Pill, title: 'Pharmacy', text: 'D.Pharm, B.Pharm, M.Pharm', color: 'bg-green-50 text-green-600', path: '/institution/pharmacy' },
+    { icon: HeartPulse, title: 'Nursing', text: 'GNM, B.Sc Nursing, M.Sc', color: 'bg-blue-50 text-blue-600', path: '/institution/nursing' },
+    { icon: Briefcase, title: 'Management', text: 'MBA, BBA, B.Com', color: 'bg-orange-50 text-orange-600', path: '/institution/management-science' },
+    { icon: Scale, title: 'Law', text: 'LL.B (3 Years)', color: 'bg-red-50 text-red-700', path: '/institution/law' },
+    { icon: Microscope, title: 'Allied Health', text: 'B.Sc MLT, MIT, AT', color: 'bg-indigo-50 text-indigo-600', path: '/institution/allied-health' },
+    { icon: Activity, title: 'Physio', text: 'BPT, MPT', color: 'bg-teal-50 text-teal-600', path: '/institution/physiotherapy' },
   ];
 
   return (
     <div className="relative w-full">
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden bg-black">
-        <video 
-          autoPlay 
-          muted 
-          loop 
+        <video
+          autoPlay
+          muted
+          loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         >
@@ -76,7 +78,7 @@ export const Home: React.FC = () => {
               Shaping Minds for Decades
             </h3>
             <p className="text-lg text-customText leading-relaxed font-light">
-              Since 1970, we have been a cornerstone of professional education in Bengaluru, combining traditional values with cutting-edge academic innovation.
+              Since 1997, we have been a cornerstone of professional education in Bengaluru, combining traditional values with cutting-edge academic innovation.
             </p>
           </div>
 
@@ -84,8 +86,8 @@ export const Home: React.FC = () => {
             {[
               { icon: Users, label: 'Global Alumni', value: '55,000+', color: 'text-blue-500' },
               { icon: BookOpen, label: 'Modern Courses', value: '45+', color: 'text-orange-500' },
-              { icon: Building2, label: 'Institutions', value: '11', color: 'text-green-500' },
-              { icon: Award, label: 'Years of Trust', value: '29', color: 'text-red-500' }
+              { icon: Building2, label: 'Institutions', value: '11', color: 'text-red-500' },
+              { icon: Award, label: 'Years of Trust', value: '29', color: 'text-green-500' }
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center p-8 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700" />
@@ -109,7 +111,7 @@ export const Home: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">Empowering Generations Through Quality Education</h2>
               <div className="prose prose-lg text-customText font-light leading-relaxed space-y-6">
                 <p>
-                  Managed by the <strong>Karnataka Educational Trust</strong>, our group has evolved into a powerhouse of knowledge across healthcare, legal, management, and foundational sciences since its inception in 1970.
+                  Managed by the <strong>Karnataka Educational Trust</strong>, our group has evolved into a powerhouse of knowledge across healthcare, legal, management, and foundational sciences since its inception in 1997.
                 </p>
                 <p>
                   Our sprawling 25-acre integrated campus in Bengaluru hosts state-of-the-art research laboratories, digital classrooms, and extensive library systems serving thousands of students from over 20 countries.
@@ -117,16 +119,16 @@ export const Home: React.FC = () => {
               </div>
               <div className="pt-4">
                 <Link to="/about" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm flex items-center gap-3 hover:bg-secondary transition-all shadow-xl shadow-primary/20 group w-fit">
-                  Learn More About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
+                  Learn More About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
             <div className="lg:w-1/2 relative">
-               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                 <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
-               </div>
-               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
-               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
+              <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
             </div>
           </div>
         </div>
@@ -142,17 +144,17 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {INSTITUTIONS.map((inst) => (
-              <Link 
-                key={inst.id} 
+            {INSTITUTIONS.slice(0, 6).map((inst) => (
+              <Link
+                key={inst.id}
                 to={`/institution/${inst.id}`}
                 className="group relative bg-white rounded-3xl overflow-hidden shadow-xl h-[480px] border border-gray-100 flex flex-col"
               >
                 <div className="absolute inset-0 w-full h-full">
-                  <img 
-                    src={inst.image} 
-                    alt={inst.name} 
-                    className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110" 
+                  <img
+                    src={inst.image}
+                    alt={inst.name}
+                    className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent" />
                 </div>
@@ -185,20 +187,20 @@ export const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {programCategories.map((prog, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center group">
+              <Link to={prog.path} key={idx} className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center group">
                 <div className={`w-16 h-16 ${prog.color} rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-105 transition-transform duration-500`}>
                   <prog.icon className="w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold text-primary mb-2">{prog.title}</h4>
                 <p className="text-sm text-gray-500 font-medium leading-relaxed">{prog.text}</p>
-              </div>
+              </Link>
             ))}
             <div className="col-span-2 lg:col-span-2 bg-gradient-to-br from-primary to-accent1 p-10 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center text-white group overflow-hidden relative">
               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
               <GraduationCap className="w-12 h-12 text-secondary mb-5 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
               <h4 className="text-2xl font-bold mb-3 relative z-10">Global Recognition</h4>
               <p className="text-base opacity-80 mb-6 max-w-sm relative z-10">Degrees that open doors worldwide. Join thousands of successful alumni.</p>
-              <Link to="/admissions/process" className="bg-white text-primary px-8 py-3 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-secondary hover:text-white transition-all relative z-10 shadow-lg">
+              <Link to="/academics" className="bg-white text-primary px-8 py-3 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-secondary hover:text-white transition-all relative z-10 shadow-lg">
                 Full Academic List <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -209,7 +211,7 @@ export const Home: React.FC = () => {
       {/* Partners Marquee */}
       <section className="bg-gray-50 py-16 overflow-hidden border-t border-b border-gray-100">
         <div className="text-center mb-10">
-           <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Our Recruitment Partners</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Our Recruitment Partners</span>
         </div>
         <div className="flex w-full mb-8">
           <div className="flex animate-marquee whitespace-nowrap items-center">
@@ -228,7 +230,7 @@ export const Home: React.FC = () => {
           <div className="bg-gradient-to-br from-primary via-accent1 to-primary rounded-3xl p-12 md:p-20 text-center relative overflow-hidden shadow-[0_30px_60px_-15px_rgba(106,0,48,0.4)]">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full translate-y-48 -translate-x-48 blur-3xl" />
-            
+
             <div className="relative z-10 max-w-4xl mx-auto space-y-8 text-white">
               <h2 className="text-secondary font-bold uppercase tracking-widest text-sm">Admissions Open 2026-27</h2>
               <h3 className="text-4xl md:text-6xl font-serif font-bold leading-tight">Elevate Your Academic Ambitions</h3>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
-  School, 
+import {
+  ChevronDown,
+  Menu,
+  X,
+  School,
   ChevronRight,
   GraduationCap,
   History,
@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const location = useLocation();
   const isHome = location.pathname === '/';
-  
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
     identity: [
       { label: 'Group Main', path: '/about', icon: LayoutDashboard, desc: 'Group overview & vision.' },
       { label: 'Overview', path: '/about/overview', icon: Globe, desc: 'Academic legacy.' },
-      { label: 'History', path: '/about/history', icon: History, desc: 'Journey since 1990.' },
+      { label: 'History', path: '/about/history', icon: History, desc: 'Journey since 1997.' },
       { label: 'Vision', path: '/about/vision', icon: Target, desc: 'Future roadmap.' },
     ],
     leadership: [
@@ -167,7 +167,7 @@ export const Header: React.FC = () => {
     const sections = menuData ? Object.keys(menuData) : [];
 
     return (
-      <div 
+      <div
         className={`absolute top-full left-0 right-0 w-full z-50 pointer-events-none transition-all duration-300 ${activeMenu === nav.title ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'}`}
         onMouseEnter={() => setActiveMenu(nav.title)}
         onMouseLeave={() => setActiveMenu(null)}
@@ -178,7 +178,7 @@ export const Header: React.FC = () => {
               <div className="grid grid-cols-3 p-8 md:p-10 gap-10">
                 <div>
                   <h4 className="text-primary font-black uppercase text-xs tracking-widest mb-6 border-b border-gray-100 pb-3 flex items-center gap-2">
-                    <Briefcase className="w-3 h-3 text-secondary"/> Professional
+                    <Briefcase className="w-3 h-3 text-secondary" /> Professional
                   </h4>
                   <div className="space-y-2">
                     {instMegaMenu.professional.map(item => (
@@ -191,7 +191,7 @@ export const Header: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-secondary font-black uppercase text-xs tracking-widest mb-6 border-b border-gray-100 pb-3 flex items-center gap-2">
-                    <Stethoscope className="w-3 h-3 text-primary"/> Healthcare
+                    <Stethoscope className="w-3 h-3 text-primary" /> Healthcare
                   </h4>
                   <div className="space-y-2">
                     {instMegaMenu.healthcare.map(item => (
@@ -204,7 +204,7 @@ export const Header: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-accent1 font-black uppercase text-xs tracking-widest mb-6 border-b border-gray-100 pb-3 flex items-center gap-2">
-                    <Layers className="w-3 h-3 text-accent1"/> Foundation & Schools
+                    <Layers className="w-3 h-3 text-accent1" /> Foundation & Schools
                   </h4>
                   <div className="space-y-2">
                     {instMegaMenu.foundation.map(item => (
@@ -250,9 +250,9 @@ export const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 w-full z-[100] header-transition ${getHeaderClasses()}`}>
       <div className="container mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between relative">
         <Link to="/" className="flex items-center relative z-[110]">
-          <img 
-            src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg" 
-            alt="Logo" 
+          <img
+            src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg"
+            alt="Logo"
             className={`h-10 md:h-12 transition-all`}
           />
         </Link>
@@ -260,8 +260,8 @@ export const Header: React.FC = () => {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5 h-full">
           {navConfig.map((nav, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="h-full flex items-center"
               onMouseEnter={() => setActiveMenu(nav.title)}
               onMouseLeave={() => setActiveMenu(null)}
@@ -284,12 +284,12 @@ export const Header: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button className="lg:hidden p-2 relative z-[110]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X className="w-6 h-6 text-primary"/> : <Menu className={`w-6 h-6 ${isHome && !isScrolled ? 'text-white' : 'text-primary'}`}/>}
+          {isMobileMenuOpen ? <X className="w-6 h-6 text-primary" /> : <Menu className={`w-6 h-6 ${isHome && !isScrolled ? 'text-white' : 'text-primary'}`} />}
         </button>
       </div>
 
       {/* Mobile Menu Backdrop */}
-      <div 
+      <div
         className={`fixed inset-0 bg-black/40 lg:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
@@ -299,16 +299,16 @@ export const Header: React.FC = () => {
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-gray-100 flex items-center justify-between">
             <span className="font-bold text-primary text-sm uppercase tracking-widest">Navigation</span>
-            <button onClick={() => setIsMobileMenuOpen(false)}><X className="w-5 h-5 text-gray-400"/></button>
+            <button onClick={() => setIsMobileMenuOpen(false)}><X className="w-5 h-5 text-gray-400" /></button>
           </div>
-          
+
           <div className="flex-grow overflow-y-auto px-4 py-6 custom-scrollbar">
             <nav className="space-y-2">
               {navConfig.map((nav, i) => (
                 <div key={i} className="border-b border-gray-50 last:border-0 pb-2">
                   {nav.mega ? (
                     <div>
-                      <button 
+                      <button
                         onClick={() => setMobileExpanded(mobileExpanded === nav.title ? null : nav.title)}
                         className="w-full flex items-center justify-between py-3 text-sm font-bold text-primary uppercase tracking-wider"
                       >

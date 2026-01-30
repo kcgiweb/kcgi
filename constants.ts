@@ -28,7 +28,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Pfizer', 'Biocon', 'Sun Pharma', 'Cipla'],
     gallery: [],
     contact: { address: 'Hegde Nagar, Bengaluru', phone: '+91 80 1234 5682', email: 'pharmacy@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769757265/kcp2_uzanov.png'
   },
   {
     id: 'nursing',
@@ -57,7 +57,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis', 'Global Health Centers'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '+91 80 1234 5683', email: 'nursing@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756824/kcn_otgpow.png'
   },
   {
     id: 'management-science',
@@ -94,7 +94,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['TCS', 'Infosys', 'Wipro', 'Indigo'],
     gallery: [],
     contact: { address: '33/2, Hegde Nagar Main Rd, Bengaluru', phone: '+91 80 1234 5678', email: 'info@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756914/kcmss_nh06dd.png'
   },
   {
     id: 'management',
@@ -122,7 +122,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Amazon', 'Deloitte', 'HDFC Bank', 'FedEx'],
     gallery: [],
     contact: { address: 'Yelahanka, Bengaluru', phone: '+91 80 1234 5679', email: 'mba@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756853/kcm_afqvix.png'
   },
   {
     id: 'education',
