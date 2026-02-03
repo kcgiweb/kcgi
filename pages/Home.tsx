@@ -104,20 +104,19 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Clickable Scrolling Admissions Marquee */}
-      <Link to="/admissions/enquiry" className="block bg-secondary py-6 overflow-hidden border-y border-black/5 hover:bg-primary transition-colors cursor-pointer group">
-        <div className="flex animate-marquee whitespace-nowrap items-center">
-          {[...Array(12)].map((_, i) => (
-            <span key={i} className="mx-24 md:mx-32 text-black group-hover:text-white font-black uppercase tracking-[0.25em] text-sm flex items-center gap-6 shrink-0 transition-colors">
-              <Sparkles className="w-5 h-5 text-primary group-hover:text-secondary group-hover:scale-125 transition-all" /> 
-              Admissions are open for 2026 - 2027
-              <ArrowRight className="w-4 h-4 text-black/40 group-hover:text-white/50" />
-            </span>
-          ))}
-        </div>
-      </Link>
-
-
-      
+      <div className="my-12">
+        <Link to="/admissions/enquiry" className="block bg-secondary py-8 overflow-hidden border-y border-black/5 hover:bg-primary transition-colors cursor-pointer group shadow-lg">
+          <div className="flex animate-marquee whitespace-nowrap items-center">
+            {[...Array(12)].map((_, i) => (
+              <span key={i} className="mx-24 md:mx-32 text-black group-hover:text-white font-black uppercase tracking-[0.25em] text-sm flex items-center gap-6 shrink-0 transition-colors">
+                <Sparkles className="w-6 h-6 text-primary group-hover:text-secondary group-hover:scale-125 transition-all" /> 
+                Admissions are open for 2026 - 2027
+                <ArrowRight className="w-5 h-5 text-black/40 group-hover:text-white/50" />
+              </span>
+            ))}
+          </div>
+        </Link>
+      </div>
 
       {/* About Our Group Summary Section */}
       <section className="py-24 bg-white overflow-hidden">
@@ -157,12 +156,12 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Our Vibrant Ecosystem</h2>
-            <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">11 Premier Institutions</h3>
-            <p className="mt-4 text-base text-black font-bold">Explore our diverse academic units catering to healthcare, law, management, and schooling.</p>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-3">Our Vibrant Ecosystem</h2>
+            <h3 className="text-secondary font-bold uppercase tracking-widest text-xs">11 Premier Institutions</h3>
+            <p className="mt-6 text-base text-black font-bold">Explore our diverse academic units catering to healthcare, law, management, and schooling.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {INSTITUTIONS.map((inst) => (
               <Link 
                 key={inst.id} 
@@ -197,7 +196,51 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-     
+      {/* Academic Streams */}
+      <section className="py-24 bg-white overflow-hidden relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-2">Academic Streams</h2>
+            <h3 className="text-secondary font-bold uppercase tracking-widest text-xs">Nurturing Professional Talent</h3>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+            {programCategories.map((prog, idx) => (
+              <Link to={prog.path} key={idx} className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center group">
+                <div className={`w-16 h-16 ${prog.color} rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-105 transition-transform duration-500`}>
+                  <prog.icon className="w-8 h-8" />
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-2">{prog.title}</h4>
+                <p className="text-sm text-black font-black leading-relaxed">{prog.text}</p>
+              </Link>
+            ))}
+            <div className="col-span-2 lg:col-span-2 bg-gradient-to-br from-primary to-accent1 p-10 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center text-white group overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+              <GraduationCap className="w-12 h-12 text-secondary mb-5 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
+              <h4 className="text-2xl font-bold mb-3 relative z-10">Global Recognition</h4>
+              <p className="text-base opacity-90 mb-6 max-w-sm relative z-10 font-bold">Degrees that open doors worldwide. Join thousands of successful alumni.</p>
+              <Link to="/academics" className="bg-white text-primary px-8 py-3 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-secondary hover:text-white transition-all relative z-10 shadow-lg">
+                Full Academic List <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Marquee */}
+      <section className="bg-gray-50 py-16 overflow-hidden border-t border-b border-gray-100">
+        <div className="text-center mb-16 px-6">
+           <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Our Recruitment Partners</h2>
+        </div>
+        <div className="flex w-full mb-8">
+          <div className="flex animate-marquee whitespace-nowrap items-center">
+            {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((logo, idx) => (
+              <div key={idx} className="mx-12 md:mx-20 flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                <img src={logo.url} alt={logo.name} className="h-10 md:h-12 w-auto object-contain max-w-[160px]" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-white">

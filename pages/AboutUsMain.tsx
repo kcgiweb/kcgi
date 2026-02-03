@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -139,32 +140,32 @@ export const AboutUsMain: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Institutions */}
-      <section className="py-24 bg-primary text-white relative overflow-hidden">
+      {/* 6. Institutions - Background changed to gray-50 for visibility, and headings swapped */}
+      <section className="py-24 bg-gray-50 text-customText relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-secondary font-bold uppercase tracking-widest mb-4 text-sm">The Academic Universe</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold">11 Premier Institutions</h3>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-3">The Academic Universe</h2>
+            <h3 className="text-secondary font-bold uppercase tracking-widest text-xs">11 Premier Institutions</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {INSTITUTIONS.map((inst) => (
               <Link 
                 key={inst.id} 
                 to={`/institution/${inst.id}`}
-                className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:bg-secondary transition-all group relative overflow-hidden"
+                className="bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-2xl transition-all group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                   <ArrowRight className="w-10 h-10 text-white/20 rotate-[-45deg]" />
+                   <ArrowRight className="w-10 h-10 text-primary/5 rotate-[-45deg]" />
                 </div>
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-secondary group-hover:bg-white group-hover:text-primary transition-all">
+                  <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                     {inst.category === 'Higher Education' ? <GraduationCap className="w-6 h-6" /> : <School className="w-6 h-6" />}
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-widest opacity-60 bg-white/5 px-3 py-1.5 rounded-full">{inst.category}</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full">{inst.category}</span>
                 </div>
-                <h4 className="text-xl font-bold leading-tight mb-4">{inst.name}</h4>
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all">
+                <h4 className="text-xl font-bold leading-tight mb-4 text-primary group-hover:text-secondary transition-colors">{inst.name}</h4>
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all">
                   Visit Unit <ArrowRight className="w-4 h-4" />
                 </div>
               </Link>
@@ -192,28 +193,6 @@ export const AboutUsMain: React.FC = () => {
                  <h4 className="font-bold text-secondary uppercase tracking-widest text-xs mb-4">Chairman & Managing Trustee</h4>
                  <Link to="/about/chairman-message" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg shadow-primary/20">Read Full Address</Link>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. Social Impact */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="bg-gradient-to-br from-indigo-900 via-primary to-accent1 p-12 md:p-20 rounded-3xl text-white flex flex-col lg:flex-row justify-between items-center gap-12 relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/connected.png')] opacity-10" />
-            <div className="max-w-2xl space-y-8 relative z-10">
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-secondary">Global Impact Beyond the Classroom</h3>
-              <p className="text-lg opacity-80 leading-relaxed font-light">
-                From rural healthcare camps to zero-plastic sustainability drives, we are committed to serving the heart of Karnataka.
-              </p>
-              <Link to="/about/social-responsibility" className="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-secondary hover:text-white transition-all shadow-xl">
-                Impact Report 2026 <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="flex gap-6 relative z-10">
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/20 transform hover:scale-110 transition-all"><Users className="w-8 h-8 text-secondary" /></div>
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/20 transform hover:scale-110 transition-all translate-y-4"><Heart className="w-8 h-8 text-red-400" /></div>
             </div>
           </div>
         </div>
