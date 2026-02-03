@@ -1,0 +1,8 @@
+{
+  "name": "Karnataka College Group of Institutions",
+  "description": "High-end, enterprise-level official website for a premier educational group with 9 institutions, featuring a cinematic video hero, advanced mega menus, and professional institutional layouts.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
