@@ -9,13 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-=======
-    "react": "19.0.0",
-    "react-dom": "^19.2.4",
->>>>>>> 621e3fbdf0a55c5900b29cce2e37df0885790d0d
     "react-router-dom": "7.1.1",
     "lucide-react": "0.462.0"
   },
