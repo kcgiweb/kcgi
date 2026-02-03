@@ -54,10 +54,10 @@ export const AboutUsMain: React.FC = () => {
                 <Globe className="w-4 h-4 text-secondary" /> Academic Legacy
               </div>
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">Nurturing Intellectual Growth Since 1997</h2>
-              <div className="prose prose-lg text-customText font-light leading-relaxed space-y-6">
+              <div className="prose prose-lg text-black font-bold leading-relaxed space-y-6">
                 <p className="text-xl text-primary font-medium italic">"We represent the future of multi-disciplinary professional training in Bengaluru."</p>
                 <p>
-                  Established by the **Karnataka Educational Trust**, our group has evolved into a powerhouse of knowledge across healthcare, legal, management, and foundational sciences since its inception in 1997.
+                  Established by the <strong>Karnataka Educational Trust</strong>, our group has evolved into a powerhouse of knowledge across healthcare, legal, management, and foundational sciences since its inception in 1997.
                 </p>
                 <p>
                   Our sprawling 25-acre integrated campus hosts state-of-the-art research laboratories, digital classrooms, and extensive library systems serving thousands of students from 20+ countries.
@@ -140,7 +140,7 @@ export const AboutUsMain: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Institutions - Background changed to gray-50 for visibility, and headings swapped */}
+      {/* 6. Institutions */}
       <section className="py-24 bg-gray-50 text-customText relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
         <div className="container mx-auto px-6 relative z-10">
@@ -174,24 +174,48 @@ export const AboutUsMain: React.FC = () => {
         </div>
       </section>
 
-      {/* 7. Leadership Snapshot */}
+      {/* 7. Leadership Snapshot - Updated to High-End White Layout from Screenshot */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center bg-gray-50 p-12 md:p-16 rounded-3xl border border-gray-100 shadow-2xl relative overflow-hidden">
-            <div className="absolute bottom-0 right-0 p-12 opacity-5 pointer-events-none">
-               <QuoteIcon className="w-48 h-48 text-primary" />
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
+            {/* Portrait Column */}
+            <div className="w-full lg:w-[40%]">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gray-50 rounded-[2.5rem] -rotate-3 transition-transform group-hover:rotate-0 duration-700" />
+                <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+                  <img 
+                    src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767687458/download_1_hopo91.png" 
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" 
+                    alt="Chairman Prof. Basavaraj Ramanal" 
+                  />
+                </div>
+              </div>
             </div>
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-3xl overflow-hidden shadow-2xl shrink-0 border-8 border-white group">
-              <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767687458/download_1_hopo91.png" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Chairman Prof. Basavaraj Ramanal" />
-            </div>
-            <div className="space-y-6 text-center md:text-left relative z-10">
-              <h3 className="text-3xl font-serif font-bold text-primary">Prof. Basavaraj Ramanal</h3>
-              <p className="text-lg text-customText italic font-light leading-relaxed">
-                "Our mission is to empower minds to think beyond boundaries. We cultivate leaders who carry both professional expertise and deep ethical integrity."
-              </p>
-              <div className="pt-4">
-                 <h4 className="font-bold text-secondary uppercase tracking-widest text-xs mb-4">Chairman & Managing Trustee</h4>
-                 <Link to="/about/chairman-message" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg shadow-primary/20">Read Full Address</Link>
+
+            {/* Message Column */}
+            <div className="w-full lg:w-[60%] space-y-8">
+              <div className="relative">
+                <QuoteIcon className="w-24 h-24 text-primary/5 absolute -top-12 -left-8" />
+                <h3 className="text-3xl md:text-4xl font-serif font-bold text-primary relative z-10 leading-tight">
+                  Empowering Minds, Shaping Futures
+                </h3>
+              </div>
+              
+              <div className="space-y-6 text-black font-medium text-lg leading-relaxed italic">
+                <p>
+                  "Education is not just about earning degrees; it is about character building and preparing for the challenges of life. At Karnataka College Group, we provide an environment where students are encouraged to think independently and innovate."
+                </p>
+                <p>
+                  "Our legacy of 30 years is a testament to the trust of thousands of parents. We remain committed to providing world-class infrastructure and pedagogical support to our students."
+                </p>
+              </div>
+
+              <div className="pt-8 border-t border-gray-100">
+                <h4 className="text-2xl font-bold text-primary">Prof. Basavaraj Ramanal</h4>
+                <p className="text-xs font-black uppercase text-secondary tracking-[0.3em] mt-2">Chairman & Managing Trustee</p>
+                <div className="mt-8">
+                   <Link to="/about/chairman-message" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg shadow-primary/20">Read Full Address</Link>
+                </div>
               </div>
             </div>
           </div>
