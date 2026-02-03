@@ -22,7 +22,7 @@ export const AboutQuality: React.FC = () => {
         <div className="prose prose-lg text-customText max-w-none font-medium mb-12 text-center">
           <p>Our commitment to quality is unwavering. Each institution under the group undergoes rigorous internal and external academic audits to ensure compliance with the highest educational standards in India. Our affiliations with premier governing bodies guarantee global academic validity.</p>
         </div>
-
+        
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
           {affiliationLogos.map((logo, idx) => (
             <div key={idx} className="bg-white p-6 rounded-3xl border border-gray-100 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">

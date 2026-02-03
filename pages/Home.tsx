@@ -1,14 +1,15 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  ArrowRight,
-  Award,
-  Users,
-  BookOpen,
-  Building2,
-  TrendingUp,
-  ShieldCheck,
-  Globe,
+import { 
+  ArrowRight, 
+  Award, 
+  Users, 
+  BookOpen, 
+  Building2, 
+  TrendingUp, 
+  ShieldCheck, 
+  Globe, 
   Pill,
   HeartPulse,
   Briefcase,
@@ -57,10 +58,10 @@ export const Home: React.FC = () => {
     <div className="relative w-full">
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden bg-black">
-        <video
-          autoPlay
-          muted
-          loop
+        <video 
+          autoPlay 
+          muted 
+          loop 
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         >
@@ -70,14 +71,16 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Intro Stats Section */}
-      <section className="py-24 bg-white relative">
+      <section className="pt-24 bg-white relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">Legacy of Excellence</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4 leading-tight">
+              Legacy of Excellence
+            </h2>
+            <h3 className="text-secondary font-bold uppercase tracking-widest text-xs mb-6">
               Shaping Minds for Decades
             </h3>
-            <p className="text-lg text-customText leading-relaxed font-light">
+            <p className="text-lg text-black leading-relaxed font-bold">
               Since 1997, we have been a cornerstone of professional education in Bengaluru, combining traditional values with cutting-edge academic innovation.
             </p>
           </div>
@@ -93,23 +96,39 @@ export const Home: React.FC = () => {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700" />
                 <stat.icon className={`w-8 h-8 ${stat.color} mb-5 relative z-10`} />
                 <span className="text-3xl md:text-4xl font-bold text-primary mb-2 relative z-10">{stat.value}</span>
-                <span className="text-xs font-black uppercase tracking-widest text-gray-400 text-center relative z-10">{stat.label}</span>
+                <span className="text-xs font-black uppercase tracking-widest text-black text-center relative z-10">{stat.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Us Summary Section */}
+      {/* Clickable Scrolling Admissions Marquee */}
+      <Link to="/admissions/enquiry" className="block bg-secondary py-6 overflow-hidden border-y border-black/5 hover:bg-primary transition-colors cursor-pointer group">
+        <div className="flex animate-marquee whitespace-nowrap items-center">
+          {[...Array(12)].map((_, i) => (
+            <span key={i} className="mx-24 md:mx-32 text-black group-hover:text-white font-black uppercase tracking-[0.25em] text-sm flex items-center gap-6 shrink-0 transition-colors">
+              <Sparkles className="w-5 h-5 text-primary group-hover:text-secondary group-hover:scale-125 transition-all" /> 
+              Admissions are open for 2026 - 2027
+              <ArrowRight className="w-4 h-4 text-black/40 group-hover:text-white/50" />
+            </span>
+          ))}
+        </div>
+      </Link>
+
+
+      
+
+      {/* About Our Group Summary Section */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/2 space-y-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-full text-primary font-bold text-xs uppercase tracking-widest">
-                <Globe className="w-4 h-4 text-secondary" /> About Our Group
+                <Globe className="w-4 h-4 text-secondary" /> About Our Institutions
               </div>
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">Empowering Generations Through Quality Education</h2>
-              <div className="prose prose-lg text-customText font-light leading-relaxed space-y-6">
+              <div className="prose prose-lg text-black font-bold leading-relaxed space-y-6">
                 <p>
                   Managed by the <strong>Karnataka Educational Trust</strong>, our group has evolved into a powerhouse of knowledge across healthcare, legal, management, and foundational sciences since its inception in 1997.
                 </p>
@@ -119,16 +138,16 @@ export const Home: React.FC = () => {
               </div>
               <div className="pt-4">
                 <Link to="/about" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm flex items-center gap-3 hover:bg-secondary transition-all shadow-xl shadow-primary/20 group w-fit">
-                  Learn More About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Learn More About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
                 </Link>
               </div>
             </div>
             <div className="lg:w-1/2 relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
-              </div>
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
-              <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
+               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                 <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+               </div>
+               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
+               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
             </div>
           </div>
         </div>
@@ -140,21 +159,21 @@ export const Home: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Our Vibrant Ecosystem</h2>
             <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">11 Premier Institutions</h3>
-            <p className="mt-4 text-base text-gray-500 font-light">Explore our diverse academic units catering to healthcare, law, management, and schooling.</p>
+            <p className="mt-4 text-base text-black font-bold">Explore our diverse academic units catering to healthcare, law, management, and schooling.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {INSTITUTIONS.map((inst) => (
-              <Link
-                key={inst.id}
+              <Link 
+                key={inst.id} 
                 to={`/institution/${inst.id}`}
                 className="group relative bg-white rounded-3xl overflow-hidden shadow-xl h-[480px] border border-gray-100 flex flex-col"
               >
                 <div className="absolute inset-0 w-full h-full">
-                  <img
-                    src={inst.image}
-                    alt={inst.name}
-                    className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110"
+                  <img 
+                    src={inst.image} 
+                    alt={inst.name} 
+                    className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent" />
                 </div>
@@ -165,7 +184,7 @@ export const Home: React.FC = () => {
                       {inst.category}
                     </span>
                     <h4 className="text-2xl font-serif font-bold text-white mb-3 leading-tight group-hover:text-secondary transition-colors">{inst.name}</h4>
-                    <p className="text-white/80 text-sm leading-relaxed line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{inst.overview}</p>
+                    <p className="text-white text-sm leading-relaxed line-clamp-2 mb-4 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{inst.overview}</p>
                     <div className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest">
                       <span>Explore</span>
                       <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
@@ -178,51 +197,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Programs Offered */}
-      <section className="py-24 bg-white overflow-hidden relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">Academic Streams</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-primary">Nurturing Professional Talent</h3>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {programCategories.map((prog, idx) => (
-              <Link to={prog.path} key={idx} className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center group">
-                <div className={`w-16 h-16 ${prog.color} rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-105 transition-transform duration-500`}>
-                  <prog.icon className="w-8 h-8" />
-                </div>
-                <h4 className="text-xl font-bold text-primary mb-2">{prog.title}</h4>
-                <p className="text-sm text-gray-500 font-medium leading-relaxed">{prog.text}</p>
-              </Link>
-            ))}
-            <div className="col-span-2 lg:col-span-2 bg-gradient-to-br from-primary to-accent1 p-10 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center text-white group overflow-hidden relative">
-              <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-              <GraduationCap className="w-12 h-12 text-secondary mb-5 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
-              <h4 className="text-2xl font-bold mb-3 relative z-10">Global Recognition</h4>
-              <p className="text-base opacity-80 mb-6 max-w-sm relative z-10">Degrees that open doors worldwide. Join thousands of successful alumni.</p>
-              <Link to="/academics" className="bg-white text-primary px-8 py-3 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-secondary hover:text-white transition-all relative z-10 shadow-lg">
-                Full Academic List <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Marquee */}
-      <section className="bg-gray-50 py-16 overflow-hidden border-t border-b border-gray-100">
-        <div className="text-center mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Our Recruitment Partners</span>
-        </div>
-        <div className="flex w-full mb-8">
-          <div className="flex animate-marquee whitespace-nowrap items-center">
-            {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((logo, idx) => (
-              <div key={idx} className="mx-12 md:mx-20 flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
-                <img src={logo.url} alt={logo.name} className="h-10 md:h-12 w-auto object-contain max-w-[160px]" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* CTA Section */}
       <section className="py-24 bg-white">
@@ -230,11 +205,11 @@ export const Home: React.FC = () => {
           <div className="bg-gradient-to-br from-primary via-accent1 to-primary rounded-3xl p-12 md:p-20 text-center relative overflow-hidden shadow-[0_30px_60px_-15px_rgba(106,0,48,0.4)]">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full translate-y-48 -translate-x-48 blur-3xl" />
-
+            
             <div className="relative z-10 max-w-4xl mx-auto space-y-8 text-white">
               <h2 className="text-secondary font-bold uppercase tracking-widest text-sm">Admissions Open 2026-27</h2>
               <h3 className="text-4xl md:text-6xl font-serif font-bold leading-tight">Elevate Your Academic Ambitions</h3>
-              <p className="text-lg opacity-80 font-light max-w-2xl mx-auto">Step into a world of opportunities. Admissions are now open for all professional courses.</p>
+              <p className="text-lg opacity-90 font-bold max-w-2xl mx-auto">Step into a world of opportunities. Admissions are now open for all professional courses.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
                 <Link to="/admissions/enquiry" className="bg-secondary text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-primary transition-all shadow-2xl transform hover:-translate-y-1 uppercase tracking-widest">Enroll for 2026</Link>
                 <Link to="/contact" className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white/20 transition-all uppercase tracking-widest">Connect Support</Link>
@@ -244,13 +219,13 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Affiliations & Approvals Section (LAST as requested) */}
+      {/* Affiliations & Approvals Section */}
       <section className="py-24 bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Recognitions & Standards</h2>
             <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">Affiliations & Approvals</h3>
-            <p className="mt-4 text-gray-500 font-light">Our institutions are recognized and approved by India's premier governing bodies, ensuring global academic validity.</p>
+            <p className="mt-4 text-black font-bold">Our institutions are recognized and approved by India's premier governing bodies, ensuring global academic validity.</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
@@ -260,7 +235,7 @@ export const Home: React.FC = () => {
                   <img src={logo.url} alt={logo.name} className="max-h-full max-w-full object-contain transition-all duration-500 group-hover:scale-105" />
                 </div>
                 <h4 className="text-sm font-bold text-primary mb-1">{logo.name}</h4>
-                <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">{logo.desc}</p>
+                <p className="text-xs text-black font-black uppercase tracking-wider">{logo.desc}</p>
               </div>
             ))}
           </div>
@@ -269,3 +244,23 @@ export const Home: React.FC = () => {
     </div>
   );
 };
+
+function Sparkles(props: any) {
+  return (
+    <svg 
+      {...props} 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+      <path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>
+    </svg>
+  );
+}

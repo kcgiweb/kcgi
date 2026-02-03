@@ -9,18 +9,18 @@ export const AboutVision: React.FC = () => (
         <Target className="absolute top-0 right-0 w-64 h-64 text-white/5 -translate-y-10 translate-x-10" />
         <h3 className="text-3xl font-serif font-bold mb-8 text-secondary relative z-10">Our Vision</h3>
         <div className="space-y-6 relative z-10">
-          <div>
-            <h4 className="font-bold text-white uppercase tracking-widest text-xs mb-2">Primary Vision</h4>
-            <p className="text-lg leading-relaxed italic font-light">
-              To contribute to societal advancement by nurturing students into skilled, ethical, and socially responsible professionals who can lead the betterment of humanity.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-bold text-white uppercase tracking-widest text-xs mb-2">Educational Vision</h4>
-            <p className="text-lg leading-relaxed italic font-light">
-              To be a premier global center for quality education, fostering innovation and research to serve the evolving needs of a globalized world.
-            </p>
-          </div>
+            <div>
+                <h4 className="font-bold text-white uppercase tracking-widest text-xs mb-2">Primary Vision</h4>
+                <p className="text-lg leading-relaxed italic font-light">
+                    To contribute to societal advancement by nurturing students into skilled, ethical, and socially responsible professionals who can lead the betterment of humanity.
+                </p>
+            </div>
+            <div>
+                <h4 className="font-bold text-white uppercase tracking-widest text-xs mb-2">Educational Vision</h4>
+                <p className="text-lg leading-relaxed italic font-light">
+                    To be a premier global center for quality education, fostering innovation and research to serve the evolving needs of a globalized world.
+                </p>
+            </div>
         </div>
       </div>
       <div className="bg-gray-50 p-12 rounded-[3rem] border border-gray-100">

@@ -184,9 +184,11 @@ export const INSTITUTIONS: Institution[] = [
       { name: 'Science: PCMB' },
       { name: 'Science: PCME' },
       { name: 'Science: PCMCS' },
+      { name: 'Science: PCMS' },
       { name: 'Commerce: EBAC' },
       { name: 'Commerce: HEBA' },
-      { name: 'Commerce: BACsS' }
+      { name: 'Commerce: BACsS' },
+      { name: 'Commerce: SEBA' }
     ],
     whyChoose: [
       'Integrated coaching for NEET, JEE, and CET',
