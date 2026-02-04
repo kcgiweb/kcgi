@@ -7,8 +7,6 @@ import {
   Users, 
   BookOpen, 
   Building2, 
-  TrendingUp, 
-  ShieldCheck, 
   Globe, 
   Pill,
   HeartPulse,
@@ -16,7 +14,8 @@ import {
   Scale,
   Microscope,
   Activity,
-  GraduationCap
+  GraduationCap,
+  ArrowUpRight
 } from 'lucide-react';
 import { INSTITUTIONS } from '../constants';
 
@@ -71,7 +70,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Intro Stats Section */}
-      <section className="pt-24 bg-white relative">
+      <section className="py-24 bg-white relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4 leading-tight">
@@ -104,7 +103,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Clickable Scrolling Admissions Marquee */}
-      <div className="my-12">
+      <section className="py-24 bg-white">
         <Link to="/admissions/enquiry" className="block bg-secondary py-8 overflow-hidden border-y border-black/5 hover:bg-primary transition-colors cursor-pointer group shadow-lg">
           <div className="flex animate-marquee whitespace-nowrap items-center">
             {[...Array(12)].map((_, i) => (
@@ -116,7 +115,7 @@ export const Home: React.FC = () => {
             ))}
           </div>
         </Link>
-      </div>
+      </section>
 
       {/* About Our Group Summary Section */}
       <section className="py-24 bg-white overflow-hidden">
@@ -163,10 +162,9 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {INSTITUTIONS.map((inst) => (
-              <Link 
+              <div 
                 key={inst.id} 
-                to={`/institution/${inst.id}`}
-                className="group relative bg-white rounded-3xl overflow-hidden shadow-xl h-[480px] border border-gray-100 flex flex-col"
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-xl h-[520px] border border-gray-100 flex flex-col"
               >
                 <div className="absolute inset-0 w-full h-full">
                   <img 
@@ -174,23 +172,30 @@ export const Home: React.FC = () => {
                     alt={inst.name} 
                     className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
                 </div>
 
                 <div className="absolute inset-0 flex flex-col justify-end p-8 transition-transform duration-500">
                   <div className="relative z-10">
-                    <span className="inline-block px-4 py-1.5 bg-secondary text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4 shadow-lg">
+                    <span className="inline-block px-4 py-1.5 bg-secondary text-white text-[10px] font-black uppercase tracking-widest rounded-full mb-4 shadow-lg">
                       {inst.category}
                     </span>
                     <h4 className="text-2xl font-serif font-bold text-white mb-3 leading-tight group-hover:text-secondary transition-colors">{inst.name}</h4>
-                    <p className="text-white text-sm leading-relaxed line-clamp-2 mb-4 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{inst.overview}</p>
-                    <div className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest">
-                      <span>Explore</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    <p className="text-white text-sm leading-relaxed line-clamp-2 mb-6 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{inst.overview}</p>
+                    
+                    <div className="flex flex-wrap items-center gap-4 mt-2">
+                      <Link to={`/institution/${inst.id}`} className="flex items-center gap-2 text-white text-xs font-black uppercase tracking-widest hover:text-secondary transition-colors group/btn">
+                        <span>Explore</span>
+                        <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                      
+                      <button className="apply-trigger bg-secondary hover:bg-white text-white hover:text-primary px-5 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all shadow-xl flex items-center gap-2">
+                        Apply Now <ArrowUpRight className="w-3 h-3" />
+                      </button>
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -227,11 +232,11 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Partners Marquee */}
-      <section className="bg-gray-50 py-16 overflow-hidden border-t border-b border-gray-100">
+      <section className="bg-gray-50 py-24 overflow-hidden border-t border-b border-gray-100">
         <div className="text-center mb-16 px-6">
            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Our Recruitment Partners</h2>
         </div>
-        <div className="flex w-full mb-8">
+        <div className="flex w-full">
           <div className="flex animate-marquee whitespace-nowrap items-center">
             {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((logo, idx) => (
               <div key={idx} className="mx-12 md:mx-20 flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-110">

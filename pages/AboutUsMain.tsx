@@ -96,7 +96,7 @@ export const AboutUsMain: React.FC = () => {
       </section>
 
       {/* The Academic Universe - Institutional Cards with Offset Shadow */}
-      <section className="py-24 bg-[#F68D18]/40 relative overflow-hidden">
+      <section className="py-24 bg-[#F2E6EC]/30 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">The Academic Universe</h2>

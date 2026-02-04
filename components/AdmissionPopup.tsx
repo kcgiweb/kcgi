@@ -1,9 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const AdmissionPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const hasSeenPopup = sessionStorage.getItem('hasSeenAdmissionPopup');
@@ -13,11 +15,28 @@ export const AdmissionPopup: React.FC = () => {
       }, 20000); // 20 seconds
       return () => clearTimeout(timer);
     }
+
+    // Global listener for apply-trigger clicks
+    const handleGlobalTrigger = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('.apply-trigger')) {
+        e.preventDefault();
+        setIsVisible(true);
+      }
+    };
+
+    document.addEventListener('click', handleGlobalTrigger);
+    return () => document.removeEventListener('click', handleGlobalTrigger);
   }, []);
 
   const closePopup = () => {
     setIsVisible(false);
     sessionStorage.setItem('hasSeenAdmissionPopup', 'true');
+  };
+
+  const handleEnquiry = () => {
+    closePopup();
+    navigate('/admissions/enquiry');
   };
 
   if (!isVisible) return null;
@@ -52,7 +71,7 @@ export const AdmissionPopup: React.FC = () => {
           </div>
           <div className="pt-4 flex flex-col sm:flex-row gap-3">
             <button 
-              onClick={closePopup}
+              onClick={handleEnquiry}
               className="flex-1 bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-accent1 transition-colors flex items-center justify-center gap-2"
             >
               Enquire Now <ExternalLink className="w-4 h-4" />
@@ -61,7 +80,7 @@ export const AdmissionPopup: React.FC = () => {
               onClick={closePopup}
               className="flex-1 border-2 border-primary text-primary py-3 px-6 rounded-lg font-semibold hover:bg-primary/5 transition-colors"
             >
-              Learn More
+              Close
             </button>
           </div>
         </div>
