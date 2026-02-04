@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
     identity: [
       { label: 'Group Main', path: '/about', icon: LayoutDashboard, desc: 'Group overview & vision.' },
       { label: 'Overview', path: '/about/overview', icon: Globe, desc: 'Academic legacy.' },
-      { label: 'History', path: '/about/history', icon: History, desc: 'Journey since 1990.' },
+      { label: 'History', path: '/about/history', icon: History, desc: 'Journey since 1997.' },
       { label: 'Vision', path: '/about/vision', icon: Target, desc: 'Future roadmap.' },
     ],
     leadership: [

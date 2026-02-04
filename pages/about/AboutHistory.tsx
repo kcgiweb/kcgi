@@ -11,7 +11,7 @@ export const AboutHistory: React.FC = () => (
           { 
             year: '1997', 
             title: 'The Visionary Foundation & Academic Voyage', 
-            desc: 'The Karnataka Educational Trust was established in Bengaluru, and our official education journey began with the establishment of the Physiotherapy division. This strategic entry into higher education set the benchmark for clinical excellence that defines us today.' 
+            desc: 'The "Karnataka Educational Trust" was established in Bengaluru, and our official education journey began with the establishment of the Physiotherapy division. This strategic entry into higher education set the benchmark for clinical excellence that defines us today.' 
           },
           { 
             year: '2003', 
