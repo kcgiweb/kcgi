@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const logoUrl = "https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg";
-  const externalMapsLink = "https://maps.app.goo.gl/LgWqNWGxzi9ZpwH26";
+  const externalMapsLink = "https://www.google.com/maps/place/Karnataka+College+Group+of+Institutions/@13.0860698,77.6355606,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae183352e8af21:0xa842e197d612053f!8m2!3d13.0860698!4d77.6355606!16s%2Fg%2F11l244r1vl?entry=ttu";
 
   return (
     <footer className="bg-white text-black pt-16 pb-8 border-t border-gray-100">
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-black">+91 80 1234 5678</span>
+                <span className="text-black">080808 33000</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary flex-shrink-0" />

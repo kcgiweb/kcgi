@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { 
   MapPin, 
@@ -19,8 +20,9 @@ export const ContactUs: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const googleMapsUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.8335!2d77.6212!3d13.0768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae190765955555%3A0xc325091422f9!2s33%2F2%2C%20Hegde%20Nagar%20Main%20Rd%2C%20Yelahanka%2C%20Thirumenahalli%2C%20Bengaluru%2C%20Karnataka%20560064!5e0!3m2!1sen!2sin!4v1715600000000!5m2!1sen!2sin";
-  const externalMapsLink = "https://maps.app.goo.gl/LgWqNWGxzi9ZpwH26";
+  // Updated to correct institutional location coordinates and CID provided by user
+  const googleMapsUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.12282255013!2d77.63337197576566!3d13.086074912959635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae183352e8af21%3A0xa842e197d612053f!2sKarnataka%20College%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1738734812345!5m2!1sen!2sin";
+  const externalMapsLink = "https://www.google.com/maps/place/Karnataka+College+Group+of+Institutions/@13.0860698,77.6355606,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae183352e8af21:0xa842e197d612053f!8m2!3d13.0860698!4d77.6355606!16s%2Fg%2F11l244r1vl?entry=ttu";
 
   return (
     <div className="pt-24 min-h-screen bg-white">
@@ -43,36 +45,36 @@ export const ContactUs: React.FC = () => {
           {/* Main Contact Card */}
           <div className="lg:col-span-2 bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-50">
             <h2 className="text-3xl font-serif font-bold text-primary mb-10">Send us a Message</h2>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6" action="mailto:rukeshbabug@gmail.com" method="POST" encType="text/plain">
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Full Name</label>
                 <div className="relative">
                   <User className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                  <input type="text" placeholder="John Doe" className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
+                  <input name="name" type="text" placeholder="John Doe" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Email Address</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Phone Number</label>
                 <div className="relative">
-                  <MailSearch className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                  <input type="email" placeholder="john@example.com" className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
+                  <Phone className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
+                  <input name="phone" type="tel" placeholder="+91 00000 00000" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
                 </div>
               </div>
               <div className="md:col-span-2 space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Subject</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Email Address</label>
                 <div className="relative">
-                  <Bookmark className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                  <input type="text" placeholder="Admissions / General Inquiry" className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
+                  <MailSearch className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
+                  <input name="email" type="email" placeholder="john@example.com" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
                 </div>
               </div>
               <div className="md:col-span-2 space-y-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Message Details</label>
                 <div className="relative">
                   <MessageSquare className="absolute left-5 top-5 w-4 h-4 text-secondary" />
-                  <textarea rows={4} placeholder="How can we help you today?" className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold resize-none"></textarea>
+                  <textarea name="message" rows={4} placeholder="How can we help you today?" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold resize-none"></textarea>
                 </div>
               </div>
-              <button className="md:col-span-2 bg-primary text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-xl hover:bg-secondary transition-all flex items-center justify-center gap-3 group">
+              <button type="submit" className="md:col-span-2 bg-primary text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-xl hover:bg-secondary transition-all flex items-center justify-center gap-3 group">
                 Send Message <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
@@ -91,7 +93,7 @@ export const ContactUs: React.FC = () => {
                 <div className="flex gap-4">
                    <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center border border-white/10 shrink-0"><Phone className="w-5 h-5 text-secondary" /></div>
                    <div>
-                     <p className="text-base font-bold">+91 80 1234 5678</p>
+                     <p className="text-base font-bold">080808 33000</p>
                      <p className="text-xs uppercase font-bold text-secondary/60 mt-1">Helpline</p>
                    </div>
                 </div>
