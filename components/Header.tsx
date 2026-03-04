@@ -252,7 +252,7 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 h-16 md:h-24 flex items-center justify-between relative">
         <Link to="/" className="flex items-center relative z-[110]">
           <img 
-            src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg" 
+            src="https://res.cloudinary.com/dwoh8qevy/image/upload/v1772447925/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr_jp7xtc.svg" 
             alt="Logo" 
             className={`h-10 md:h-14 lg:h-16 transition-all drop-shadow-md`}
           />
