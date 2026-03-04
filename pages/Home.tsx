@@ -42,7 +42,7 @@ export const Home: React.FC = () => {
     { name: 'CBSE', url: 'https://i.pinimg.com/736x/e2/da/ae/e2daaec4c90b8633c90b554b6e205620.jpg', desc: 'Affiliated to CBSE' },
   ];
 
-  const officialVideoUrl = "https://res.cloudinary.com/dejcpd56d/video/upload/v1767590647/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez.mp4";
+  const officialVideoUrl = "https://res.cloudinary.com/dwoh8qevy/video/upload/v1772447579/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez_lvqzli.mp4";
 
   const programCategories = [
     { icon: Pill, title: 'Pharmacy', text: 'D.Pharm, B.Pharm, M.Pharm', color: 'bg-green-50 text-green-600', path: '/institution/pharmacy' },
