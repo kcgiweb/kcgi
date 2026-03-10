@@ -72,7 +72,7 @@ export const AdmissionPopup: React.FC = () => {
         {/* Left Side: Visual/Branding */}
         <div className="hidden md:block w-5/12 bg-primary relative overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800" 
+            src="https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756914/kcmss_nh06dd.png" 
             alt="Admissions Open" 
             className="w-full h-full object-cover opacity-30"
           />
