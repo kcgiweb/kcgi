@@ -45,10 +45,13 @@ import { Prospectus } from './pages/admissions/Prospectus';
 import { InternationalAdmissions } from './pages/admissions/International';
 import { Scholarships } from './pages/admissions/Scholarships';
 
+import { AdmissionPopup } from './components/AdmissionPopup';
+
 const App: React.FC = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
+        <AdmissionPopup />
         <Header />
         <main className="flex-grow">
           <Routes>
