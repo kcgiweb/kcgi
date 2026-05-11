@@ -22,37 +22,37 @@ export const Facilities: React.FC = () => {
       title: 'Central Library', 
       icon: Book, 
       desc: 'Over 50,000 volumes, e-journals, and high-speed digital research terminals.', 
-      img: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800'
+      img: '/assets/images/Central%20Library.webp'
     },
     { 
       title: 'Advanced Laboratories', 
       icon: FlaskConical, 
       desc: 'CPCSEA approved animal house and industry-standard pharmaceutical & clinical labs.', 
-      img: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=800'
+      img: '/assets/images/Advanced%20Laboratories.png'
     },
     { 
       title: 'Separate Hostels', 
       icon: Home, 
       desc: 'Hygienic, secure, and comfortable accommodation for boys and girls with 24/7 power & Wi-Fi.', 
-      img: 'https://images.unsplash.com/photo-1555854817-40e098ee7f57?auto=format&fit=crop&q=80&w=800'
+      img: '/assets/images/Separate%20Hostels.png'
     },
     { 
       title: 'Transportation', 
       icon: Bus, 
       desc: 'Fleet of buses covering all major parts of Bengaluru for safe commuting.', 
-      img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
+      img: '/assets/images/Transportation.jpeg'
     },
     { 
       title: 'Sports & Fitness', 
       icon: Trophy, 
       desc: 'Indoor and outdoor sports arenas including a pool, gym, and cricket ground.', 
-      img: 'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&q=80&w=800'
+      img: '/assets/images/Sports%20&%20Fitness.webp'
     },
     { 
       title: 'Medical Facilities', 
       icon: Stethoscope, 
       desc: 'On-campus health center with 24/7 ambulance service and nursing staff.', 
-      img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800'
+      img: '/assets/images/Medical%20Facilities.jpg'
     },
   ];
 
@@ -99,7 +99,7 @@ export const Facilities: React.FC = () => {
                    <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-white border-b-[8px] border-b-transparent ml-1.5"/>
                 </div>
              </div>
-             <img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover opacity-60" />
+             <img src="/assets/images/SLA_9058_y5xdri.jpg" className="w-full h-full object-cover opacity-60" />
           </div>
         </div>
       </div>

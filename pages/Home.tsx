@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
 
   const affiliationLogos = [
     { name: 'AICTE', url: 'https://upload.wikimedia.org/wikipedia/en/e/eb/All_India_Council_for_Technical_Education_logo.png', desc: 'Approved by AICTE' },
-    { name: 'PCI', url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg', desc: 'Recognized by PCI' },
+    { name: 'PCI', url: '/assets/images/PCI%20logo.png', desc: 'Recognized by PCI' },
     { name: 'RGUHS', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTepoRcwGHChReAO7cHODgrBTZGOrC9W--3xQ&s', desc: 'Affiliated to RGUHS' },
     { name: 'NAAC', url: 'https://sjbit.edu.in/wp-content/uploads/2021/07/NAAC-Logo-250x250-1.png', desc: 'NAAC Accredited Grade A' },
     { name: 'INC', url: 'https://images.seeklogo.com/logo-png/39/1/nic-inc-logo-png_seeklogo-392312.png', desc: 'Recognized by INC' },
@@ -42,7 +42,7 @@ export const Home: React.FC = () => {
     { name: 'CBSE', url: 'https://i.pinimg.com/736x/e2/da/ae/e2daaec4c90b8633c90b554b6e205620.jpg', desc: 'Affiliated to CBSE' },
   ];
 
-  const officialVideoUrl = "https://res.cloudinary.com/dwoh8qevy/video/upload/v1772447579/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez_lvqzli.mp4";
+  const heroVideoUrl = "/assets/videos/herosection.mp4";
 
   const programCategories = [
     { icon: Pill, title: 'Pharmacy', text: 'D.Pharm, B.Pharm, M.Pharm', color: 'bg-green-50 text-green-600', path: '/institution/pharmacy' },
@@ -56,7 +56,7 @@ export const Home: React.FC = () => {
   return (
     <div className="relative w-full">
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden bg-black">
+      <section className="relative h-[65vh] md:h-screen w-full overflow-hidden bg-black">
         <video 
           autoPlay 
           muted 
@@ -64,7 +64,7 @@ export const Home: React.FC = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         >
-          <source src={officialVideoUrl} type="video/mp4" />
+          <source src={heroVideoUrl} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
       </section>
@@ -142,7 +142,7 @@ export const Home: React.FC = () => {
             </div>
             <div className="lg:w-1/2 relative">
                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                 <img src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+                 <img src="/assets/images/homeabout.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
                </div>
                <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
                <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />

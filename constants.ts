@@ -28,7 +28,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Pfizer', 'Biocon', 'Sun Pharma', 'Cipla'],
     gallery: [],
     contact: { address: 'Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'pharmacy@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769757265/kcp2_uzanov.png'
+    image: '/assets/images/Karnataka%20College%20of%20Pharmacy.png'
   },
   {
     id: 'nursing',
@@ -57,7 +57,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis', 'Global Health Centers'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '080808 33000', email: 'nursing@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756824/kcn_otgpow.png'
+    image: '/assets/images/Karnataka%20College%20of%20Nursing.png'
   },
   {
     id: 'management-science',
@@ -94,7 +94,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['TCS', 'Infosys', 'Wipro', 'Indigo'],
     gallery: [],
     contact: { address: '33/2, Hegde Nagar Main Rd, Bengaluru', phone: '080808 33000', email: 'info@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756914/kcmss_nh06dd.png'
+    image: '/assets/images/Karnataka%20College%20of%20Management%20&%20Science.png'
   },
   {
     id: 'management',
@@ -122,7 +122,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Amazon', 'Deloitte', 'HDFC Bank', 'FedEx'],
     gallery: [],
     contact: { address: 'Yelahanka, Bengaluru', phone: '080808 33000', email: 'mba@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dwoh8qevy/image/upload/v1769756853/kcm_afqvix.png'
+    image: '/assets/images/Karnataka%20College%20of%20Management.png'
   },
   {
     id: 'education',
@@ -147,7 +147,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Reputed Schools', 'Educational Institutions', 'Online Learning Platforms'],
     gallery: [],
     contact: { address: 'Thirumenahalli, Bengaluru', phone: '080808 33000', email: 'bed@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: '/assets/images/Karnataka%20College%20of%20Education.webp'
   },
   {
     id: 'public-school',
@@ -172,7 +172,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Internal progression to PU College'],
     gallery: [],
     contact: { address: 'Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'school@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1768973897/9527slider1_eqzolb.jpg'
+    image: '/assets/images/Karnataka%20Public%20School%20(CBSE).jpg'
   },
   {
     id: 'pu-college',
@@ -204,7 +204,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Career Counseling for Higher Education'],
     gallery: [],
     contact: { address: '33/2, Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'pu@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: '/assets/images/Karnataka%20Composite%20P.U.%20College.jpg'
   },
   {
     id: 'law',
@@ -229,7 +229,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Legal Firms', 'Corporate Legal Departments', 'Independent Practice Support'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '080808 33000', email: 'law@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: '/assets/images/Karunadu%20College%20of%20Law.jpg'
   },
   {
     id: 'allied-health',
@@ -257,7 +257,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Diagnostic Chains', 'Private Hospitals', 'Public Health Centers'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '080808 33000', email: 'alliedhealth@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: '/assets/images/Karunadu%20College%20of%20Allied%20Health%20Science.jpg'
   },
   {
     id: 'paramedical',
@@ -285,7 +285,7 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Private Clinics', 'Medical Labs', 'Surgical Centers'],
     gallery: [],
     contact: { address: 'Thirumenahalli, Bengaluru', phone: '080808 33000', email: 'kaveri@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: '/assets/images/Kaveri%20Paramedical%20College.jpg'
   },
   {
     id: 'physiotherapy',
@@ -311,6 +311,6 @@ export const INSTITUTIONS: Institution[] = [
     placements: ['Sports Clinics', 'Rehabilitation Centers', 'Hospitals'],
     gallery: [],
     contact: { address: 'Bengaluru', phone: '080808 33000', email: 'physio@karnatakacollege.edu' },
-    image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767861219/unnamed_y30slw.jpg'
+    image: '/assets/images/Manjunatha%20College%20of%20Physiotherapy.jpg'
   }
 ];

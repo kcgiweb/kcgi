@@ -8,7 +8,7 @@
     <meta name="description" content="Official website of Karnataka College Group of Institutions. Excellence in Pharmacy, Nursing, Law, and Management.">
     <meta name="google-site-verification" content="vYGu4DL6KEkJXFJCwaA6XLgp3R7ykFPzs52lFAqMIFI" />
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg">
+    <link rel="apple-touch-icon" href="/assets/images/logo.svg">
     <title>Karnataka College Group of Institutions</title>
 
 
@@ -44,6 +44,8 @@
                     animation: {
                         'marquee': 'marquee 20s linear infinite',
                         'marquee-reverse': 'marquee-reverse 20s linear infinite',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 1s ease-out forwards',
                     },
                     keyframes: {
                         marquee: {
@@ -53,6 +55,14 @@
                         'marquee-reverse': {
                             '0%': { transform: 'translateX(-50%)' },
                             '100%': { transform: 'translateX(0%)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
                 }

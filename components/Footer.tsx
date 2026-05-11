@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, ExternalLi
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
-  const logoUrl = "https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg";
+  const logoUrl = "/assets/images/logo.svg";
   const externalMapsLink = "https://www.google.com/maps/place/Karnataka+College+Group+of+Institutions/@13.0860698,77.6355606,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae183352e8af21:0xa842e197d612053f!8m2!3d13.0860698!4d77.6355606!16s%2Fg%2F11l244r1vl?entry=ttu";
 
   return (
@@ -24,8 +24,25 @@ export const Footer: React.FC = () => {
               Providing world-class education for over three decades across multiple disciplines, fostering innovation and professional excellence.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center hover:bg-secondary text-primary hover:text-white transition-all">
+              {[
+                { Icon: Facebook, href: "https://facebook.com/Kcgiedu" },
+                { Icon: Instagram, href: "https://instagram.com/Kcgiedu" },
+                { Icon: Twitter, href: "https://twitter.com/Kcgiedu" },
+                { Icon: Linkedin, href: "https://linkedin.com/company/kcgiedu" },
+                { Icon: (props: any) => (
+                  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.14 1 12 1 12s0 3.86.46 5.58a2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.86 23 12 23 12s0-3.86-.46-5.58z" />
+                    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                  </svg>
+                ), href: "https://youtube.com/@kcgiedu?si=5nI63pg8UhxbekMg" }
+              ].map(({ Icon, href }, i) => (
+                <a 
+                  key={i} 
+                  href={href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center hover:bg-secondary text-primary hover:text-white transition-all"
+                >
                   <Icon className="w-5 h-5" />
                 </a>
               ))}

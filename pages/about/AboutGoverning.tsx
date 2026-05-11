@@ -31,7 +31,7 @@ export const AboutGoverning: React.FC = () => (
 
         <div>
           <img
-            src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767687764/download_3_gzxfum.png"
+            src="/assets/images/download_3_gzxfum_abause.png"
             alt="Smt. Suvarna Basavaraj Ramnal"
             className="w-full h-auto rounded-3xl"
           />
@@ -42,7 +42,7 @@ export const AboutGoverning: React.FC = () => (
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1">
           <img
-            src="https://res.cloudinary.com/dejcpd56d/image/upload/v1767687679/download_2_cbxmzc.png"
+            src="/assets/images/coo_uycfyc.png"
             alt="Mr. Pradeep Ramnal"
             className="w-full h-auto rounded-3xl"
           />

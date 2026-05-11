@@ -59,7 +59,7 @@ export const Research: React.FC = () => (
           </div>
         </div>
         <div className="lg:w-1/2 relative z-10 aspect-video rounded-3xl overflow-hidden shadow-2xl">
-           <img src="https://images.unsplash.com/photo-1579154235884-331505f56284?auto=format&fit=crop&q=80&w=800" alt="Student Poster Presentation" className="w-full h-full object-cover" />
+           <img src="/assets/images/SLA_8705_ccmafe.jpg" alt="Student Poster Presentation" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>
