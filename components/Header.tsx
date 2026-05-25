@@ -281,6 +281,11 @@ export const Header: React.FC = () => {
               {nav.mega && renderMegaMenu(nav)}
             </div>
           ))}
+          <div className="pl-4 xl:pl-6 h-full flex items-center">
+            <Link to="/apply" className="bg-secondary text-white px-5 py-2.5 rounded-full font-bold text-[11px] xl:text-xs uppercase tracking-wider hover:bg-primary transition-colors shadow-lg shadow-secondary/20">
+              Apply Now
+            </Link>
+          </div>
         </nav>
 
         {/* Mobile Toggle */}
@@ -339,6 +344,11 @@ export const Header: React.FC = () => {
                   )}
                 </div>
               ))}
+              <div className="pt-4 border-t border-gray-50 mt-2">
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/apply" className="block w-full text-center bg-secondary text-white py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-primary transition-colors shadow-lg shadow-secondary/20">
+                  Apply Now
+                </Link>
+              </div>
             </nav>
           </div>
         </div>

@@ -9,7 +9,7 @@ import { Admissions } from './pages/Admissions';
 import { Academics } from './pages/Academics';
 import { Placements } from './pages/Placements';
 import { NAAC } from './pages/NAAC';
-import { NewsEvents } from './pages/NewsEvents';
+import { NewsEvents } from './pages/NewsEvents';  
 import { Facilities } from './pages/Facilities';
 import { ContactUs } from './pages/ContactUs';
 
@@ -44,6 +44,8 @@ import { AdmissionEnquiry } from './pages/admissions/Enquiry';
 import { Prospectus } from './pages/admissions/Prospectus';
 import { InternationalAdmissions } from './pages/admissions/International';
 import { Scholarships } from './pages/admissions/Scholarships';
+import Apply from './pages/admissions/Apply';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 import { AdmissionPopup } from './components/AdmissionPopup';
 
@@ -92,8 +94,10 @@ const App: React.FC = () => {
             <Route path="/admissions/prospectus" element={<Prospectus />} />
             <Route path="/admissions/international" element={<InternationalAdmissions />} />
             <Route path="/admissions/scholarships" element={<Scholarships />} />
+            <Route path="/apply" element={<Apply />} />
             
             {/* Other Main Sections */}
+            <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/placements/*" element={<Placements />} />
             <Route path="/naac/*" element={<NAAC />} />
             <Route path="/facilities" element={<Facilities />} />
