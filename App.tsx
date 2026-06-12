@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -48,10 +48,12 @@ import Apply from './pages/admissions/Apply';
 import AdminDashboard from './pages/admin/AdminDashboard';
 
 import { AdmissionPopup } from './components/AdmissionPopup';
+import { DynamicRouteSEO } from './components/DynamicRouteSEO';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <DynamicRouteSEO />
       <div className="flex flex-col min-h-screen">
         <AdmissionPopup />
         <Header />

@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   BookOpen, 
   MapPin, 
@@ -30,6 +31,10 @@ export const InstitutionDetail: React.FC = () => {
 
   return (
     <div className="pt-16 md:pt-20 min-h-screen bg-white">
+      <SEO 
+        title={`${inst.name} | KCGI Bangalore`} 
+        description={inst.overview || `Learn more about ${inst.name} at Karnataka College Group of Institutions.`}
+      />
       {/* Dynamic Cinematic Banner */}
       <div className="relative h-[35vh] md:h-[48vh] min-h-[280px] overflow-hidden">
         <img 
