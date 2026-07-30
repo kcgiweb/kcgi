@@ -14,6 +14,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { NoPaperFormsWidget } from '../components/NoPaperFormsWidget';
 
 export const ContactUs: React.FC = () => {
   useEffect(() => {
@@ -45,39 +46,7 @@ export const ContactUs: React.FC = () => {
           {/* Main Contact Card */}
           <div className="lg:col-span-2 bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-50">
             <h2 className="text-3xl font-serif font-bold text-primary mb-10">Send us a Message</h2>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6" action="mailto:rukeshbabug@gmail.com" method="POST" encType="text/plain">
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Full Name</label>
-                <div className="relative">
-                  <User className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                  <input name="name" type="text" placeholder="John Doe" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Phone Number</label>
-                <div className="relative">
-                  <Phone className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                  <input name="phone" type="tel" placeholder="+91 00000 00000" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
-                </div>
-              </div>
-              <div className="md:col-span-2 space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Email Address</label>
-                <div className="relative">
-                  <MailSearch className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                  <input name="email" type="email" placeholder="john@example.com" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" />
-                </div>
-              </div>
-              <div className="md:col-span-2 space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-primary/40 ml-1">Message Details</label>
-                <div className="relative">
-                  <MessageSquare className="absolute left-5 top-5 w-4 h-4 text-secondary" />
-                  <textarea name="message" rows={4} placeholder="How can we help you today?" required className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold resize-none"></textarea>
-                </div>
-              </div>
-              <button type="submit" className="md:col-span-2 bg-primary text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-xl hover:bg-secondary transition-all flex items-center justify-center gap-3 group">
-                Send Message <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </form>
+            <NoPaperFormsWidget />
           </div>
 
           {/* Side Info Cards */}

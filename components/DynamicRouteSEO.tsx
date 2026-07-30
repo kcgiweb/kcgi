@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SEO from './SEO';
 
-const BASE_KEYWORDS = "KCGI, karnataka college group of institutions, Karnataka Education Trust, Karnataka College of Pharmacy, Karnataka College of Nursing, Karnataka College of Management & Science, Karnataka College of Management, Karnataka College of Education, Karnataka Public School CBSE, Karnataka Composite PU College, Karunadu College of Law, Karunadu College of Allied Health Science, Kaveri Paramedical College, Manjunatha College of Physiotherapy, Hegde Nagar Bengaluru, Thirumenahalli Bengaluru, Yelahanka Bengaluru, best pharmacy college in bangalore, top nursing colleges in bangalore, B.Pharm, M.Pharm, Pharm D, GNM, B.Sc Nursing, MBA, BBA, BCA, B.Com, B.Ed, LL.B 3 Years, B.Sc MLT, B.Sc MIT, Paramedical Diploma, BPT, MPT Physiotherapy, KCGI Admissions 2026, Karnataka College Bangalore, top colleges in South India, best institutions in India, colleges in Kerala for nursing, colleges in Andhra Pradesh, higher education in Telangana, study in Bangalore, Tamil Nadu students, pan India admissions, best pharmacy college in India, top management colleges South India";
+const BASE_KEYWORDS = "KCM, KCM Bangalore, KCM College, Karnataka College of Management, Karnataka College of Management and Science, the best college in Bangalore, KCGI, karnataka college group of institutions, Karnataka Education Trust, Karnataka College of Pharmacy, Karnataka College of Nursing, Karnataka College of Education, Karnataka Public School CBSE, Karnataka Composite PU College, Karunadu College of Law, Karunadu College of Allied Health Science, Kaveri Paramedical College, Manjunatha College of Physiotherapy, Hegde Nagar Bengaluru, Thirumenahalli Bengaluru, Yelahanka Bengaluru, best pharmacy college in bangalore, top nursing colleges in bangalore, B.Pharm, M.Pharm, Pharm D, GNM, B.Sc Nursing, MBA, BBA, BCA, B.Com, B.Ed, LL.B 3 Years, B.Sc MLT, B.Sc MIT, Paramedical Diploma, BPT, MPT Physiotherapy, KCM Admissions 2026, Karnataka College Bangalore, top colleges in South India, best institutions in India, colleges in Kerala for nursing, colleges in Andhra Pradesh, higher education in Telangana, study in Bangalore, Tamil Nadu students, pan India admissions, best pharmacy college in India, top management colleges South India";
 
 const routeSEO: Record<string, { title: string, description: string, keywords?: string }> = {
   '/': {
-    title: 'Karnataka College Group of Institutions | Best College in Bangalore',
-    description: 'KCGI: Karnataka College Group of Institutions. Top-ranked college in Bangalore offering courses in Pharmacy, Nursing, Law, and Management. KCGI admissions are open.',
-    keywords: 'KCGI, karnataka college group of institutions, Karnataka Education Trust, best colleges in bangalore, top institutions in karnataka'
+    title: 'KCM | Karnataka College Group of Institutions | The Best College in Bangalore',
+    description: 'KCM (Karnataka College Group of Institutions): The Best College in Bangalore offering Excellence in Pharmacy, Nursing, Law, and Management. KCM admissions open.',
+    keywords: 'KCM, KCM Bangalore, KCM College, karnataka college group of institutions, Karnataka Education Trust, the best college in bangalore, top institutions in karnataka'
   },
   
   // ABOUT US PAGES
@@ -202,8 +202,8 @@ export const DynamicRouteSEO: React.FC = () => {
         // Fallback for unknown routes (but don't override dynamic institution pages which have their own SEO)
         if (!location.pathname.includes('/institution/')) {
           setSeoData({
-            title: 'Karnataka College Group of Institutions',
-            description: 'KCGI: Excellence in Pharmacy, Nursing, Law, and Management in Bangalore.',
+            title: 'KCM | Karnataka College Group of Institutions | The Best College in Bangalore',
+            description: 'KCM: Excellence in Pharmacy, Nursing, Law, and Management in Bangalore. Apply to the best college in Bangalore.',
           });
         }
       }

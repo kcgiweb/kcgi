@@ -4,6 +4,7 @@ import React from 'react';
 import { AdmissionsLayout } from '../../components/AdmissionsLayout';
 import { Send, Phone, Mail, MapPin, ArrowRight, User, PhoneCall, MailSearch, GraduationCap, MessageSquare } from 'lucide-react';
 import { INSTITUTIONS } from '../../constants';
+import { NoPaperFormsWidget } from '../../components/NoPaperFormsWidget';
 
 export const AdmissionEnquiry: React.FC = () => (
   <AdmissionsLayout 
@@ -17,49 +18,7 @@ export const AdmissionEnquiry: React.FC = () => (
           <h3 className="text-3xl font-serif font-bold text-primary mb-10 flex items-center gap-4">
              <div className="w-1.5 h-10 bg-secondary rounded-full" /> Personal Information
           </h3>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-primary/40 uppercase tracking-wider ml-2">Full Legal Name</label>
-              <div className="relative">
-                <User className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                <input type="text" className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" placeholder="As per 10th marksheet" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-primary/40 uppercase tracking-wider ml-2">Mobile Number</label>
-              <div className="relative">
-                <PhoneCall className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                <input type="tel" className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" placeholder="+91 00000 00000" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-primary/40 uppercase tracking-wider ml-2">Email Address</label>
-              <div className="relative">
-                <MailSearch className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                <input type="email" className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold" placeholder="name@domain.com" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-primary/40 uppercase tracking-wider ml-2">Preferred Program</label>
-              <div className="relative">
-                <GraduationCap className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                <select className="w-full pl-12 pr-10 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold appearance-none bg-no-repeat">
-                  <option value="">Select an Institution</option>
-                  {INSTITUTIONS.map(inst => <option key={inst.id} value={inst.id}>{inst.name}</option>)}
-                </select>
-              </div>
-            </div>
-            <div className="md:col-span-2 space-y-2">
-              <label className="text-xs font-bold text-primary/40 uppercase tracking-wider ml-2">Describe your query</label>
-              <div className="relative">
-                <MessageSquare className="absolute left-5 top-5 w-4 h-4 text-secondary" />
-                <textarea rows={4} className="w-full pl-12 pr-5 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all text-sm font-semibold resize-none" placeholder="Any specific requirements or questions?"></textarea>
-              </div>
-            </div>
-            <button className="md:col-span-2 py-4 bg-primary text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-xl hover:bg-secondary transition-all flex items-center justify-center gap-3 group mt-4">
-              Submit Enquiry <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </form>
+          <NoPaperFormsWidget />
         </div>
       </div>
 
