@@ -1,15 +1,15 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ChevronRight, 
-  ArrowRight, 
-  Globe, 
-  Target, 
-  Building2, 
-  UserCheck, 
-  ShieldCheck, 
-  Users, 
+import {
+  ChevronRight,
+  ArrowRight,
+  Globe,
+  Target,
+  Building2,
+  UserCheck,
+  ShieldCheck,
+  Users,
   GraduationCap,
   School,
   Sparkles,
@@ -33,7 +33,7 @@ export const AboutUsMain: React.FC = () => {
             <ChevronRight className="w-3 h-3" />
             <span className="text-secondary">About the Group</span>
           </nav>
-          <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight fade-in-left">A Global Academic <br/> Conglomerate</h1>
+          <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight fade-in-left">A Global Academic <br /> Conglomerate</h1>
           <p className="text-lg text-white/70 font-light max-w-2xl mt-6">
             Pioneering educational standards in India since 1997 with 11 premier institutions dedicated to professional excellence.
           </p>
@@ -60,16 +60,16 @@ export const AboutUsMain: React.FC = () => {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Link to="/about/overview" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm flex items-center gap-2 hover:bg-secondary transition-all shadow-xl shadow-primary/20">Full History <ArrowRight className="w-4 h-4"/></Link>
+                <Link to="/about/overview" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm flex items-center gap-2 hover:bg-secondary transition-all shadow-xl shadow-primary/20">Full History <ArrowRight className="w-4 h-4" /></Link>
                 <Link to="/contact" className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold text-sm hover:bg-primary/5 transition-all">Visit Campus</Link>
               </div>
             </div>
             <div className="lg:w-1/2 relative">
-               <div className="aspect-square bg-secondary/10 absolute -inset-10 rounded-3xl -rotate-6" />
-               <div className="aspect-square bg-primary absolute -inset-10 rounded-3xl translate-x-4 translate-y-4 opacity-5" />
-               <div className="relative z-10 aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                 <img src="/assets/images/homeabout.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
-               </div>
+              <div className="aspect-square bg-secondary/10 absolute -inset-10 rounded-3xl -rotate-6" />
+              <div className="aspect-square bg-primary absolute -inset-10 rounded-3xl translate-x-4 translate-y-4 opacity-5" />
+              <div className="relative z-10 aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                <img src="/assets/images/homeabout.png" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+              </div>
             </div>
           </div>
         </div>
@@ -78,20 +78,20 @@ export const AboutUsMain: React.FC = () => {
       {/* Statistics Grid */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
-           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { label: 'Group Institutions', value: '11+', color: 'text-orange-500' },
-                { label: 'Programs & Streams', value: '45+', color: 'text-blue-500' },
-                { label: 'Research Scholars', value: '250+', color: 'text-green-500' },
-                { label: 'Years of Trust', value: '29', color: 'text-red-500' }
-              ].map((s, i) => (
-                <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 text-center shadow-lg hover:shadow-2xl transition-all group overflow-hidden relative">
-                   <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700" />
-                   <span className={`block text-5xl font-bold ${s.color} mb-3 relative z-10`}>{s.value}</span>
-                   <span className="text-xs font-bold uppercase tracking-wider text-gray-400 relative z-10">{s.label}</span>
-                </div>
-              ))}
-           </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { label: 'Group Institutions', value: '11+', color: 'text-orange-500' },
+              { label: 'Programs & Streams', value: '45+', color: 'text-blue-500' },
+              { label: 'Research Scholars', value: '250+', color: 'text-green-500' },
+              { label: 'Years of Trust', value: '29', color: 'text-red-500' }
+            ].map((s, i) => (
+              <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 text-center shadow-lg hover:shadow-2xl transition-all group overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-700" />
+                <span className={`block text-5xl font-bold ${s.color} mb-3 relative z-10`}>{s.value}</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400 relative z-10">{s.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -103,15 +103,15 @@ export const AboutUsMain: React.FC = () => {
             <div className="w-20 h-1.5 bg-secondary mx-auto mb-6 rounded-full" />
             <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">Explore our 11 Specialized Premier Institutions</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
             {INSTITUTIONS.map((inst) => (
               <div key={inst.id} className="relative group h-full">
                 {/* Background offset layer */}
                 <div className="absolute inset-0 bg-primary translate-x-3 translate-y-3 rounded-[2.5rem] transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
-                
+
                 {/* Main Card layer */}
-                <Link 
+                <Link
                   to={`/institution/${inst.id}`}
                   className="relative h-full bg-white p-8 md:p-10 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col justify-between transition-colors group-hover:border-primary/20"
                 >
@@ -131,7 +131,7 @@ export const AboutUsMain: React.FC = () => {
                       {inst.tagline}
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center justify-between pt-6 border-t border-gray-50 mt-auto">
                     <span className="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2">
                       Explore Details <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -168,16 +168,16 @@ export const AboutUsMain: React.FC = () => {
                 <h4 className="text-2xl font-bold text-primary">Prof. Basavaraj Ramanal</h4>
                 <p className="text-xs font-black uppercase text-secondary tracking-[0.3em] mt-2">Chairman & Managing Trustee</p>
                 <div className="mt-8">
-                   <Link to="/about/chairman-message" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg shadow-primary/20">Read Full Address</Link>
+                  <Link to="/about/chairman-message" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg shadow-primary/20">Read Full Address</Link>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2 relative">
-               <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                 <img src="/assets/images/Chairman_dml3ot.png" className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-1000" alt="Chairman Prof. Basavaraj Ramanal" />
-               </div>
-               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
-               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
+              <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                <img src="/assets/images/Chairman_dml3ot.png" className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-1000" alt="Chairman Prof. Basavaraj Ramanal" />
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
+              <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
             </div>
           </div>
         </div>

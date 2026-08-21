@@ -5,10 +5,10 @@ import { ShieldCheck } from 'lucide-react';
 export const AboutQuality: React.FC = () => {
   const affiliationLogos = [
     { name: 'AICTE', url: 'https://upload.wikimedia.org/wikipedia/en/e/eb/All_India_Council_for_Technical_Education_logo.png', desc: 'Approved by AICTE' },
-    { name: 'PCI', url: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1767769752/Karnataka-Group-of-institute-brand-Guidline.pdf.pdf-3_1_qegbvr.svg', desc: 'Recognized by PCI' },
+    { name: 'PCI', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9m56x1puXtMtDDTSRO-ySv6kRejN47zU8wdl5v5R0Jg&s', desc: 'Recognized by PCI' },
     { name: 'RGUHS', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTepoRcwGHChReAO7cHODgrBTZGOrC9W--3xQ&s', desc: 'Affiliated to RGUHS' },
-    { name: 'NAAC', url: 'https://sjbit.edu.in/wp-content/uploads/2021/07/NAAC-Logo-250x250-1.png', desc: 'NAAC Accredited Grade A' },
-    { name: 'INC', url: 'https://images.seeklogo.com/logo-png/39/1/nic-inc-logo-png_seeklogo-392312.png', desc: 'Recognized by INC' },
+    { name: 'NAAC', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijpghFkMUvYzlQriFzKgsYbDNUM0qaDFetlcNZEO22w&s=10', desc: 'NAAC Accredited Grade A' },
+    { name: 'INC', url: 'https://www.icn.ch/sites/default/files/styles/large/public/2023-05/India_INC%20Logo%20%282%29.png?itok=h5fPElhX', desc: 'Recognized by INC' },
     { name: 'KSLU', url: 'https://iras-proxy-assets.s3.ap-south-1.amazonaws.com/60942ff751f89d059ff43066/logo/5-7-2021--4-16-35-am-logo.png', desc: 'Affiliated to KSLU' },
     { name: 'KNC', url: 'https://vidyarthiinstitutions.com/img/affiliations/3.jpg', desc: 'Recognized by KNC' },
     { name: 'Govt. Karnataka', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSwtz3LdNqfcixXpoz5U1GVZMkrGoZEN8pg&s', desc: 'Govt. of Karnataka' },

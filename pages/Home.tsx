@@ -2,13 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { 
-  ArrowRight, 
-  Award, 
-  Users, 
-  BookOpen, 
-  Building2, 
-  Globe, 
+import {
+  ArrowRight,
+  Award,
+  Users,
+  BookOpen,
+  Building2,
+  Globe,
   Pill,
   HeartPulse,
   Briefcase,
@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
     { name: 'Amazon', url: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
     { name: 'Pfizer', url: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Pfizer_%282021%29.svg' },
     { name: 'Infosys', url: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg' },
-    { name: 'Deloitte', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Logo_of_Deloitte.svg/2560px-Logo_of_Deloitte.svg.png' },
+    { name: 'Deloitte', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRImMsjSVXG4MU9ybpLdoio8DEHTnY-5x8gXr6r4eD8U3Q9NLt5vGQ7wqQ&s=10' },
     { name: 'TCS', url: 'https://vectorseek.com/wp-content/uploads/2023/08/TCS-Tata-Consultancy-Services-Logo-Vector.svg-.png' },
     { name: 'Biocon', url: 'https://www.logo.wine/a/logo/Biocon/Biocon-Logo.wine.svg' },
   ];
@@ -34,8 +34,8 @@ export const Home: React.FC = () => {
     { name: 'AICTE', url: 'https://upload.wikimedia.org/wikipedia/en/e/eb/All_India_Council_for_Technical_Education_logo.png', desc: 'Approved by AICTE' },
     { name: 'PCI', url: '/assets/images/PCI%20logo.png', desc: 'Recognized by PCI' },
     { name: 'RGUHS', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTepoRcwGHChReAO7cHODgrBTZGOrC9W--3xQ&s', desc: 'Affiliated to RGUHS' },
-    { name: 'NAAC', url: 'https://sjbit.edu.in/wp-content/uploads/2021/07/NAAC-Logo-250x250-1.png', desc: 'NAAC Accredited Grade A' },
-    { name: 'INC', url: 'https://images.seeklogo.com/logo-png/39/1/nic-inc-logo-png_seeklogo-392312.png', desc: 'Recognized by INC' },
+    { name: 'NAAC', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijpghFkMUvYzlQriFzKgsYbDNUM0qaDFetlcNZEO22w&s=10', desc: 'NAAC Accredited Grade A' },
+    { name: 'INC', url: 'https://www.icn.ch/sites/default/files/styles/large/public/2023-05/India_INC%20Logo%20%282%29.png?itok=h5fPElhX', desc: 'Recognized by INC' },
     { name: 'KSLU', url: 'https://iras-proxy-assets.s3.ap-south-1.amazonaws.com/60942ff751f89d059ff43066/logo/5-7-2021--4-16-35-am-logo.png', desc: 'Affiliated to KSLU' },
     { name: 'KNC', url: 'https://vidyarthiinstitutions.com/img/affiliations/3.jpg', desc: 'Recognized by KNC' },
     { name: 'Govt. Karnataka', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSwtz3LdNqfcixXpoz5U1GVZMkrGoZEN8pg&s', desc: 'Govt. of Karnataka' },
@@ -56,17 +56,17 @@ export const Home: React.FC = () => {
 
   return (
     <div className="relative w-full">
-      <SEO 
+      <SEO
         title="Karnataka College Group of Institutions | Best College in Bangalore"
         description="KCGI: Karnataka College Group of Institutions. Top-ranked college in Bangalore offering courses in Pharmacy, Nursing, Law, and Management. KCGI admissions are open."
         keywords="KCGI, karnataka college group of institutions, Karnataka Education Trust, Karnataka College of Pharmacy, Karnataka College of Nursing, Karnataka College of Management & Science, Karnataka College of Management, Karnataka College of Education, Karnataka Public School CBSE, Karnataka Composite PU College, Karunadu College of Law, Karunadu College of Allied Health Science, Kaveri Paramedical College, Manjunatha College of Physiotherapy, Hegde Nagar Bengaluru, Thirumenahalli Bengaluru, Yelahanka Bengaluru, best pharmacy college in bangalore, top nursing colleges in bangalore, B.Pharm, M.Pharm, Pharm D, GNM, B.Sc Nursing, MBA, BBA, BCA, B.Com, B.Ed, LL.B 3 Years, B.Sc MLT, B.Sc MIT, Paramedical Diploma, BPT, MPT Physiotherapy, KCGI Admissions 2026, Karnataka College Bangalore"
       />
       {/* Hero Section */}
       <section className="relative h-[65vh] md:h-screen w-full overflow-hidden bg-black">
-        <video 
-          autoPlay 
-          muted 
-          loop 
+        <video
+          autoPlay
+          muted
+          loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         >
@@ -114,7 +114,7 @@ export const Home: React.FC = () => {
           <div className="flex animate-marquee whitespace-nowrap items-center">
             {[...Array(12)].map((_, i) => (
               <span key={i} className="mx-24 md:mx-32 text-black group-hover:text-white font-black uppercase tracking-[0.25em] text-sm flex items-center gap-6 shrink-0 transition-colors">
-                <Sparkles className="w-6 h-6 text-primary group-hover:text-secondary group-hover:scale-125 transition-all" /> 
+                <Sparkles className="w-6 h-6 text-primary group-hover:text-secondary group-hover:scale-125 transition-all" />
                 Admissions are open for 2026 - 2027
                 <ArrowRight className="w-5 h-5 text-black/40 group-hover:text-white/50" />
               </span>
@@ -142,16 +142,16 @@ export const Home: React.FC = () => {
               </div>
               <div className="pt-4">
                 <Link to="/about" className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm flex items-center gap-3 hover:bg-secondary transition-all shadow-xl shadow-primary/20 group w-fit">
-                  Learn More About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
+                  Learn More About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
             <div className="lg:w-1/2 relative">
-               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                 <img src="/assets/images/homeabout.jpg" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
-               </div>
-               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
-               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                <img src="/assets/images/homeabout.png" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
+              <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
             </div>
           </div>
         </div>
@@ -168,15 +168,15 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {INSTITUTIONS.map((inst) => (
-              <div 
-                key={inst.id} 
+              <div
+                key={inst.id}
                 className="group relative bg-white rounded-3xl overflow-hidden shadow-xl h-[520px] border border-gray-100 flex flex-col"
               >
                 <div className="absolute inset-0 w-full h-full">
-                  <img 
-                    src={inst.image} 
-                    alt={inst.name} 
-                    className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110" 
+                  <img
+                    src={inst.image}
+                    alt={inst.name}
+                    className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
                 </div>
@@ -188,13 +188,13 @@ export const Home: React.FC = () => {
                     </span>
                     <h4 className="text-2xl font-serif font-bold text-white mb-3 leading-tight group-hover:text-secondary transition-colors">{inst.name}</h4>
                     <p className="text-white text-sm leading-relaxed line-clamp-2 mb-6 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{inst.overview}</p>
-                    
+
                     <div className="flex flex-wrap items-center gap-4 mt-2">
                       <Link to={`/institution/${inst.id}`} className="flex items-center gap-2 text-white text-xs font-black uppercase tracking-widest hover:text-secondary transition-colors group/btn">
                         <span>Explore</span>
                         <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
-                      
+
                       <button className="apply-trigger bg-secondary hover:bg-white text-white hover:text-primary px-5 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all shadow-xl flex items-center gap-2">
                         Apply Now <ArrowUpRight className="w-3 h-3" />
                       </button>
@@ -240,7 +240,7 @@ export const Home: React.FC = () => {
       {/* Partners Marquee */}
       <section className="bg-gray-50 py-24 overflow-hidden border-t border-b border-gray-100">
         <div className="text-center mb-16 px-6">
-           <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Our Recruitment Partners</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Our Recruitment Partners</h2>
         </div>
         <div className="flex w-full">
           <div className="flex animate-marquee whitespace-nowrap items-center">
@@ -259,7 +259,7 @@ export const Home: React.FC = () => {
           <div className="bg-gradient-to-br from-primary via-accent1 to-primary rounded-3xl p-12 md:p-20 text-center relative overflow-hidden shadow-[0_30px_60px_-15px_rgba(106,0,48,0.4)]">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full translate-y-48 -translate-x-48 blur-3xl" />
-            
+
             <div className="relative z-10 max-w-4xl mx-auto space-y-8 text-white">
               <h2 className="text-secondary font-bold uppercase tracking-widest text-sm">Admissions Open 2026-27</h2>
               <h3 className="text-4xl md:text-6xl font-serif font-bold leading-tight">Elevate Your Academic Ambitions</h3>
@@ -301,20 +301,20 @@ export const Home: React.FC = () => {
 
 function Sparkles(props: any) {
   return (
-    <svg 
-      {...props} 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-      <path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>
+      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+      <path d="M5 3v4" /><path d="M19 17v4" /><path d="M3 5h4" /><path d="M17 19h4" />
     </svg>
   );
 }
