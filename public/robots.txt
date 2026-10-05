@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kcgi.edu.in/sitemap.xml
+Sitemap: https://kcgiedu.org/sitemap.xml

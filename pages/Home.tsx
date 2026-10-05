@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
 import {
   ArrowRight,
   Award,
@@ -61,6 +62,56 @@ export const Home: React.FC = () => {
         description="KCGI: Karnataka College Group of Institutions. Top-ranked college in Bangalore offering courses in Pharmacy, Nursing, Law, and Management. KCGI admissions are open."
         keywords="KCGI, karnataka college group of institutions, Karnataka Education Trust, Karnataka College of Pharmacy, Karnataka College of Nursing, Karnataka College of Management & Science, Karnataka College of Management, Karnataka College of Education, Karnataka Public School CBSE, Karnataka Composite PU College, Karunadu College of Law, Karunadu College of Allied Health Science, Kaveri Paramedical College, Manjunatha College of Physiotherapy, Hegde Nagar Bengaluru, Thirumenahalli Bengaluru, Yelahanka Bengaluru, best pharmacy college in bangalore, top nursing colleges in bangalore, B.Pharm, M.Pharm, Pharm D, GNM, B.Sc Nursing, MBA, BBA, BCA, B.Com, B.Ed, LL.B 3 Years, B.Sc MLT, B.Sc MIT, Paramedical Diploma, BPT, MPT Physiotherapy, KCGI Admissions 2026, Karnataka College Bangalore"
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              "name": "Karnataka College Group of Institutions",
+              "alternateName": "KCGI",
+              "url": "https://kcgiedu.org/",
+              "logo": "https://kcgiedu.org/assets/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-08080833000",
+                "contactType": "admissions",
+                "areaServed": "IN",
+                "availableLanguage": ["en", "kn", "hi"]
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "33/2, Hegde Nagar Main Rd",
+                "addressLocality": "Bengaluru",
+                "addressRegion": "Karnataka",
+                "addressCountry": "IN"
+              },
+              "subOrganization": [
+                {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Karnataka College of Pharmacy",
+                  "url": "https://kcgiedu.org/institution/pharmacy"
+                },
+                {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Karnataka College of Management & Science",
+                  "url": "https://kcgiedu.org/institution/management-science"
+                },
+                {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Karnataka College of Nursing",
+                  "url": "https://kcgiedu.org/institution/nursing"
+                },
+                {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Karunadu College of Law",
+                  "url": "https://kcgiedu.org/institution/law"
+                }
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[65vh] md:h-screen w-full overflow-hidden bg-black">
         <video

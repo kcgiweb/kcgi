@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
@@ -8,59 +9,35 @@ interface SEOProps {
   url?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, keywords, ogImage = '/assets/images/logo.svg', url = window.location.href }) => {
-  React.useEffect(() => {
-    document.title = title;
-    
-    const setMetaTag = (selector: string, attribute: string, value: string, contentAttribute = 'content') => {
-      let metaTag = document.querySelector(selector);
-      if (!metaTag) {
-        metaTag = document.createElement('meta');
-        if (selector.includes('name=')) {
-          metaTag.setAttribute('name', attribute);
-        } else if (selector.includes('property=')) {
-          metaTag.setAttribute('property', attribute);
-        }
-        document.head.appendChild(metaTag);
-      }
-      metaTag.setAttribute(contentAttribute, value);
-    };
+const SEO: React.FC<SEOProps> = ({ 
+  title, 
+  description, 
+  keywords, 
+  ogImage = '/assets/images/logo.svg', 
+  url = typeof window !== 'undefined' ? window.location.href : 'https://kcgiedu.org' 
+}) => {
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <link rel="canonical" href={url} />
 
-    setMetaTag('meta[name="description"]', 'description', description);
-    
-    if (keywords) {
-      setMetaTag('meta[name="keywords"]', 'keywords', keywords);
-    }
+      {/* Open Graph Tags */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Karnataka College Group of Institutions (KCGI)" />
 
-    const setLinkTag = (rel: string, href: string) => {
-      let linkTag = document.querySelector(`link[rel="${rel}"]`);
-      if (!linkTag) {
-        linkTag = document.createElement('link');
-        linkTag.setAttribute('rel', rel);
-        document.head.appendChild(linkTag);
-      }
-      linkTag.setAttribute('href', href);
-    };
-
-    setLinkTag('canonical', url);
-
-    // Open Graph Tags
-    setMetaTag('meta[property="og:title"]', 'og:title', title);
-    setMetaTag('meta[property="og:description"]', 'og:description', description);
-    setMetaTag('meta[property="og:image"]', 'og:image', ogImage);
-    setMetaTag('meta[property="og:url"]', 'og:url', url);
-    setMetaTag('meta[property="og:type"]', 'og:type', 'website');
-    setMetaTag('meta[property="og:site_name"]', 'og:site_name', 'Karnataka College Group of Institutions (KCM)');
-
-    // Twitter Card Tags
-    setMetaTag('meta[name="twitter:card"]', 'twitter:card', 'summary_large_image');
-    setMetaTag('meta[name="twitter:title"]', 'twitter:title', title);
-    setMetaTag('meta[name="twitter:description"]', 'twitter:description', description);
-    setMetaTag('meta[name="twitter:image"]', 'twitter:image', ogImage);
-
-  }, [title, description, keywords, ogImage, url]);
-
-  return null;
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+    </Helmet>
+  );
 };
 
 export default SEO;
