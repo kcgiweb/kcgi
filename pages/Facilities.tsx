@@ -99,7 +99,7 @@ export const Facilities: React.FC = () => {
                    <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-white border-b-[8px] border-b-transparent ml-1.5"/>
                 </div>
              </div>
-             <img src="/assets/images/opt/sla-9058-y5xdri.webp" className="w-full h-full object-cover opacity-60" />
+             <img src="/assets/images/opt/sla-9058-y5xdri.webp" alt="KCGI campus in Yelahanka, Bengaluru" loading="lazy" className="w-full h-full object-cover opacity-60" />
           </div>
         </div>
       </div>

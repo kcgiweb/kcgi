@@ -43,6 +43,7 @@ const AdmissionEnquiry = named(() => import('./pages/admissions/Enquiry'), 'Admi
 const Prospectus = named(() => import('./pages/admissions/Prospectus'), 'Prospectus');
 const InternationalAdmissions = named(() => import('./pages/admissions/International'), 'InternationalAdmissions');
 const Scholarships = named(() => import('./pages/admissions/Scholarships'), 'Scholarships');
+const FeesStructure = named(() => import('./pages/admissions/Fees'), 'FeesStructure');
 const PrivacyPolicy = named(() => import('./pages/legal/PrivacyPolicy'), 'PrivacyPolicy');
 const Terms = named(() => import('./pages/legal/Terms'), 'Terms');
 const NotFound = named(() => import('./pages/NotFound'), 'NotFound');
@@ -99,6 +100,7 @@ const App: React.FC = () => {
             <Route path="/admissions/prospectus" element={<Prospectus />} />
             <Route path="/admissions/international" element={<InternationalAdmissions />} />
             <Route path="/admissions/scholarships" element={<Scholarships />} />
+            <Route path="/admissions/fees" element={<FeesStructure />} />
             <Route path="/apply" element={<Apply />} />
             
             {/* Other Main Sections */}

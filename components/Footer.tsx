@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-black font-black">
-          <p>© 2026 Karnataka College Group of Institutions. All Rights Reserved.</p>
+          <p>© 2026 Karnataka College Group of Institutions (KCGI). All Rights Reserved.</p>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>

@@ -74,8 +74,8 @@ export const NewsEvents: React.FC = () => {
             <div className="bg-secondary/5 p-8 rounded-2xl border border-secondary/10">
               <h4 className="text-primary font-bold mb-4">Gallery Highlights</h4>
               <div className="grid grid-cols-2 gap-2">
-                <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover"/></div>
-                <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover"/></div>
+                <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=400" alt="" loading="lazy" className="w-full h-full object-cover"/></div>
+                <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400" alt="" loading="lazy" className="w-full h-full object-cover"/></div>
               </div>
               <button className="w-full mt-6 py-3 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 text-sm"><ImageIcon className="w-4 h-4"/> View Photo Gallery</button>
             </div>

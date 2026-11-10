@@ -37,6 +37,7 @@ export const Admissions: React.FC = () => {
     {
       title: 'Opportunities',
       items: [
+        { label: 'Fees Structure', path: '/admissions/fees', icon: Award, desc: 'Fee policy and how to get a course-wise fee breakup.' },
         { label: 'Scholarships', path: '/admissions/scholarships', icon: Award, desc: 'Merit and need-based financial assistance programs.' },
       ]
     }

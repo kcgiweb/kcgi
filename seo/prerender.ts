@@ -17,7 +17,7 @@ import path from 'node:path';
 import type { Plugin, ResolvedConfig } from 'vite';
 import { INSTITUTIONS } from '../constants';
 import {
-  SITE_NAME, SITE_URL, ORG, ROUTES, indexablePaths, resolveSeo, sitemapEntry,
+  SITE_NAME, SITE_URL, ORG, ROUTES, HOME_FAQ, indexablePaths, resolveSeo, sitemapEntry,
   type ResolvedSeo,
 } from './config';
 
@@ -98,6 +98,10 @@ const bodyContent = (seo: ResolvedSeo): string => {
   }
   if (!seo.found) {
     parts.push('<h2>Our institutions</h2>', institutionsList());
+  }
+  if (seo.path === '/') {
+    parts.push('<h2>Frequently asked questions about KCGI</h2>',
+      HOME_FAQ.map(f => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join(''));
   }
   parts.push('<h2>Contact</h2>', contactBlock());
   return `<div class="prerender-fallback">${parts.join('\n')}</div>`;

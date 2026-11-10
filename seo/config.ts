@@ -43,6 +43,42 @@ export const ORG = {
   ],
 };
 
+/**
+ * Questions people search for about KCGI ("KCGI contact number", "KCGI courses"...).
+ * Shown on the homepage and emitted as FAQPage JSON-LD. Facts only, no claims
+ * that are not stated elsewhere on the site.
+ */
+export const HOME_FAQ: { q: string; a: string }[] = [
+  {
+    q: 'What is KCGI?',
+    a: 'KCGI is Karnataka College Group of Institutions, a group of 11 colleges and schools run by the Karnataka Educational Trust on one campus in Yelahanka, Bengaluru, since 1997.',
+  },
+  {
+    q: 'Where is KCGI located?',
+    a: 'KCGI is at 33/2, Hegde Nagar Main Road, Thirumenahalli, Yelahanka, Bengaluru, Karnataka 560064, in North Bengaluru.',
+  },
+  {
+    q: 'What is the KCGI contact number?',
+    a: 'You can call KCGI on 080808 33000 (+91 80808 33000) or email info@kcgiedu.org. Admission questions can also go to admissions@kcgiedu.org.',
+  },
+  {
+    q: 'What courses does KCGI offer?',
+    a: 'KCGI offers Pharmacy (D.Pharm, B.Pharm, Pharm D, M.Pharm), Nursing (GNM, B.Sc, M.Sc), Physiotherapy (BPT, MPT), Allied Health and paramedical courses, Law (LL.B), Management (MBA, BBA, BCA, B.Com), B.Ed, PU Science and Commerce, and CBSE schooling.',
+  },
+  {
+    q: 'Which universities and boards are KCGI institutions affiliated to?',
+    a: 'Depending on the course, KCGI institutions are affiliated to Rajiv Gandhi University of Health Sciences (RGUHS), Karnataka State Law University (KSLU), Bengaluru City University, the Karnataka PU Board and CBSE. Pharmacy is PCI approved and Nursing is INC and KNC recognised.',
+  },
+  {
+    q: 'How do I apply for admission at KCGI?',
+    a: 'Apply online at kcgiedu.org/apply, send an admission enquiry at kcgiedu.org/admissions/enquiry, or call 080808 33000. Admissions for 2026-27 are open.',
+  },
+  {
+    q: 'What is the official website of KCGI?',
+    a: 'The official website of Karnataka College Group of Institutions is kcgiedu.org.',
+  },
+];
+
 export interface PageSeo {
   title: string;
   description: string;
@@ -59,9 +95,9 @@ export interface PageSeo {
 /** Static (non-institution) pages. Order matters for the sitemap only. */
 export const ROUTES: Record<string, PageSeo> = {
   '/': {
-    title: 'Karnataka College Group of Institutions | Colleges in Yelahanka, Bangalore',
-    description: '11 institutions on one Yelahanka, Bengaluru campus since 1997: Pharmacy, Nursing, Physiotherapy, Allied Health, Law, MBA, BBA, BCA, B.Ed, PU and CBSE school. Admissions open 2026-27.',
-    h1: 'Karnataka College Group of Institutions, Bengaluru',
+    title: 'KCGI | Karnataka College Group of Institutions, Bangalore',
+    description: 'Official website of KCGI (Karnataka College Group of Institutions), Yelahanka, Bengaluru. 11 institutions since 1997: Pharmacy, Nursing, Physiotherapy, Law, MBA, B.Ed, PU & CBSE.',
+    h1: 'KCGI – Karnataka College Group of Institutions, Yelahanka, Bengaluru',
     label: 'Home',
     priority: 1.0,
     changefreq: 'weekly',
@@ -80,7 +116,7 @@ export const ROUTES: Record<string, PageSeo> = {
   '/about/future-vision': { title: 'Future Vision 2030 | KCGI Bengaluru', description: 'The KCGI roadmap to 2030: new programmes, infrastructure and partnerships planned for our Yelahanka campus.', label: 'Future Vision', priority: 0.3 },
 
   // Academics
-  '/academics': { title: 'Courses at KCGI Bengaluru | Pharmacy, Nursing, Law, MBA, Physiotherapy', description: 'All programmes at KCGI: D.Pharm, B.Pharm, Pharm D, M.Pharm, GNM, B.Sc and M.Sc Nursing, BPT, MPT, B.Sc MLT, LL.B, MBA, BBA, BCA, B.Com, B.Ed, PU and CBSE schooling.', label: 'Academics', h1: 'Academics & Courses', priority: 0.8 },
+  '/academics': { title: 'KCGI Courses | Pharmacy, Nursing, Law, MBA & Physiotherapy, Bangalore', description: 'All programmes at KCGI: D.Pharm, B.Pharm, Pharm D, M.Pharm, GNM, B.Sc and M.Sc Nursing, BPT, MPT, B.Sc MLT, LL.B, MBA, BBA, BCA, B.Com, B.Ed, PU and CBSE schooling.', label: 'Academics', h1: 'KCGI Academics & Courses', priority: 0.8 },
   '/academics/ug-programs': { title: 'UG Courses in Bangalore | B.Pharm, B.Sc Nursing, BPT, BBA, BCA | KCGI', description: 'Undergraduate degrees at KCGI Yelahanka: B.Pharm, B.Sc Nursing, BPT, B.Sc MLT/MIT/AT, LL.B, BBA, BCA and B.Com. Eligibility, duration and admissions 2026.', label: 'UG Programs', priority: 0.8 },
   '/academics/pg-programs': { title: 'PG Courses in Bangalore | M.Pharm, Pharm D, M.Sc Nursing, MPT, MBA | KCGI', description: 'Postgraduate programmes at KCGI Bengaluru: M.Pharm, Pharm D, M.Sc Nursing, MPT and MBA. Eligibility, duration and admissions 2026.', label: 'PG Programs', priority: 0.8 },
   '/academics/diploma-pu-programs': { title: 'Diploma & PU Courses in Bangalore | D.Pharm, GNM, Paramedical, PUC | KCGI', description: 'D.Pharm, GNM nursing, paramedical diplomas and PU Science & Commerce at KCGI, Yelahanka, Bengaluru.', label: 'Diploma & PU', priority: 0.7 },
@@ -92,22 +128,23 @@ export const ROUTES: Record<string, PageSeo> = {
   '/academics/the-edge': { title: 'Why Choose KCGI? | The KCGI Edge', description: 'What sets Karnataka College Group of Institutions apart: one campus, 11 institutions, clinical training and placement support in North Bengaluru.', label: 'The KCGI Edge', priority: 0.5 },
 
   // Admissions
-  '/admissions': { title: 'Admissions 2026-27 Open | Apply to KCGI Bengaluru', description: 'Apply for 2026-27 admission to Pharmacy, Nursing, Physiotherapy, Allied Health, Law, MBA, BBA, BCA, B.Ed, PU and CBSE school at KCGI, Yelahanka.', label: 'Admissions', h1: 'Admissions 2026-27', priority: 0.9, changefreq: 'weekly' },
+  '/admissions': { title: 'KCGI Admissions 2026-27 Open | Apply Online, Bengaluru', description: 'Apply for 2026-27 admission to Pharmacy, Nursing, Physiotherapy, Allied Health, Law, MBA, BBA, BCA, B.Ed, PU and CBSE school at KCGI, Yelahanka.', label: 'Admissions', h1: 'KCGI Admissions 2026-27', priority: 0.9, changefreq: 'weekly' },
   '/admissions/process': { title: 'Admission Process 2026 | KCGI Bengaluru', description: 'Step-by-step admission process at KCGI: enquiry, application, document verification, fee payment and enrolment.', label: 'Admission Process', priority: 0.7 },
   '/admissions/eligibility': { title: 'Eligibility Criteria for All Courses | KCGI Admissions', description: 'Eligibility for B.Pharm, D.Pharm, B.Sc Nursing, GNM, BPT, LL.B, MBA, BBA, BCA, B.Ed and PU admission at KCGI Bengaluru.', label: 'Eligibility', priority: 0.7 },
   '/admissions/documents': { title: 'Documents Required for Admission | KCGI Bengaluru', description: 'Checklist of documents needed for admission at KCGI, including RGUHS, BCU and KSLU course requirements.', label: 'Documents Required', priority: 0.6 },
   '/admissions/enquiry': { title: 'Admission Enquiry | KCGI Bengaluru', description: 'Send an admission enquiry to Karnataka College Group of Institutions. Our counsellors will call you back about courses, fees and eligibility.', label: 'Enquiry', priority: 0.7 },
   '/admissions/prospectus': { title: 'Download Prospectus 2026-27 | KCGI Bengaluru', description: 'Download the KCGI prospectus for 2026-27 with programmes, facilities and admission details for all 11 institutions.', label: 'Prospectus', priority: 0.6 },
   '/admissions/international': { title: 'International & Out-of-State Admissions | KCGI Bengaluru', description: 'Admission guidance for international students and students from Kerala, Andhra Pradesh, Telangana and other states at KCGI Bengaluru.', label: 'International Admissions', priority: 0.6 },
+  '/admissions/fees': { title: 'KCGI Fees Structure 2026-27 | Course-wise Fee Enquiry', description: 'How fees work at Karnataka College Group of Institutions (KCGI), Bengaluru: tuition, lab, library and exam fees by course and quota. Request a course-wise fee breakup.', label: 'Fees Structure', priority: 0.7 },
   '/admissions/scholarships': { title: 'Scholarships & Financial Aid | KCGI Bengaluru', description: 'Merit, need-based and government scholarships available to students at Karnataka College Group of Institutions.', label: 'Scholarships', priority: 0.6 },
   '/apply': { title: 'Apply Online | KCGI Admissions 2026-27', description: 'Apply online for 2026-27 admission to Karnataka College Group of Institutions, Bengaluru.', label: 'Apply Online', priority: 0.6 },
 
   // Other
-  '/placements': { title: 'Placements & Recruiters | KCGI Bengaluru', description: 'Training and placements at KCGI: hospital, pharma and corporate recruiters, internships and career support.', label: 'Placements', priority: 0.7 },
-  '/facilities': { title: 'Campus Facilities, Hostel & Transport | KCGI Yelahanka', description: 'Labs, library, separate hostels, transport, medical and sports facilities on the KCGI campus in Yelahanka, Bengaluru.', label: 'Facilities', priority: 0.7 },
+  '/placements': { title: 'KCGI Placements & Recruiters | Karnataka College Group, Bengaluru', description: 'Training and placements at KCGI: hospital, pharma and corporate recruiters, internships and career support.', label: 'Placements', priority: 0.7 },
+  '/facilities': { title: 'KCGI Campus Facilities, Hostel & Transport | Yelahanka', description: 'Labs, library, separate hostels, transport, medical and sports facilities on the KCGI campus in Yelahanka, Bengaluru.', label: 'Facilities', priority: 0.7 },
   '/naac': { title: 'NAAC Accreditation | KCGI Bengaluru', description: 'NAAC accreditation details, IQAC and quality documents for Karnataka College Group of Institutions.', label: 'NAAC', priority: 0.4 },
-  '/news': { title: 'News & Events | KCGI Bengaluru', description: 'Latest news, events, fests, seminars and achievements from Karnataka College Group of Institutions.', label: 'News & Events', priority: 0.5, changefreq: 'weekly' },
-  '/contact': { title: 'Contact KCGI | Address, Phone & Directions, Yelahanka Bengaluru', description: 'Contact Karnataka College Group of Institutions: 33/2 Hegde Nagar Main Rd, Yelahanka, Bengaluru 560064. Call 080808 33000 or email info@kcgiedu.org.', label: 'Contact', h1: 'Contact Us', priority: 0.8 },
+  '/news': { title: 'KCGI News & Events | Karnataka College Group of Institutions', description: 'Latest news, events, fests, seminars and achievements from Karnataka College Group of Institutions.', label: 'News & Events', priority: 0.5, changefreq: 'weekly' },
+  '/contact': { title: 'KCGI Contact Number & Address | Yelahanka, Bengaluru', description: 'Contact Karnataka College Group of Institutions: 33/2 Hegde Nagar Main Rd, Yelahanka, Bengaluru 560064. Call 080808 33000 or email info@kcgiedu.org.', label: 'Contact', h1: 'Contact KCGI', priority: 0.8 },
   '/privacy-policy': { title: 'Privacy Policy | KCGI Bengaluru', description: 'How Karnataka College Group of Institutions collects, uses and protects personal data from enquiries, applications and payments.', label: 'Privacy Policy', priority: 0.2, changefreq: 'yearly' },
   '/terms': { title: 'Terms & Conditions | KCGI Bengaluru', description: 'Terms for using the KCGI website, submitting admission enquiries and applications, and paying application fees online.', label: 'Terms & Conditions', priority: 0.2, changefreq: 'yearly' },
 };
@@ -154,7 +191,7 @@ export const institutionSeo = (inst: Institution): PageSeo => {
     .map(n => `${inst.name}, Bangalore | ${courseList(inst, n)} Admissions 2026`)
     .find(t => t.length <= 75) ?? `${inst.name}, Bangalore | Admissions 2026`;
   const description =
-    `${inst.name}, Yelahanka, Bengaluru${approvals ? ` (${approvals})` : ''}. ` +
+    `${inst.name}, a KCGI institution in Yelahanka, Bengaluru${approvals ? ` (${approvals})` : ''}. ` +
     `Courses: ${courseList(inst, 6)}. Admissions open for 2026-27. Call 080808 33000.`;
   return {
     title: title.length > 75 ? `${inst.name}, Bangalore | Admissions 2026` : title,
@@ -190,7 +227,8 @@ export const organizationSchema = () => ({
   '@type': ['EducationalOrganization', 'CollegeOrUniversity'],
   '@id': ORG_ID,
   name: SITE_NAME,
-  alternateName: [SITE_SHORT_NAME, 'Karnataka College Bangalore'],
+  alternateName: [SITE_SHORT_NAME, 'KCGI Bangalore', 'KCGI Bengaluru', 'KCGI Yelahanka', 'Karnataka College Bangalore'],
+  description: ROUTES['/'].description,
   legalName: ORG.legalName,
   url: `${SITE_URL}/`,
   logo: { '@type': 'ImageObject', url: LOGO_URL, width: 1200, height: 318 },
@@ -222,7 +260,7 @@ export const websiteSchema = () => ({
   '@id': WEBSITE_ID,
   url: `${SITE_URL}/`,
   name: SITE_NAME,
-  alternateName: SITE_SHORT_NAME,
+  alternateName: [SITE_SHORT_NAME, 'KCGI Bangalore'],
   publisher: { '@id': ORG_ID },
   inLanguage: 'en-IN',
 });
@@ -242,7 +280,7 @@ export const institutionSchema = (inst: Institution) => {
     email: inst.contact.email,
     address: postalAddress,
     geo: { '@type': 'GeoCoordinates', ...ORG.geo },
-    parentOrganization: { '@id': ORG_ID },
+    parentOrganization: { '@id': ORG_ID, name: SITE_NAME, alternateName: SITE_SHORT_NAME },
     hasCourse: inst.courses.map(c => ({
       '@type': 'Course',
       name: c.name,
@@ -252,6 +290,16 @@ export const institutionSchema = (inst: Institution) => {
     })),
   };
 };
+
+export const faqSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: HOME_FAQ.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
 
 export const breadcrumbSchema = (crumbs: { name: string; path: string }[]) => ({
   '@context': 'https://schema.org',
@@ -335,7 +383,7 @@ export const resolveSeo = (rawPath: string): ResolvedSeo => {
   const crumbs = found ? buildCrumbs(canonicalPath, inst) : [];
 
   const jsonLd: object[] = [];
-  if (canonicalPath === '/') jsonLd.push(organizationSchema(), websiteSchema());
+  if (canonicalPath === '/') jsonLd.push(organizationSchema(), websiteSchema(), faqSchema());
   if (inst) jsonLd.push(institutionSchema(inst));
   if (crumbs.length > 1) jsonLd.push(breadcrumbSchema(crumbs));
 

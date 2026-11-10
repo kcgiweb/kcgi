@@ -18,6 +18,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import { INSTITUTIONS } from '../constants';
+import { HOME_FAQ } from '../seo/config';
 
 export const Home: React.FC = () => {
   const partnerLogos = [
@@ -93,7 +94,7 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-primary/70 font-bold uppercase tracking-widest text-xs mb-4">
-              Karnataka College Group of Institutions · Yelahanka, Bengaluru
+              KCGI – Karnataka College Group of Institutions · Yelahanka, Bengaluru
             </h1>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4 leading-tight">
               Legacy of Excellence
@@ -102,7 +103,7 @@ export const Home: React.FC = () => {
               Shaping Minds for Decades
             </h3>
             <p className="text-lg text-black leading-relaxed font-bold">
-              Since 1997, we have been a cornerstone of professional education in Bengaluru, combining traditional values with cutting-edge academic innovation.
+              Since 1997, KCGI has been a cornerstone of professional education in Bengaluru, combining traditional values with cutting-edge academic innovation.
             </p>
           </div>
 
@@ -309,6 +310,30 @@ export const Home: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ: answers the questions people search for about KCGI */}
+      <section className="py-24 bg-white border-t border-gray-100" aria-labelledby="kcgi-faq">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-12">
+            <p className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">About KCGI</p>
+            <h2 id="kcgi-faq" className="text-3xl md:text-5xl font-serif font-bold text-primary">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            {HOME_FAQ.map((f) => (
+              <details key={f.q} className="group bg-gray-50 rounded-2xl border border-gray-100 p-6 open:shadow-md transition-shadow">
+                <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-primary text-lg">
+                  <h3 className="text-lg">{f.q}</h3>
+                  <span className="text-secondary text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-4 text-black leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <p className="mt-10 text-center text-black font-bold">
+            More questions? <Link to="/contact" className="text-primary underline hover:text-secondary">Contact KCGI</Link> or <Link to="/admissions/enquiry" className="text-primary underline hover:text-secondary">send an admission enquiry</Link>.
+          </p>
         </div>
       </section>
     </div>

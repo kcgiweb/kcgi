@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AdmissionsLayout } from '../../components/AdmissionsLayout';
 import { Wallet, Info, AlertTriangle } from 'lucide-react';
 
@@ -18,7 +19,9 @@ export const FeesStructure: React.FC = () => (
       <div className="bg-white border-2 border-primary/5 rounded-[3rem] p-12 text-center">
         <p className="text-lg font-bold text-primary mb-6">Request Detailed Course-wise Fee Breakup</p>
         <p className="text-sm text-gray-400 mb-10 max-w-xl mx-auto font-medium">As fees may vary based on quota (Merit/Management) and scholarship eligibility, we recommend contacting our finance office for a personalized quote.</p>
-        <button className="bg-primary text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-xl">Connect with Finance Cell</button>
+        <Link to="/admissions/enquiry" className="inline-block bg-primary text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-xl">Request Fee Details</Link>
+        <p className="mt-6 text-sm font-bold text-primary">Or call <a href="tel:+918080833000" className="underline hover:text-secondary">080808 33000</a></p>
+        <p className="mt-4 text-sm text-gray-500 font-medium">See also <Link to="/admissions/scholarships" className="text-primary underline">scholarships</Link> and <Link to="/admissions/eligibility" className="text-primary underline">eligibility</Link>.</p>
       </div>
 
       <div className="p-8 bg-red-50 rounded-[2rem] border border-red-100 flex gap-6">
