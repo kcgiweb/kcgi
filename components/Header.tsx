@@ -252,9 +252,12 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 h-16 md:h-24 flex items-center justify-between relative">
         <Link to="/" className="flex items-center relative z-[110]">
           <img 
-            src="/assets/images/logo.svg" 
-            alt="Logo" 
-            className={`h-10 md:h-14 lg:h-16 transition-all drop-shadow-md`}
+            src="/assets/images/logo.webp"
+            alt="Karnataka College Group of Institutions logo"
+            width={904}
+            height={239}
+            fetchPriority="high"
+            className={`h-10 md:h-14 lg:h-16 w-auto transition-all drop-shadow-md`}
           />
         </Link>
 

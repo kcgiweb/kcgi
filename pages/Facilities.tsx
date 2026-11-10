@@ -22,37 +22,37 @@ export const Facilities: React.FC = () => {
       title: 'Central Library', 
       icon: Book, 
       desc: 'Over 50,000 volumes, e-journals, and high-speed digital research terminals.', 
-      img: '/assets/images/Central%20Library.webp'
+      img: '/assets/images/opt/central-library.webp'
     },
     { 
       title: 'Advanced Laboratories', 
       icon: FlaskConical, 
       desc: 'CPCSEA approved animal house and industry-standard pharmaceutical & clinical labs.', 
-      img: '/assets/images/Advanced%20Laboratories.png'
+      img: '/assets/images/opt/advanced-laboratories.webp'
     },
     { 
       title: 'Separate Hostels', 
       icon: Home, 
       desc: 'Hygienic, secure, and comfortable accommodation for boys and girls with 24/7 power & Wi-Fi.', 
-      img: '/assets/images/Separate%20Hostels.png'
+      img: '/assets/images/opt/separate-hostels.webp'
     },
     { 
       title: 'Transportation', 
       icon: Bus, 
       desc: 'Fleet of buses covering all major parts of Bengaluru for safe commuting.', 
-      img: '/assets/images/Transportation.jpeg'
+      img: '/assets/images/opt/transportation.webp'
     },
     { 
       title: 'Sports & Fitness', 
       icon: Trophy, 
       desc: 'Indoor and outdoor sports arenas including a pool, gym, and cricket ground.', 
-      img: '/assets/images/Sports%20&%20Fitness.webp'
+      img: '/assets/images/opt/sports-fitness.webp'
     },
     { 
       title: 'Medical Facilities', 
       icon: Stethoscope, 
       desc: 'On-campus health center with 24/7 ambulance service and nursing staff.', 
-      img: '/assets/images/Medical%20Facilities.jpg'
+      img: '/assets/images/opt/medical-facilities.webp'
     },
   ];
 
@@ -99,7 +99,7 @@ export const Facilities: React.FC = () => {
                    <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-white border-b-[8px] border-b-transparent ml-1.5"/>
                 </div>
              </div>
-             <img src="/assets/images/SLA_9058_y5xdri.jpg" className="w-full h-full object-cover opacity-60" />
+             <img src="/assets/images/opt/sla-9058-y5xdri.webp" className="w-full h-full object-cover opacity-60" />
           </div>
         </div>
       </div>

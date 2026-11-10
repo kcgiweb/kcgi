@@ -26,7 +26,7 @@ export const DiplomaPU: React.FC = () => (
           <Link to="/institution/pre-university" className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg">Explore PU College</Link>
         </div>
         <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-gray-50">
-           <img src="/assets/images/Karnataka%20Composite%20P.U.%20College.jpg" className="w-full h-full object-cover" alt="PU Students" />
+           <img src="/assets/images/opt/karnataka-composite-p-u-college.webp" className="w-full h-full object-cover" alt="PU Students" />
         </div>
       </div>
 

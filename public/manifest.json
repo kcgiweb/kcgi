@@ -1,0 +1,12 @@
+{
+  "short_name": "KCGI",
+  "name": "Karnataka College Group of Institutions",
+  "icons": [
+    { "src": "/assets/images/logo-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/images/logo-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#6A0030",
+  "background_color": "#ffffff"
+}

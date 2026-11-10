@@ -1,0 +1,66 @@
+# Hostinger (Apache/LiteSpeed) config for kcgiedu.org.
+#
+# The build (seo/prerender.ts) writes one HTML file per page with its own title,
+# description, canonical, structured data and crawlable content:
+#   /                      -> index.html
+#   /about                 -> about.html
+#   /institution/pharmacy  -> institution/pharmacy.html
+# Unknown URLs get 404.html with a real 404 status. vercel.json is ignored here.
+
+Options -MultiViews -Indexes
+DirectoryIndex index.html
+DirectorySlash Off
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. One canonical host: https://kcgiedu.org
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^(.*)$ https://kcgiedu.org/$1 [L,R=301]
+
+  # 2. Clean URLs only: /index.html -> /, /about.html -> /about, /about/ -> /about
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+  RewriteRule ^ / [L,R=301]
+  RewriteCond %{THE_REQUEST} \s/([^\s?]+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [L,R=301]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+  # 3. Prerendered pages
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
+  # 4. Real files (JS, CSS, images, robots.txt, sitemap.xml)
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # 5. App-only routes that are not prerendered (admin, legacy sub-paths): app shell, noindex
+  RewriteRule ^(admin(/.*)?|placements/.+|naac/.+|news/.+)$ 404.html [L]
+
+  # 6. Everything else does not exist
+  RewriteRule ^ - [R=404,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Don't cache HTML, so new deploys show up immediately.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  # Vite's hashed JS/CSS bundles (name-hash.js) never change: cache for a year.
+  <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Optimised images and fonts: cache for 30 days.
+  <FilesMatch "\.(webp|avif|woff2)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml application/xml text/xml
+</IfModule>

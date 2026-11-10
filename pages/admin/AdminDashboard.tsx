@@ -11,7 +11,6 @@ import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, 
   Tooltip, ResponsiveContainer, PieChart, Pie, Cell 
 } from 'recharts';
-import SEO from '../../components/SEO';
 import { supabase } from '../../lib/supabase';
 
 interface Application {
@@ -179,7 +178,6 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex font-sans">
-      <SEO title="Elite Admin | KCMS Bangalore" description="Premium Admission Management Dashboard" />
       
       {/* Sidebar */}
       <aside className="w-72 bg-white border-r border-gray-100 hidden xl:flex flex-col fixed inset-y-0 z-50">

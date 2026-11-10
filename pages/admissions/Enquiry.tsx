@@ -42,7 +42,7 @@ export const AdmissionEnquiry: React.FC = () => (
               <div className="flex gap-5 items-start">
                 <Phone className="w-6 h-6 text-secondary shrink-0 mt-1" />
                 <div>
-                  <p className="text-xl font-bold tracking-tight text-white">+91 80 1234 5678</p>
+                  <a href="tel:+918080833000" className="text-xl font-bold tracking-tight text-white hover:text-secondary transition-colors">080808 33000</a>
                   <p className="text-[10px] font-black uppercase text-white/30 tracking-[0.2em] mt-1.5">Direct Admissions</p>
                 </div>
               </div>
@@ -50,7 +50,7 @@ export const AdmissionEnquiry: React.FC = () => (
               <div className="flex gap-5 items-start">
                 <Mail className="w-6 h-6 text-secondary shrink-0 mt-1" />
                 <div>
-                  <p className="text-sm font-bold text-white break-all">admissions@karnatakacollege.edu</p>
+                  <a href="mailto:admissions@kcgiedu.org" className="text-sm font-bold text-white break-all hover:text-secondary transition-colors">admissions@kcgiedu.org</a>
                   <p className="text-[10px] font-black uppercase text-white/30 tracking-[0.2em] mt-1.5">Official Helpdesk</p>
                 </div>
               </div>

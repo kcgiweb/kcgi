@@ -1,8 +1,6 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
-import { Helmet } from 'react-helmet-async';
 import {
   ArrowRight,
   Award,
@@ -33,7 +31,7 @@ export const Home: React.FC = () => {
 
   const affiliationLogos = [
     { name: 'AICTE', url: 'https://upload.wikimedia.org/wikipedia/en/e/eb/All_India_Council_for_Technical_Education_logo.png', desc: 'Approved by AICTE' },
-    { name: 'PCI', url: '/assets/images/PCI%20logo.png', desc: 'Recognized by PCI' },
+    { name: 'PCI', url: '/assets/images/opt/pci-logo.webp', desc: 'Recognized by PCI' },
     { name: 'RGUHS', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTepoRcwGHChReAO7cHODgrBTZGOrC9W--3xQ&s', desc: 'Affiliated to RGUHS' },
     { name: 'NAAC', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijpghFkMUvYzlQriFzKgsYbDNUM0qaDFetlcNZEO22w&s=10', desc: 'NAAC Accredited Grade A' },
     { name: 'INC', url: 'https://www.icn.ch/sites/default/files/styles/large/public/2023-05/India_INC%20Logo%20%282%29.png?itok=h5fPElhX', desc: 'Recognized by INC' },
@@ -45,6 +43,12 @@ export const Home: React.FC = () => {
   ];
 
   const heroVideoUrl = "/assets/videos/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez_lvqzli.mp4";
+  const [showHeroVideo, setShowHeroVideo] = React.useState(false);
+  React.useEffect(() => {
+    const conn = (navigator as any).connection;
+    const saveData = !!conn?.saveData || /(^|-)2g$/.test(conn?.effectiveType ?? '');
+    setShowHeroVideo(window.matchMedia('(min-width: 768px)').matches && !saveData);
+  }, []);
 
   const programCategories = [
     { icon: Pill, title: 'Pharmacy', text: 'D.Pharm, B.Pharm, M.Pharm', color: 'bg-green-50 text-green-600', path: '/institution/pharmacy' },
@@ -57,72 +61,30 @@ export const Home: React.FC = () => {
 
   return (
     <div className="relative w-full">
-      <SEO
-        title="Karnataka College Group of Institutions | Best College in Bangalore"
-        description="KCGI: Karnataka College Group of Institutions. Top-ranked college in Bangalore offering courses in Pharmacy, Nursing, Law, and Management. KCGI admissions are open."
-        keywords="KCGI, karnataka college group of institutions, Karnataka Education Trust, Karnataka College of Pharmacy, Karnataka College of Nursing, Karnataka College of Management & Science, Karnataka College of Management, Karnataka College of Education, Karnataka Public School CBSE, Karnataka Composite PU College, Karunadu College of Law, Karunadu College of Allied Health Science, Kaveri Paramedical College, Manjunatha College of Physiotherapy, Hegde Nagar Bengaluru, Thirumenahalli Bengaluru, Yelahanka Bengaluru, best pharmacy college in bangalore, top nursing colleges in bangalore, B.Pharm, M.Pharm, Pharm D, GNM, B.Sc Nursing, MBA, BBA, BCA, B.Com, B.Ed, LL.B 3 Years, B.Sc MLT, B.Sc MIT, Paramedical Diploma, BPT, MPT Physiotherapy, KCGI Admissions 2026, Karnataka College Bangalore"
-      />
-      <Helmet>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "EducationalOrganization",
-              "name": "Karnataka College Group of Institutions",
-              "alternateName": "KCGI",
-              "url": "https://kcgiedu.org/",
-              "logo": "https://kcgiedu.org/assets/images/logo.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-08080833000",
-                "contactType": "admissions",
-                "areaServed": "IN",
-                "availableLanguage": ["en", "kn", "hi"]
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "33/2, Hegde Nagar Main Rd",
-                "addressLocality": "Bengaluru",
-                "addressRegion": "Karnataka",
-                "addressCountry": "IN"
-              },
-              "subOrganization": [
-                {
-                  "@type": "CollegeOrUniversity",
-                  "name": "Karnataka College of Pharmacy",
-                  "url": "https://kcgiedu.org/institution/pharmacy"
-                },
-                {
-                  "@type": "CollegeOrUniversity",
-                  "name": "Karnataka College of Management & Science",
-                  "url": "https://kcgiedu.org/institution/management-science"
-                },
-                {
-                  "@type": "CollegeOrUniversity",
-                  "name": "Karnataka College of Nursing",
-                  "url": "https://kcgiedu.org/institution/nursing"
-                },
-                {
-                  "@type": "CollegeOrUniversity",
-                  "name": "Karunadu College of Law",
-                  "url": "https://kcgiedu.org/institution/law"
-                }
-              ]
-            }
-          `}
-        </script>
-      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[65vh] md:h-screen w-full overflow-hidden bg-black">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        {/* The hero video is ~54 MB: only stream it on larger screens without Data Saver. */}
+        <img
+          src="/assets/images/og/kcgi-og.jpg"
+          alt="Karnataka College Group of Institutions campus gate, Yelahanka, Bengaluru"
+          width={1200}
+          height={630}
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover opacity-90"
-        >
-          <source src={heroVideoUrl} type="video/mp4" />
-        </video>
+        />
+        {showHeroVideo && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            poster="/assets/images/og/kcgi-og.jpg"
+            className="absolute inset-0 w-full h-full object-cover opacity-90"
+          >
+            <source src={heroVideoUrl} type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
       </section>
 
@@ -130,6 +92,9 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
+            <h1 className="text-primary/70 font-bold uppercase tracking-widest text-xs mb-4">
+              Karnataka College Group of Institutions · Yelahanka, Bengaluru
+            </h1>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4 leading-tight">
               Legacy of Excellence
             </h2>
@@ -199,7 +164,7 @@ export const Home: React.FC = () => {
             </div>
             <div className="lg:w-1/2 relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                <img src="/assets/images/homeabout.png" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+                <img src="/assets/images/opt/homeabout.webp" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />

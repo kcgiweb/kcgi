@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
-import SEO from '../components/SEO';
+import { useParams, Link } from 'react-router-dom';
+import { NotFound } from './NotFound';
 import { 
   BookOpen, 
   MapPin, 
@@ -27,14 +27,10 @@ export const InstitutionDetail: React.FC = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  if (!inst) return <Navigate to="/" />;
+  if (!inst) return <NotFound />;
 
   return (
     <div className="pt-16 md:pt-20 min-h-screen bg-white">
-      <SEO 
-        title={`${inst.name} | KCGI Bangalore`} 
-        description={inst.overview || `Learn more about ${inst.name} at Karnataka College Group of Institutions.`}
-      />
       {/* Dynamic Cinematic Banner */}
       <div className="relative h-[35vh] md:h-[48vh] min-h-[280px] overflow-hidden">
         <img 
@@ -200,14 +196,14 @@ export const InstitutionDetail: React.FC = () => {
                 <div className="flex gap-4">
                    <div className="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center text-secondary shrink-0"><Phone className="w-5 h-5"/></div>
                    <div>
-                      <p className="text-base font-bold text-primary tracking-tight">{inst.contact.phone}</p>
+                      <a href={`tel:+91${inst.contact.phone.replace(/\D/g, '').replace(/^0/, '')}`} className="text-base font-bold text-primary tracking-tight hover:underline">{inst.contact.phone}</a>
                       <p className="text-[10px] font-black text-black uppercase tracking-widest mt-1">Official Hotline</p>
                    </div>
                 </div>
                 <div className="flex gap-4">
                    <div className="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center text-secondary shrink-0"><Mail className="w-5 h-5"/></div>
                    <div>
-                      <p className="text-sm font-bold text-primary break-all">{inst.contact.email}</p>
+                      <a href={`mailto:${inst.contact.email}`} className="text-sm font-bold text-primary break-all hover:underline">{inst.contact.email}</a>
                       <p className="text-[10px] font-black text-black uppercase tracking-widest mt-1">Inquiry Mail</p>
                    </div>
                 </div>

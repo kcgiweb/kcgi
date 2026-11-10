@@ -14,7 +14,6 @@ export const AdmissionsLayout: React.FC<AdmissionsLayoutProps> = ({ title, subti
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `${title} | Admissions | Karnataka College Group`;
   }, [title]);
 
   return (

@@ -68,7 +68,7 @@ export const AboutUsMain: React.FC = () => {
               <div className="aspect-square bg-secondary/10 absolute -inset-10 rounded-3xl -rotate-6" />
               <div className="aspect-square bg-primary absolute -inset-10 rounded-3xl translate-x-4 translate-y-4 opacity-5" />
               <div className="relative z-10 aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <img src="/assets/images/homeabout.png" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+                <img src="/assets/images/opt/homeabout.webp" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@ export const AboutUsMain: React.FC = () => {
             </div>
             <div className="lg:w-1/2 relative">
               <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                <img src="/assets/images/Chairman_dml3ot.png" className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-1000" alt="Chairman Prof. Basavaraj Ramanal" />
+                <img src="/assets/images/opt/chairman-dml3ot.webp" className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-1000" alt="Chairman Prof. Basavaraj Ramanal" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />

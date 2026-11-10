@@ -12,7 +12,6 @@ interface AboutLayoutProps {
 export const AboutLayout: React.FC<AboutLayoutProps> = ({ title, subtitle, icon: Icon, children }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `${title} | Karnataka College Group`;
   }, [title]);
 
   return (

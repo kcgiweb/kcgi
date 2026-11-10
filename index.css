@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Moved from the inline <style> block in index.html */
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.header-transition {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease, box-shadow 0.4s ease;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f8f8f8; }
+::-webkit-scrollbar-thumb { background: #6A0030; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #F7961E; }
+
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Custom Animations to replace tailwindcss-animate plugin functionality */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.fade-in-simple { animation: fadeIn 0.5s ease-out forwards; }
+.fade-in-up { animation: fadeInUp 0.7s ease-out forwards; }
+.fade-in-left { animation: fadeInLeft 0.7s ease-out forwards; }
+
+/* Crawlable fallback written into #root by seo/prerender.ts; replaced when the app mounts. */
+.prerender-fallback { max-width: 64rem; margin: 0 auto; padding: 7rem 1.5rem 4rem; }
+.prerender-fallback h1 { font-family: 'Playfair Display', serif; color: #6A0030; font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+.prerender-fallback h2 { font-family: 'Playfair Display', serif; color: #6A0030; font-size: 1.25rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+.prerender-fallback p, .prerender-fallback li { font-size: 1rem; line-height: 1.7; }
+.prerender-fallback ul { list-style: disc; padding-left: 1.25rem; }
+.prerender-fallback nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.prerender-fallback a { color: #6A0030; text-decoration: underline; }

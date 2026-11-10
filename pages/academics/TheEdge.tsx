@@ -12,7 +12,7 @@ export const TheEdge: React.FC = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="space-y-8">
           <h2 className="text-4xl font-serif font-bold text-primary">Uncompromising Excellence</h2>
-          <p className="text-xl text-customText leading-relaxed font-light">With over three decades of legacy, we have perfected the art of professional training, ensuring every graduate is "industry-ready" on day one.</p>
+          <p className="text-xl text-customText leading-relaxed font-light">With a legacy going back to 1997, we have perfected the art of professional training, ensuring every graduate is "industry-ready" on day one.</p>
           <div className="space-y-6">
             {[
               { title: 'Global Benchmarking', desc: 'Our curriculum is synced with international standards in Pharmacy and Nursing.' },

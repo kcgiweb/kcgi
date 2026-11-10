@@ -27,8 +27,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Admission based on KCET/NEET or academic merit.',
     placements: ['Pfizer', 'Biocon', 'Sun Pharma', 'Cipla'],
     gallery: [],
-    contact: { address: 'Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'pharmacy@karnatakacollege.edu' },
-    image: '/assets/images/Karnataka%20College%20of%20Pharmacy.png'
+    contact: { address: 'Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'pharmacy@kcgiedu.org' },
+    image: '/assets/images/opt/karnataka-college-of-pharmacy.webp'
   },
   {
     id: 'nursing',
@@ -56,8 +56,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Admission based on merit and counseling.',
     placements: ['Apollo Hospitals', 'Manipal Hospitals', 'Fortis', 'Global Health Centers'],
     gallery: [],
-    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'nursing@karnatakacollege.edu' },
-    image: '/assets/images/Karnataka%20College%20of%20Nursing.png'
+    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'nursing@kcgiedu.org' },
+    image: '/assets/images/opt/karnataka-college-of-nursing.webp'
   },
   {
     id: 'management-science',
@@ -93,8 +93,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Admissions are based on merit and entrance eligibility.',
     placements: ['TCS', 'Infosys', 'Wipro', 'Indigo'],
     gallery: [],
-    contact: { address: '33/2, Hegde Nagar Main Rd, Bengaluru', phone: '080808 33000', email: 'info@karnatakacollege.edu' },
-    image: '/assets/images/Karnataka%20College%20of%20Management%20&%20Science.png'
+    contact: { address: '33/2, Hegde Nagar Main Rd, Bengaluru', phone: '080808 33000', email: 'info@kcgiedu.org' },
+    image: '/assets/images/opt/karnataka-college-of-management-science.webp'
   },
   {
     id: 'management',
@@ -121,8 +121,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Admission through KMAT, MAT, or PGCET scores.',
     placements: ['Amazon', 'Deloitte', 'HDFC Bank', 'FedEx'],
     gallery: [],
-    contact: { address: 'Yelahanka, Bengaluru', phone: '080808 33000', email: 'mba@karnatakacollege.edu' },
-    image: '/assets/images/Karnataka%20College%20of%20Management.png'
+    contact: { address: 'Yelahanka, Bengaluru', phone: '080808 33000', email: 'mba@kcgiedu.org' },
+    image: '/assets/images/opt/karnataka-college-of-management.webp'
   },
   {
     id: 'education',
@@ -146,8 +146,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Admission based on university norms and merit.',
     placements: ['Reputed Schools', 'Educational Institutions', 'Online Learning Platforms'],
     gallery: [],
-    contact: { address: 'Thirumenahalli, Bengaluru', phone: '080808 33000', email: 'bed@karnatakacollege.edu' },
-    image: '/assets/images/Karnataka%20College%20of%20Education.webp'
+    contact: { address: 'Thirumenahalli, Bengaluru', phone: '080808 33000', email: 'bed@kcgiedu.org' },
+    image: '/assets/images/opt/karnataka-college-of-education.webp'
   },
   {
     id: 'public-school',
@@ -171,8 +171,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Direct inquiry and age-based selection.',
     placements: ['Internal progression to PU College'],
     gallery: [],
-    contact: { address: 'Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'school@karnatakacollege.edu' },
-    image: '/assets/images/Karnataka%20Public%20School%20(CBSE).jpg'
+    contact: { address: 'Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'school@kcgiedu.org' },
+    image: '/assets/images/opt/karnataka-public-school-cbse.webp'
   },
   {
     id: 'pu-college',
@@ -203,8 +203,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Based on 10th standard SSLC/CBSE/ICSE results.',
     placements: ['Career Counseling for Higher Education'],
     gallery: [],
-    contact: { address: '33/2, Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'pu@karnatakacollege.edu' },
-    image: '/assets/images/Karnataka%20Composite%20P.U.%20College.jpg'
+    contact: { address: '33/2, Hegde Nagar, Bengaluru', phone: '080808 33000', email: 'pu@kcgiedu.org' },
+    image: '/assets/images/opt/karnataka-composite-p-u-college.webp'
   },
   {
     id: 'law',
@@ -228,8 +228,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Selection based on merit and academic performance.',
     placements: ['Legal Firms', 'Corporate Legal Departments', 'Independent Practice Support'],
     gallery: [],
-    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'law@karnatakacollege.edu' },
-    image: '/assets/images/Karunadu%20College%20of%20Law.jpg'
+    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'law@kcgiedu.org' },
+    image: '/assets/images/opt/karunadu-college-of-law.webp'
   },
   {
     id: 'allied-health',
@@ -256,8 +256,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Based on 10+2 science scores and interview.',
     placements: ['Diagnostic Chains', 'Private Hospitals', 'Public Health Centers'],
     gallery: [],
-    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'alliedhealth@karnatakacollege.edu' },
-    image: '/assets/images/Karunadu%20College%20of%20Allied%20Health%20Science.jpg'
+    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'alliedhealth@kcgiedu.org' },
+    image: '/assets/images/opt/karunadu-college-of-allied-health-science.webp'
   },
   {
     id: 'paramedical',
@@ -284,8 +284,8 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Direct admission based on high school results.',
     placements: ['Private Clinics', 'Medical Labs', 'Surgical Centers'],
     gallery: [],
-    contact: { address: 'Thirumenahalli, Bengaluru', phone: '080808 33000', email: 'kaveri@karnatakacollege.edu' },
-    image: '/assets/images/Kaveri%20Paramedical%20College.jpg'
+    contact: { address: 'Thirumenahalli, Bengaluru', phone: '080808 33000', email: 'kaveri@kcgiedu.org' },
+    image: '/assets/images/opt/kaveri-paramedical-college.webp'
   },
   {
     id: 'physiotherapy',
@@ -310,7 +310,7 @@ export const INSTITUTIONS: Institution[] = [
     admissions: 'Based on academic merit and entrance performance.',
     placements: ['Sports Clinics', 'Rehabilitation Centers', 'Hospitals'],
     gallery: [],
-    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'physio@karnatakacollege.edu' },
-    image: '/assets/images/Manjunatha%20College%20of%20Physiotherapy.jpg'
+    contact: { address: 'Bengaluru', phone: '080808 33000', email: 'physio@kcgiedu.org' },
+    image: '/assets/images/opt/manjunatha-college-of-physiotherapy.webp'
   }
 ];

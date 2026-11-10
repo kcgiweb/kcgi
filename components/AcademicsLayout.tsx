@@ -12,7 +12,6 @@ interface AcademicsLayoutProps {
 export const AcademicsLayout: React.FC<AcademicsLayoutProps> = ({ title, subtitle, icon: Icon, children }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `${title} | Academics | Karnataka College Group`;
   }, [title]);
 
   return (

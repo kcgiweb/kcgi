@@ -31,7 +31,7 @@ export const AboutGoverning: React.FC = () => (
 
         <div>
           <img
-            src="/assets/images/download_3_gzxfum_abause.png"
+            src="/assets/images/opt/download-3-gzxfum-abause.webp"
             alt="Smt. Suvarna Basavaraj Ramnal"
             className="w-full h-auto rounded-3xl"
           />
@@ -42,7 +42,7 @@ export const AboutGoverning: React.FC = () => (
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1">
           <img
-            src="/assets/images/coo_uycfyc.png"
+            src="/assets/images/opt/coo-uycfyc.webp"
             alt="Mr. Pradeep Ramnal"
             className="w-full h-auto rounded-3xl"
           />

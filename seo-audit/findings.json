@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "client_name": "Karnataka College Group of Institutions",
+    "url": "https://kcgiedu.org",
+    "date": "November 2026",
+    "agency_name": "KCGI Web Team",
+    "agency_url": "",
+    "business_model": "B2C Local (single campus, 11 institutions)",
+    "market": "Yelahanka, North Bengaluru, Karnataka",
+    "launch_status": "live"
+  },
+  "brand": {
+    "primary": "#6A0030",
+    "secondary": "#F7961E",
+    "accent": "#8A1A72",
+    "source": "extracted from live CSS (theme-color and Tailwind tokens, confirmed by computed button and heading colors)"
+  },
+  "executive_summary": {
+    "market_context": "North Bengaluru's Yelahanka belt is dense with private health-science and management colleges: Nitte, Aditya, SB, KNN and Ocean all sit within a few kilometres, and Acharya and Krupanidhi dominate city-wide 'best college in Bangalore' searches. Students compare colleges on aggregators (Careers360, Collegedunia, Shiksha) before they ever reach a college website, so the official site has to win the course-level and fees-level searches the aggregators currently own.",
+    "verdict": "The site looks modern, but Google can't index it: every page except the homepage returns HTTP 404 when loaded directly, so 3 hard blockers must be fixed before any ranking work pays off.",
+    "key_points": [
+      "3 hard blockers: all inner pages return 404 on the live server, the published email domain (karnatakacollege.edu) does not exist, and the Privacy Policy and Terms links go nowhere even though the site takes enquiries and payments.",
+      "The 404 fix is already written: a Hostinger .htaccess rewrite now ships in the build. It goes live with the next upload of dist/.",
+      "Every page sends two title and two meta-description tags, and the first description is always the homepage's, so Google sees 'KCM ... best college in Bangalore' on every URL.",
+      "Institution pages are thin (about 100 words each), with no fees, intake, eligibility or faculty, which are exactly the facts that aggregators rank for.",
+      "What's working: a clean URL structure for all 11 institutions, a sensible header and footer, EducationalOrganization schema on the homepage, and robots.txt that allows all crawlers."
+    ]
+  },
+  "business_overview": {
+    "summary": "Karnataka College Group of Institutions (KCGI), run by the Karnataka Educational Trust since 1997, operates 11 institutions on one campus at Hegde Nagar, Yelahanka / Thirumenahalli, Bengaluru 560064: pharmacy, nursing, management, management & science, education (B.Ed), law, allied health, paramedical, physiotherapy, a PU college and a CBSE school.",
+    "services": [
+      "Pharmacy (D.Pharm, B.Pharm, M.Pharm, Pharm D, PhD)",
+      "Nursing (GNM, B.Sc, M.Sc)",
+      "Management (MBA, BBA, BCA, B.Com)",
+      "Education (B.Ed)",
+      "Law (LL.B 3-year)",
+      "Allied Health (B.Sc MLT, MIT, AT)",
+      "Paramedical diplomas",
+      "Physiotherapy (BPT, MPT)",
+      "PU College (Science, Commerce)",
+      "Karnataka Public School (CBSE, LKG-10)"
+    ],
+    "areas_served": [
+      "Yelahanka",
+      "Thirumenahalli",
+      "Hegde Nagar",
+      "North Bengaluru",
+      "Students from Kerala, Andhra Pradesh, Telangana and abroad (per site copy)"
+    ],
+    "site_status": "Live React single-page app (Vite) on Hostinger. Only '/' returns 200; the other 16 sitemap URLs return 404 when requested directly. Content is rendered by JavaScript only: the raw HTML has no H1 and no body text.",
+    "issues": [
+      { "issue": "All inner URLs return HTTP 404", "severity": "blocker", "detail": "The SPA fallback lives in vercel.json, which Hostinger ignores. /about, /admissions, /contact and all 11 /institution/* pages 404 on direct load or crawl." },
+      { "issue": "Published email domain does not exist", "severity": "blocker", "detail": "info@, admissions@ and 11 institution addresses use karnatakacollege.edu, which has no DNS. Mail to these addresses bounces. The real mail domain (kcgiedu.org) has Hostinger MX records." },
+      { "issue": "Privacy Policy and Terms link to '#'", "severity": "blocker", "detail": "The site collects enquiries (NoPaperForms, Supabase) and loads Razorpay checkout but has no legal pages. The footer 'Sitemap' link is also '#'." },
+      { "issue": "Duplicate title and meta description on every page", "severity": "high", "detail": "index.html hard-codes a title and description, and Helmet adds a second set. The first description, which Google usually reads, is the homepage's on every URL." },
+      { "issue": "www host not redirected", "severity": "high", "detail": "https://www.kcgiedu.org/ returns 200 rather than 301 to the bare domain, which creates a duplicate copy of the site." },
+      { "issue": "Canonical tag copies the full URL", "severity": "medium", "detail": "The canonical is set from window.location.href, so ?utm= and other query URLs canonicalise to themselves. The homepage also emits two canonical tags." },
+      { "issue": "Homepage has no H1", "severity": "medium", "detail": "The hero is styled text. Seven H2s, zero H1s." },
+      { "issue": "Thin institution pages", "severity": "medium", "detail": "About 100 words each: two-sentence overview, course names, five bullets. No fees, seats, eligibility, duration, faculty or results." },
+      { "issue": "Inconsistent brand name and facts", "severity": "medium", "detail": "Meta copy says 'KCM', the title says 'KCGI', the footer says 'over three decades' and the hero says 'since 1997' (29 years). Entity signals are split." },
+      { "issue": "Broken assets referenced in head and schema", "severity": "low", "detail": "manifest.json and favicon.ico return 404. The schema logo URL (/assets/images/logo.png) returns 404. og:image is a relative SVG that social platforms won't render." },
+      { "issue": "Phone number is not tappable", "severity": "low", "detail": "080808 33000 is plain text everywhere, with no tel: link, on a site most students visit on mobile." }
+    ]
+  },
+  "competitors": [
+    {
+      "name": "Acharya Institutes",
+      "url": "https://acharya.ac.in",
+      "hq": "Soladevanahalli, North Bengaluru",
+      "scale": "Large multi-college campus (pharmacy, nursing, management, engineering)",
+      "differentiator": "City-wide brand; homepage title targets 'Best College in Bangalore', the same phrase KCGI targets.",
+      "strengths": "Server-rendered HTML with H1s, a dedicated fees page, a news section and per-college pages (e.g. Acharya & BM Reddy College of Pharmacy).",
+      "weaknesses": "No JSON-LD schema on the homepage. Sitemap.xml redirects rather than resolving.",
+      "reviews": null
+    },
+    {
+      "name": "Nitte (Yelahanka campus: NCOPS and others)",
+      "url": "https://nitte.edu.in",
+      "hq": "Mangaluru; Bengaluru campus in Yelahanka",
+      "scale": "Deemed-to-be university",
+      "differentiator": "University brand with a pharmacy college a few kilometres from KCGI.",
+      "strengths": "JSON-LD schema, fee-structure page, active news, and a supporting blog network targeting 'best pharmacy college in Yelahanka'.",
+      "weaknesses": "The Yelahanka pharmacy keyword push relies on a Blogspot satellite rather than the main domain.",
+      "reviews": null
+    },
+    {
+      "name": "Krupanidhi Group of Institutions",
+      "url": "https://krupanidhi.edu.in",
+      "hq": "Bengaluru (Varthur / Carmelaram)",
+      "scale": "Pharmacy, physiotherapy, nursing, business school; pharmacy college NAAC A+",
+      "differentiator": "Closest like-for-like portfolio: health sciences plus management under one trust.",
+      "strengths": "Paid campaign landing pages per discipline, international admissions microsite, Wikipedia article.",
+      "weaknesses": "Homepage is also a JS shell (about 5 KB HTML, no H1, no schema), the same weakness as KCGI.",
+      "reviews": null
+    },
+    {
+      "name": "Aditya Group of Institutions",
+      "url": "https://www.collegedunia.com/college/60510-aditya-group-of-institutions-bangalore",
+      "hq": "Kogilu Main Road, Yelahanka 560064",
+      "scale": "Pharmacy, nursing, physiotherapy, management",
+      "differentiator": "Same pincode as KCGI, with near-identical programmes. The most direct local rival.",
+      "strengths": "Strong presence on aggregators (Collegedunia, Shiksha, Careers360), one listing per college.",
+      "weaknesses": "Official website could not be confirmed during this audit. Aggregator data on founding year and affiliations conflicts.",
+      "reviews": null
+    },
+    {
+      "name": "Sambhram Group of Institutions",
+      "url": "https://www.sambhram.org",
+      "hq": "M S Palya, Jalahalli East, Bengaluru",
+      "scale": "Engineering, management, nursing",
+      "differentiator": "Nursing (GNM, B.Sc, M.Sc) competes for the same North Bengaluru students.",
+      "strengths": "WordPress site with H1s and a large indexable HTML footprint.",
+      "weaknesses": "No schema. Thin, inconsistent course listings across aggregators.",
+      "reviews": null
+    },
+    {
+      "name": "Yelahanka nursing colleges (SB, KNN, Ocean)",
+      "url": "https://www.careers360.com/colleges/sb-college-of-nursing-bengaluru",
+      "hq": "Yelahanka New Town",
+      "scale": "Single-discipline RGUHS-affiliated nursing colleges",
+      "differentiator": "Win 'nursing college Yelahanka' through aggregator listings, not their own websites.",
+      "strengths": "Listed with fees and admission status for 2026-27 on Careers360 and Collegedunia.",
+      "weaknesses": "Little or no owned-site SEO, so a strong KCGI nursing page can outrank them.",
+      "reviews": null
+    }
+  ],
+  "feature_matrix": {
+    "features": ["Indexable pages", "H1 in HTML", "Fees page", "Course pages", "Schema", "News / blog", "Aggregator presence"],
+    "rows": [
+      { "name": "KCGI (kcgiedu.org)", "is_client": true, "values": ["no", "no", "no", "partial", "partial", "partial", "partial"] },
+      { "name": "Acharya Institutes", "is_client": false, "values": ["yes", "yes", "yes", "yes", "no", "yes", "yes"] },
+      { "name": "Nitte", "is_client": false, "values": ["yes", "yes", "yes", "yes", "yes", "yes", "yes"] },
+      { "name": "Krupanidhi", "is_client": false, "values": ["partial", "no", "partial", "yes", "no", "partial", "yes"] },
+      { "name": "Aditya Group", "is_client": false, "values": ["?", "?", "?", "?", "?", "?", "yes"] },
+      { "name": "Sambhram", "is_client": false, "values": ["yes", "yes", "no", "partial", "no", "partial", "partial"] }
+    ]
+  },
+  "keywords": [
+    { "keyword": "best college in bangalore", "tier": 1, "intent": "Mixed", "difficulty": "HIGH", "target_page": "Homepage", "ai_overview": null },
+    { "keyword": "college near me", "tier": 1, "intent": "Transactional", "difficulty": "HIGH", "target_page": "Homepage + Google Business Profile", "ai_overview": null },
+    { "keyword": "pharmacy college in bangalore", "tier": 1, "intent": "Mixed", "difficulty": "HIGH", "target_page": "/institution/pharmacy", "ai_overview": null },
+    { "keyword": "nursing college in bangalore", "tier": 1, "intent": "Mixed", "difficulty": "HIGH", "target_page": "/institution/nursing", "ai_overview": null },
+    { "keyword": "physiotherapy college in bangalore", "tier": 1, "intent": "Mixed", "difficulty": "MEDIUM", "target_page": "/institution/physiotherapy", "ai_overview": null },
+    { "keyword": "law college in bangalore", "tier": 1, "intent": "Mixed", "difficulty": "HIGH", "target_page": "/institution/law", "ai_overview": null },
+    { "keyword": "mba college in bangalore", "tier": 1, "intent": "Mixed", "difficulty": "HIGH", "target_page": "/institution/management", "ai_overview": null },
+    { "keyword": "b.ed college in bangalore", "tier": 1, "intent": "Mixed", "difficulty": "MEDIUM", "target_page": "/institution/education", "ai_overview": null },
+    { "keyword": "allied health science college bangalore", "tier": 1, "intent": "Mixed", "difficulty": "MEDIUM", "target_page": "/institution/allied-health", "ai_overview": null },
+    { "keyword": "karnataka college group of institutions", "tier": 1, "intent": "Navigational", "difficulty": "LOW", "target_page": "Homepage", "ai_overview": null },
+    { "keyword": "pharmacy college yelahanka", "tier": 2, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/institution/pharmacy", "ai_overview": null },
+    { "keyword": "nursing college yelahanka", "tier": 2, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/institution/nursing", "ai_overview": null },
+    { "keyword": "physiotherapy college yelahanka", "tier": 2, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/physiotherapy", "ai_overview": null },
+    { "keyword": "law college yelahanka", "tier": 2, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/law", "ai_overview": null },
+    { "keyword": "bba bca college yelahanka", "tier": 2, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/management-science", "ai_overview": null },
+    { "keyword": "pu college yelahanka", "tier": 2, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/institution/pu-college", "ai_overview": null },
+    { "keyword": "cbse school yelahanka", "tier": 2, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/institution/public-school", "ai_overview": null },
+    { "keyword": "cbse school thirumenahalli hegde nagar", "tier": 2, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/public-school", "ai_overview": null },
+    { "keyword": "colleges in north bangalore", "tier": 2, "intent": "Mixed", "difficulty": "MEDIUM", "target_page": "Homepage", "ai_overview": null },
+    { "keyword": "nursing college near hebbal", "tier": 2, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/nursing", "ai_overview": null },
+    { "keyword": "pharmacy college near jakkur thanisandra", "tier": 2, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/pharmacy", "ai_overview": null },
+    { "keyword": "college near kempegowda airport road", "tier": 2, "intent": "Transactional", "difficulty": "LOW", "target_page": "/contact", "ai_overview": null },
+    { "keyword": "b.pharm admission 2026 bangalore", "tier": 3, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/institution/pharmacy", "ai_overview": null },
+    { "keyword": "pharm d colleges in bangalore", "tier": 3, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/institution/pharmacy", "ai_overview": null },
+    { "keyword": "d.pharm college bangalore fees", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/pharmacy", "ai_overview": null },
+    { "keyword": "b.sc nursing management quota bangalore", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/nursing", "ai_overview": null },
+    { "keyword": "gnm nursing admission 2026 bangalore", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/nursing", "ai_overview": null },
+    { "keyword": "nursing college in bangalore for kerala students", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/admissions/international (new: /admissions/kerala-students)", "ai_overview": null },
+    { "keyword": "bpt admission bangalore rguhs", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/physiotherapy", "ai_overview": null },
+    { "keyword": "3 year llb college bangalore kslu", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/law", "ai_overview": null },
+    { "keyword": "b.sc mlt college bangalore", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/allied-health", "ai_overview": null },
+    { "keyword": "paramedical diploma course bangalore after 10th", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/paramedical", "ai_overview": null },
+    { "keyword": "b.ed admission 2026 bangalore city university", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/education", "ai_overview": null },
+    { "keyword": "mba college bangalore with hostel", "tier": 3, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/facilities", "ai_overview": null },
+    { "keyword": "pu science college with neet coaching yelahanka", "tier": 3, "intent": "Transactional", "difficulty": "LOW", "target_page": "/institution/pu-college", "ai_overview": null },
+    { "keyword": "low fee nursing college bangalore", "tier": 3, "intent": "Transactional", "difficulty": "MEDIUM", "target_page": "/admissions/fees (new)", "ai_overview": null },
+    { "keyword": "b.pharm vs pharm d which is better", "tier": 4, "intent": "Informational", "difficulty": "MEDIUM", "target_page": "Blog", "ai_overview": null },
+    { "keyword": "b.sc nursing fees in bangalore", "tier": 4, "intent": "Informational", "difficulty": "MEDIUM", "target_page": "Blog / fees page", "ai_overview": null },
+    { "keyword": "gnm vs b.sc nursing", "tier": 4, "intent": "Informational", "difficulty": "MEDIUM", "target_page": "Blog", "ai_overview": null },
+    { "keyword": "bpt course details salary scope", "tier": 4, "intent": "Informational", "difficulty": "MEDIUM", "target_page": "Blog", "ai_overview": null },
+    { "keyword": "allied health science courses after 12th", "tier": 4, "intent": "Informational", "difficulty": "MEDIUM", "target_page": "Blog", "ai_overview": null },
+    { "keyword": "kea ugcet nursing counselling process", "tier": 4, "intent": "Informational", "difficulty": "MEDIUM", "target_page": "Blog", "ai_overview": null },
+    { "keyword": "documents required for rguhs admission", "tier": 4, "intent": "Informational", "difficulty": "LOW", "target_page": "/admissions/documents", "ai_overview": null },
+    { "keyword": "is 3 year llb worth it after graduation", "tier": 4, "intent": "Informational", "difficulty": "LOW", "target_page": "Blog", "ai_overview": null },
+    { "keyword": "how to choose a nursing college in karnataka", "tier": 4, "intent": "Informational", "difficulty": "LOW", "target_page": "Blog", "ai_overview": null },
+    { "keyword": "d.pharm course after 12th eligibility", "tier": 4, "intent": "Informational", "difficulty": "MEDIUM", "target_page": "Blog", "ai_overview": null }
+  ],
+  "technical": [
+    { "category": "Crawlability & Indexation", "check": "Inner pages return 200", "rating": "FAIL", "finding": "16 of 17 sitemap URLs return 404 on direct request. Fixed in code with public/.htaccess; needs a deploy.", "basis": "measured", "blocker": true },
+    { "category": "Crawlability & Indexation", "check": "robots.txt", "rating": "PASS", "finding": "Allow: / for all agents, with a sitemap reference.", "basis": "measured" },
+    { "category": "Crawlability & Indexation", "check": "XML sitemap coverage", "rating": "WARN", "finding": "17 URLs listed, but the app has about 45 routes (about/*, academics/*, admissions/*, facilities, placements, news). Lastmod is only on 5.", "basis": "measured" },
+    { "category": "Crawlability & Indexation", "check": "Brand search visibility", "rating": "WARN", "finding": "A web search for 'kcgiedu.org' returned no results from the domain. Confirm indexed pages in Search Console.", "basis": "observed" },
+    { "category": "Crawlability & Indexation", "check": "Unknown URLs", "rating": "WARN", "finding": "Router sends any unknown path to '/' with a 200 after the fix, creating soft 404s. /admissions/fees exists as a page but has no route.", "basis": "observed" },
+    { "category": "Canonicalization", "check": "Single canonical host", "rating": "FAIL", "finding": "www.kcgiedu.org serves 200, not 301. The new .htaccess redirects it.", "basis": "measured" },
+    { "category": "Canonicalization", "check": "Canonical tags", "rating": "WARN", "finding": "Built from window.location.href (keeps ?query), and the homepage emits two tags.", "basis": "measured" },
+    { "category": "On-Page", "check": "Unique titles and descriptions", "rating": "FAIL", "finding": "Two title tags and two descriptions per page. The first description is always the homepage's.", "basis": "measured" },
+    { "category": "On-Page", "check": "H1 per page", "rating": "WARN", "finding": "Present on inner pages. Missing on the homepage.", "basis": "measured" },
+    { "category": "On-Page", "check": "Meta keywords", "rating": "WARN", "finding": "A 600-character keyword list on every page. Ignored by Google, and it shows strategy to competitors. Remove.", "basis": "observed" },
+    { "category": "Rendering", "check": "Content in raw HTML", "rating": "WARN", "finding": "The raw HTML is an 8.5 KB shell with no text or links. Google renders JS, but slower; Bing and AI crawlers often don't.", "basis": "measured" },
+    { "category": "Performance", "check": "Core Web Vitals", "rating": "N/A", "finding": "PageSpeed API quota exhausted and Lighthouse got 403 from Hostinger bot protection. Re-run from PageSpeed Insights in a normal browser.", "basis": "observed" },
+    { "category": "Performance", "check": "Page weight", "rating": "WARN", "finding": "2.9 MB and 43 requests on the homepage. The logo SVG is 652 KB, the JS bundle is 390 KB gzipped (1.08 MB raw), and Tailwind compiles in the browser from cdn.tailwindcss.com.", "basis": "measured" },
+    { "category": "Performance", "check": "Image formats", "rating": "WARN", "finding": "Institution cards are 95-200 KB JPG/PNG each. Convert to WebP/AVIF at display size.", "basis": "measured" },
+    { "category": "Structured Data", "check": "Organization schema", "rating": "WARN", "finding": "EducationalOrganization plus subOrganizations on the homepage (good), but the logo URL 404s, postalCode and geo are missing, and there is none on institution pages.", "basis": "measured" },
+    { "category": "Structured Data", "check": "Course schema", "rating": "FAIL", "finding": "No Course or CollegeOrUniversity schema on the 11 institution pages.", "basis": "measured" },
+    { "category": "Local SEO", "check": "NAP consistency", "rating": "WARN", "finding": "Footer address is complete. Institution pages show only 'Bengaluru' or 'Hegde Nagar'. Phone is not a tel: link.", "basis": "observed" },
+    { "category": "Local SEO", "check": "Google Business Profile", "rating": "WARN", "finding": "A Maps listing exists (linked in the footer). Category, reviews and per-institution profiles were not verified.", "basis": "observed" },
+    { "category": "Trust & Legal", "check": "Privacy Policy and Terms", "rating": "FAIL", "finding": "Footer links are '#'. Required for the enquiry forms and Razorpay payments.", "basis": "observed", "blocker": true },
+    { "category": "Trust & Legal", "check": "Contact details work", "rating": "FAIL", "finding": "All 12 published email addresses use karnatakacollege.edu, which has no DNS.", "basis": "measured", "blocker": true },
+    { "category": "Social & Assets", "check": "OG image, manifest, favicon", "rating": "FAIL", "finding": "og:image is a relative SVG. manifest.json and favicon.ico return 404.", "basis": "measured" },
+    { "category": "Security", "check": "HTTPS", "rating": "PASS", "finding": "HTTP 301s to HTTPS. Certificate valid.", "basis": "measured" },
+    { "category": "AI Visibility", "check": "AI search crawler access", "rating": "PASS", "finding": "OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot and Claude-SearchBot get 200. GPTBot (training) got 429.", "basis": "measured" }
+  ],
+  "ai_visibility": {
+    "summary": "AI search bots can reach the homepage, but because inner pages 404 and all content is JS-rendered, AI answers have nothing to cite beyond the homepage shell. Answers about North Bengaluru colleges will draw on Careers360, Collegedunia and Shiksha listings, where KCGI's institution data (fees, ratings) is thin and inconsistent. ChatGPT, Perplexity and AI Overviews could not be queried from this environment, so the citation table lists queries to check rather than observed results. Spoofed Googlebot and Bingbot user agents got 403 from Hostinger's CDN; this is normal bot verification, but confirm real Googlebot access with URL Inspection in Search Console.",
+    "crawlers": [
+      { "agent": "Googlebot", "status": "partial", "note": "Spoofed UA blocked (expected). Verify with Search Console URL Inspection." },
+      { "agent": "Bingbot", "status": "partial", "note": "Spoofed UA blocked (expected). Verify in Bing Webmaster Tools." },
+      { "agent": "OAI-SearchBot", "status": "allowed", "note": "200 on homepage; inner pages 404 until the fix is deployed." },
+      { "agent": "PerplexityBot", "status": "allowed", "note": "200 on homepage." },
+      { "agent": "Claude-SearchBot", "status": "allowed", "note": "200 on homepage." },
+      { "agent": "GPTBot (training)", "status": "partial", "note": "429 rate-limited by Hostinger. Training-only, so low priority." }
+    ],
+    "citations": [
+      { "query": "best pharmacy college in yelahanka", "surface": "Not checked (no access)", "client_cited": false, "cited": "Web results lean on a Nitte Blogspot, Careers360 and Collegedunia" },
+      { "query": "nursing colleges in yelahanka bangalore", "surface": "Not checked (no access)", "client_cited": false, "cited": "Web results: Careers360, Collegedunia, mynursingadmission.com" },
+      { "query": "karnataka college of pharmacy bangalore reviews", "surface": "Not checked (no access)", "client_cited": false, "cited": "Shiksha 3.6, CollegeDekho 4.7, Careers360 3.6 (1 review)" },
+      { "query": "karnataka college group of institutions", "surface": "Not checked (no access)", "client_cited": false, "cited": "Web results: CollegeDekho (1 review), TimesOfCollege KCM listing" }
+    ]
+  },
+  "blockers": [
+    {
+      "title": "Deploy the .htaccess fix so inner pages stop returning 404",
+      "detail": "Hostinger ignores vercel.json, so every route except '/' 404s on direct load or crawl. Google cannot index /admissions or any institution page.",
+      "fix": "Done in code: public/.htaccess (SPA rewrite plus HTTPS/www redirect) is copied into dist/ by the build. Upload the full dist/ (including the hidden .htaccess) to public_html, then confirm /about returns 200 and request indexing in Search Console."
+    },
+    {
+      "title": "Replace the non-existent karnatakacollege.edu email addresses",
+      "detail": "12 distinct addresses in the footer, Contact, Enquiry and every institution page use a domain with no DNS. Every enquiry email bounces.",
+      "fix": "Switch to mailboxes on kcgiedu.org (already has Hostinger MX) in constants.ts, Footer.tsx, ContactUs.tsx and Enquiry.tsx, and make them mailto: links."
+    },
+    {
+      "title": "Publish Privacy Policy and Terms pages",
+      "detail": "The site collects personal data through enquiry forms and Razorpay payments, but the footer legal links are '#'. This is a trust and compliance gap (DPDP Act 2023) and a payment-gateway requirement.",
+      "fix": "Add /privacy-policy and /terms routes with real policy text, link them in the footer, and add them to the sitemap. Point the 'Sitemap' footer link to /sitemap.xml or remove it."
+    }
+  ],
+  "quick_wins": [
+    { "title": "Remove the static title and description from index.html", "detail": "Let Helmet own them, so each page has one title and its own description. Also drop the meta keywords tag.", "impact": "High", "effort_hours": 1 },
+    { "title": "Fix canonicals: one tag, origin + pathname only", "detail": "Build the canonical in SEO.tsx from 'https://kcgiedu.org' + pathname, and remove the duplicate on Home.", "impact": "High", "effort_hours": 1 },
+    { "title": "Expand the sitemap to every real route", "detail": "Add the about/*, academics/*, admissions/*, facilities, placements and news URLs (about 45) with lastmod, then resubmit in Search Console.", "impact": "High", "effort_hours": 1.5 },
+    { "title": "Add a homepage H1 and settle on one brand name", "detail": "e.g. 'Karnataka College Group of Institutions, Yelahanka, Bengaluru'. Use KCGI everywhere (not KCM), and align 'since 1997' and 'three decades'.", "impact": "Medium", "effort_hours": 1 },
+    { "title": "Fix schema logo, og:image, manifest and favicon", "detail": "Point the schema at logo.svg or upload logo.png. Use an absolute 1200x630 JPG for og:image. Move manifest.json into public/ and add a favicon.", "impact": "Medium", "effort_hours": 1.5 },
+    { "title": "Make the phone number tappable everywhere", "detail": "tel:+918080833000 in the header, footer, contact and institution cards.", "impact": "Medium", "effort_hours": 0.5 },
+    { "title": "Shrink the 652 KB logo and compress card images", "detail": "The logo SVG probably embeds a raster; export a clean SVG or WebP. Convert the 11 institution images to WebP at about 600px wide.", "impact": "Medium", "effort_hours": 2 },
+    { "title": "Add Course + CollegeOrUniversity schema per institution", "detail": "Generate it from constants.ts in InstitutionDetail: name, address, the parent organisation, and each course with its duration.", "impact": "Medium", "effort_hours": 3 },
+    { "title": "Replace the catch-all redirect with a real 404 page", "detail": "Render a noindex 'Page not found' page with links, instead of Navigate to '/', to avoid soft 404s.", "impact": "Low", "effort_hours": 1 },
+    { "title": "Build Tailwind at compile time instead of using the CDN", "detail": "cdn.tailwindcss.com compiles CSS in the browser on every visit and is not meant for production.", "impact": "Medium", "effort_hours": 3 }
+  ],
+  "content_strategy": {
+    "page_roadmap": [
+      { "page": "Homepage", "url": "/", "type": "Core", "status": "weak", "priority": "High" },
+      { "page": "Karnataka College of Pharmacy", "url": "/institution/pharmacy", "type": "Institution", "status": "weak", "priority": "High" },
+      { "page": "Karnataka College of Nursing", "url": "/institution/nursing", "type": "Institution", "status": "weak", "priority": "High" },
+      { "page": "Manjunatha College of Physiotherapy", "url": "/institution/physiotherapy", "type": "Institution", "status": "weak", "priority": "High" },
+      { "page": "Other 8 institution pages", "url": "/institution/*", "type": "Institution", "status": "weak", "priority": "Medium" },
+      { "page": "Course pages (B.Pharm, Pharm D, B.Sc Nursing, GNM, BPT, LL.B ...)", "url": "/courses/[course]", "type": "Course", "status": "missing", "priority": "High" },
+      { "page": "Fees & Scholarships", "url": "/admissions/fees", "type": "Admissions", "status": "missing", "priority": "High" },
+      { "page": "Admissions (process, eligibility, documents)", "url": "/admissions/*", "type": "Admissions", "status": "exists", "priority": "Medium" },
+      { "page": "Students from Kerala / AP / Telangana", "url": "/admissions/kerala-students", "type": "Audience", "status": "missing", "priority": "Medium" },
+      { "page": "Campus & Hostel", "url": "/facilities", "type": "Core", "status": "weak", "priority": "Medium" },
+      { "page": "Contact & Directions", "url": "/contact", "type": "Core", "status": "weak", "priority": "Medium" },
+      { "page": "Privacy Policy / Terms", "url": "/privacy-policy, /terms", "type": "Legal", "status": "missing", "priority": "High" },
+      { "page": "News & Blog", "url": "/news", "type": "Blog", "status": "weak", "priority": "Medium" }
+    ],
+    "blog_posts": [
+      { "title": "B.Sc Nursing Fees in Bangalore 2026: What You'll Actually Pay", "keyword": "b.sc nursing fees in bangalore", "tier": 4, "purpose": "Cost guide" },
+      { "title": "B.Pharm vs Pharm D: Which Should You Choose After 12th?", "keyword": "b.pharm vs pharm d which is better", "tier": 4, "purpose": "Comparison" },
+      { "title": "GNM vs B.Sc Nursing: Eligibility, Duration, Jobs and Salary", "keyword": "gnm vs b.sc nursing", "tier": 4, "purpose": "Comparison" },
+      { "title": "KEA UGCET Nursing Counselling 2026: Step-by-Step with Dates", "keyword": "kea ugcet nursing counselling process", "tier": 4, "purpose": "Process" },
+      { "title": "Studying Nursing in Bangalore as a Kerala Student: Hostel, Fees, Registration", "keyword": "nursing college in bangalore for kerala students", "tier": 3, "purpose": "Audience" },
+      { "title": "BPT in Bangalore: Course, RGUHS Admission and Career Scope", "keyword": "bpt course details salary scope", "tier": 4, "purpose": "Course guide" },
+      { "title": "Allied Health Science Courses After 12th: MLT, MIT, AT Compared", "keyword": "allied health science courses after 12th", "tier": 4, "purpose": "Comparison" },
+      { "title": "Documents Required for RGUHS Admission (Checklist)", "keyword": "documents required for rguhs admission", "tier": 4, "purpose": "FAQ" },
+      { "title": "Colleges in North Bangalore: A Guide to Yelahanka's Campuses", "keyword": "colleges in north bangalore", "tier": 2, "purpose": "Local" },
+      { "title": "Is a 3-Year LL.B Worth It After Your Degree?", "keyword": "is 3 year llb worth it after graduation", "tier": 4, "purpose": "Decision guide" }
+    ]
+  },
+  "opportunities": [
+    {
+      "title": "Win the Yelahanka course searches with real facts",
+      "gap": "For 'pharmacy college Yelahanka' and 'nursing college Yelahanka', results are aggregator listings and a Nitte Blogspot. No local college's own site answers fees, seats, eligibility and RGUHS/PCI/INC status on one page.",
+      "why": "Students and parents shortlist by course plus area plus fees. KCGI already has 11 institution URLs with clean slugs; they only lack substance.",
+      "action": "Rebuild the pharmacy, nursing and physiotherapy pages first: fees, intake, eligibility, duration, approvals with letter numbers, faculty, labs with real photos, an admission timeline, and Course schema. Then add one page per flagship course."
+    },
+    {
+      "title": "Own the out-of-state nursing and allied-health student",
+      "gap": "Site copy and meta keywords target Kerala, Andhra Pradesh and Telangana students, but no page speaks to them, and competitors only cover it through aggregators.",
+      "why": "Bengaluru nursing and allied-health colleges draw heavily from Kerala. These families research hostels, safety, travel and nursing-council registration before applying, and nobody answers those questions in one place.",
+      "action": "Publish an 'Out-of-state students' hub covering hostel, fees, KNC/INC registration transfer, travel from Kerala, and testimonials from such students, linked from each health-science institution page."
+    },
+    {
+      "title": "Fix the aggregator footprint AI answers draw on",
+      "gap": "KCGI's ratings are fragmented: Shiksha 3.6, CollegeDekho 4.7, Careers360 3.6 from one review. A 'KCM' listing on TimesOfCollege is split from the group. Aditya, in the same pincode, has a fuller aggregator presence.",
+      "why": "Students and AI answers both lean on these listings. A consistent name, address, fees and approvals across them is the cheapest way to show up in AI answers.",
+      "action": "Claim the Careers360, Collegedunia, Shiksha and CollegeDekho profiles for each institution, standardise the name 'Karnataka College Group of Institutions (KCGI)' and the NAP, link back to the matching kcgiedu.org page, and run a post-admission review drive with current students."
+    }
+  ],
+  "closing": {
+    "headline": "The first fix is already written",
+    "body": "The 404 fix ships with the next upload of dist/. The two other blockers (email addresses and legal pages) are a day's work. The quick wins after that are about two working days in total. Then the institution page rebuild, starting with pharmacy, nursing and physiotherapy, is where rankings will come from.",
+    "cta": "Next step: deploy dist/ to Hostinger, verify in Search Console, then start on the quick-win list.",
+    "contact": "KCGI Web Team"
+  }
+}

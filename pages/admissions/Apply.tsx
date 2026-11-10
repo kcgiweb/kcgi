@@ -4,7 +4,6 @@ import {
   CheckCircle, ArrowRight, ArrowLeft, CreditCard, ShieldCheck,
   Loader2, Sparkles, Building, Calendar, FileText
 } from 'lucide-react';
-import SEO from '../../components/SEO';
 import { supabase } from '../../lib/supabase';
 
 declare global {
@@ -18,6 +17,9 @@ const Apply: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState<'idle' | 'processing' | 'success' | 'failed'>('idle');
   const [applicationFee, setApplicationFee] = useState('1000');
+  const [paymentRef, setPaymentRef] = useState('');
+  // Set when payment succeeded but the application could not be saved.
+  const [saveFailed, setSaveFailed] = useState(false);
 
   const [formData, setFormData] = useState({
     // Step 1: Personal
@@ -62,7 +64,26 @@ const Apply: React.FC = () => {
   const nextStep = () => setStep(prev => prev + 1);
   const prevStep = () => setStep(prev => prev - 1);
 
-  const handlePayment = () => {
+  // Razorpay's checkout script is loaded only on this page, when it is needed.
+  const loadRazorpay = () => new Promise<void>((resolve, reject) => {
+    if (window.Razorpay) return resolve();
+    const existing = document.getElementById('razorpay-checkout-js') as HTMLScriptElement | null;
+    const script = existing ?? document.createElement('script');
+    script.addEventListener('load', () => resolve());
+    script.addEventListener('error', () => reject(new Error('Razorpay script failed to load')));
+    if (!existing) {
+      script.id = 'razorpay-checkout-js';
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  });
+
+  useEffect(() => {
+    if (step === 4) loadRazorpay().catch(() => { /* retried on click */ });
+  }, [step]);
+
+  const handlePayment = async () => {
     setPaymentStatus('processing');
 
     const options = {
@@ -71,10 +92,10 @@ const Apply: React.FC = () => {
       currency: 'INR',
       name: 'KCGI',
       description: 'Application Fee for Admission',
-      image: 'https://res.cloudinary.com/dejcpd56d/image/upload/v1713331200/kcms_logo_placeholder.png',
+      image: 'https://kcgiedu.org/assets/images/logo-512.png',
       handler: async function (response: any) {
-        console.log('Payment Successful:', response);
         setPaymentStatus('success');
+        setPaymentRef(response.razorpay_payment_id);
         await submitToDatabase(response.razorpay_payment_id);
       },
       prefill: {
@@ -83,7 +104,7 @@ const Apply: React.FC = () => {
         contact: formData.phone
       },
       theme: {
-        color: '#002E5B' // Primary color
+        color: '#6A0030' // Brand primary
       },
       modal: {
         ondismiss: function () {
@@ -93,6 +114,7 @@ const Apply: React.FC = () => {
     };
 
     try {
+      await loadRazorpay();
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (error) {
@@ -104,7 +126,7 @@ const Apply: React.FC = () => {
 
   const submitToDatabase = async (paymentId: string) => {
     setIsSubmitting(true);
-    console.log('Attempting to save to Supabase...', formData);
+    setSaveFailed(false);
 
     try {
       const { data, error } = await supabase
@@ -129,31 +151,14 @@ const Apply: React.FC = () => {
         }])
         .select();
 
-      if (error) {
-        console.error('Supabase Insert Error:', error);
-        alert(`Database Error: ${error.message}\nDetails: ${error.details}\nHint: ${error.hint}`);
-        throw error;
-      }
-
-      console.log('Save Successful:', data);
+      if (error) throw error;
       setStep(5); // Success step
     } catch (error: any) {
-      console.error('Final Catch Error:', error);
-      alert('Application could not be saved to the database. Saving to local storage instead.');
-
-      // Fallback
-      const newApplication = {
-        id: `KCMS-${Date.now()}`,
-        ...formData,
-        paymentId,
-        status: 'Paid',
-        date: new Date().toLocaleDateString(),
-        amount: `₹${parseInt(applicationFee).toLocaleString()}`
-      };
-      const existingApps = JSON.parse(localStorage.getItem('kcms_applications') || '[]');
-      localStorage.setItem('kcms_applications', JSON.stringify([newApplication, ...existingApps]));
-
-      setStep(5);
+      // Payment went through but the application was not saved. Never store the
+      // applicant's personal data in the browser; keep it in memory, let them retry,
+      // and give them the payment ID to quote to the admissions office.
+      console.error('Application save failed:', error?.message ?? error);
+      setSaveFailed(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -448,8 +453,8 @@ const Apply: React.FC = () => {
             <div className="bg-gray-50 p-8 rounded-[3rem] border border-gray-100 max-w-md mx-auto mb-12">
               <div className="text-left space-y-4">
                 <div className="flex justify-between">
-                  <span className="text-neutralText/40 opacity-40 text-sm">Application ID</span>
-                  <span className="font-black text-primary uppercase">KCMS2026-{(Math.random() * 10000).toFixed(0)}</span>
+                  <span className="text-neutralText/40 opacity-40 text-sm">Payment reference</span>
+                  <span className="font-black text-primary break-all text-right">{paymentRef}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-neutralText/40 opacity-40 text-sm">Payment Status</span>
@@ -472,17 +477,13 @@ const Apply: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-gray-50/50">
-      <SEO
-        title="Apply Online 2026 | KCMS Bangalore Admissions"
-        description="Secure your seat at the best college in Bangalore. Start your online application for BCA, BBA, B.Com, and MBA 2026 batch."
-      />
 
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-black text-primary mb-4 leading-tight">Apply for <br /><span className="text-secondary">Admission 2026</span></h1>
-            <p className="text-neutralText/60 opacity-60 max-w-lg mx-auto">Fill the form below to start your professional journey at KCMS Bangalore.</p>
+            <p className="text-neutralText/60 opacity-60 max-w-lg mx-auto">Fill the form below to start your professional journey at KCGI Bengaluru.</p>
           </div>
 
           {/* Stepper */}
@@ -498,6 +499,34 @@ const Apply: React.FC = () => {
                   {step > s ? <CheckCircle size={20} /> : s}
                 </div>
               ))}
+            </div>
+          )}
+
+          {saveFailed && (
+            <div role="alert" className="mb-8 p-6 md:p-8 rounded-3xl bg-red-50 border border-red-200 text-red-900">
+              <h2 className="text-xl font-black mb-2">Your payment was received, but your application could not be saved.</h2>
+              <p className="mb-4 text-sm leading-relaxed">
+                Please don't pay again. Try saving once more. If it still fails, contact the admissions office with your
+                payment reference <strong className="break-all">{paymentRef}</strong> and we will complete your application.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  onClick={() => submitToDatabase(paymentRef)}
+                  disabled={isSubmitting}
+                  className="bg-primary text-white px-6 py-3 rounded-full font-bold text-sm disabled:opacity-50"
+                >
+                  {isSubmitting ? 'Saving…' : 'Try saving again'}
+                </button>
+                <a
+                  href={`mailto:admissions@kcgiedu.org?subject=${encodeURIComponent('Application not saved - payment ' + paymentRef)}`}
+                  className="px-6 py-3 rounded-full font-bold text-sm border border-red-300"
+                >
+                  Email admissions
+                </a>
+                <a href="tel:+918080833000" className="px-6 py-3 rounded-full font-bold text-sm border border-red-300">
+                  Call 080808 33000
+                </a>
+              </div>
             </div>
           )}
 

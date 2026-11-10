@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, ExternalLi
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
-  const logoUrl = "/assets/images/logo.svg";
+  const logoUrl = "/assets/images/logo.webp";
   const externalMapsLink = "https://www.google.com/maps/place/Karnataka+College+Group+of+Institutions/@13.0860698,77.6355606,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae183352e8af21:0xa842e197d612053f!8m2!3d13.0860698!4d77.6355606!16s%2Fg%2F11l244r1vl?entry=ttu";
 
   return (
@@ -16,12 +16,15 @@ export const Footer: React.FC = () => {
             <div className="flex items-center">
               <img 
                 src={logoUrl} 
-                alt="Karnataka College Group of Institutions" 
-                className="h-16 w-auto" 
+                alt="Karnataka College Group of Institutions"
+                width={904}
+                height={239}
+                loading="lazy"
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-black leading-relaxed text-sm font-bold">
-              Providing world-class education for over three decades across multiple disciplines, fostering innovation and professional excellence.
+              Providing world-class education since 1997 across multiple disciplines, fostering innovation and professional excellence.
             </p>
             <div className="flex gap-4">
               {[
@@ -101,11 +104,11 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-black">080808 33000</span>
+                <a href="tel:+918080833000" className="text-black hover:text-primary transition-colors">080808 33000</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-black">info@karnatakacollege.edu</span>
+                <a href="mailto:info@kcgiedu.org" className="text-black hover:text-primary transition-colors">info@kcgiedu.org</a>
               </li>
             </ul>
           </div>
@@ -114,9 +117,9 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-black font-black">
           <p>© 2026 Karnataka College Group of Institutions. All Rights Reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:text-primary transition-colors">Sitemap</a>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+            <a href="/sitemap.xml" className="hover:text-primary transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
