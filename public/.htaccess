@@ -29,18 +29,22 @@ ErrorDocument 404 /404.html
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.+)/$ /$1 [L,R=301]
 
-  # 3. Prerendered pages
+  # 3. Homepage
+  RewriteRule ^$ index.html [L]
+
+  # 4. Prerendered pages
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+)$ $1.html [L]
 
-  # 4. Real files (JS, CSS, images, robots.txt, sitemap.xml)
-  RewriteCond %{REQUEST_FILENAME} -f
+  # 5. Real files and directories (JS, CSS, images, robots.txt, sitemap.xml)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # 5. App-only routes that are not prerendered (admin, legacy sub-paths): app shell, noindex
+  # 6. App-only routes that are not prerendered (admin, legacy sub-paths): app shell, noindex
   RewriteRule ^(admin(/.*)?|placements/.+|naac/.+|news/.+)$ 404.html [L]
 
-  # 6. Everything else does not exist
+  # 7. Everything else does not exist
   RewriteRule ^ - [R=404,L]
 </IfModule>
 
