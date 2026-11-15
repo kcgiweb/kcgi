@@ -37,6 +37,7 @@ export const AdmissionPopup: React.FC = () => {
       <div className="bg-white max-w-4xl w-full rounded-3xl shadow-2xl overflow-hidden relative flex flex-col md:flex-row border-4 border-primary/10">
         <button 
           onClick={closePopup}
+          aria-label="Close admissions popup"
           className="absolute top-4 right-4 p-2 text-primary hover:bg-gray-100 rounded-full transition-colors z-20"
         >
           <X className="w-6 h-6" />

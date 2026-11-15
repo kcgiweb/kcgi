@@ -14,6 +14,7 @@ export default {
     extend: {
       colors: {
         primary: '#6A0030',
+        // KCGI brand orange. White text on orange controls is darkened in index.css for WCAG AA.
         secondary: '#F7961E',
         accent1: '#8A1A72',
         accent2: '#C63A87',

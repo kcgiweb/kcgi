@@ -10,7 +10,7 @@ export const AboutOverview: React.FC = () => (
           The Karnataka College Group of Institutions, managed by the Karnataka Educational Trust, stands as a beacon of academic excellence in Bengaluru. Founded with the mission to provide accessible, high-quality professional education, the group has grown into a multi-disciplinary educational hub.
         </p>
         <p>
-          With over 11 institutions spread across a sprawling campus, we offer a diverse array of programs including Pharmacy, Nursing, Management, Law, Physiotherapy, and School Education. Our institutions are recognized for their state-of-the-art infrastructure, experienced faculty, and strong industry linkages.
+          KCGI brings together institutions across Pharmacy, Nursing, Management, Law, Physiotherapy and School Education in Bengaluru. Explore each institution and request current course information from Admissions before applying.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

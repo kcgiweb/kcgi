@@ -46,3 +46,12 @@ body {
 .prerender-fallback ul { list-style: disc; padding-left: 1.25rem; }
 .prerender-fallback nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
 .prerender-fallback a { color: #6A0030; text-decoration: underline; }
+
+/* Keep KCGI's #F7961E brand orange on controls. White text on this bright
+   orange is not readable enough, so those controls use KCGI maroon text. */
+.bg-secondary.text-white,
+.hover\:bg-secondary.text-white:hover,
+.group:hover .group-hover\:bg-secondary.group-hover\:text-white {
+  background-color: #F7961E;
+  color: #6A0030;
+}

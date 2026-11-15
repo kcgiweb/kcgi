@@ -31,7 +31,7 @@ const ABOUT_CONTENT: Record<string, { title: string, subtitle: string, icon: any
             The Karnataka College Group of Institutions, managed by the Karnataka Educational Trust, stands as a beacon of academic excellence in Bengaluru. Founded with the mission to provide accessible, high-quality professional education, the group has grown into a multi-disciplinary educational hub.
           </p>
           <p>
-            With over 10 institutions spread across a sprawling campus, we offer a diverse array of programs including Pharmacy, Nursing, Management, Law, Physiotherapy, and School Education. Our institutions are recognized for their state-of-the-art infrastructure, experienced faculty, and strong industry linkages.
+            KCGI brings together institutions across Pharmacy, Nursing, Management, Law, Physiotherapy and School Education in Bengaluru. Explore each institution and request current course information from Admissions before applying.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -185,10 +185,10 @@ const ABOUT_CONTENT: Record<string, { title: string, subtitle: string, icon: any
       <div className="space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
-            { title: 'NAAC Accredited', text: 'Institutional Grade A certification for academic audits.' },
-            { title: 'AICTE Approved', text: 'Compliant with Technical Council standards.' },
-            { title: 'PCI & NMC Recognition', text: 'Approved for professional medical & pharmacy practice.' },
-            { title: 'RGUHS Affiliation', text: 'Member of premier Health Sciences University.' }
+            { title: 'Programme information', text: 'Current eligibility, fees and document requirements are available from Admissions.' },
+            { title: 'Academic guidance', text: 'Speak with the relevant institution before making an admission decision.' },
+            { title: 'Course documentation', text: 'Request official programme-specific approval and affiliation information.' },
+            { title: 'Student support', text: 'Get help choosing the appropriate course and institution.' }
           ].map((item, i) => (
             <div key={i} className="flex gap-6 p-8 bg-gray-50 rounded-3xl border border-gray-100">
               <CheckCircle2 className="w-8 h-8 text-secondary flex-shrink-0" />

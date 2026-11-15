@@ -172,7 +172,7 @@ export const AboutGroup: React.FC = () => {
                      },
                      { 
                        year: '2018', 
-                       title: 'NAAC A Grade Recognition', 
+                       title: 'Quality-focused learning',
                        desc: 'Achieving excellence in academic audits and ranking among top institutions in Bengaluru.',
                        color: 'bg-secondary'
                      },
@@ -317,13 +317,13 @@ export const AboutGroup: React.FC = () => {
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                            {[
-                             { title: 'NAAC A-Grade', desc: 'Highest standard of academic audit.' },
-                             { title: 'AICTE Approved', desc: 'Compliant with technical council norms.' },
-                             { title: 'RGUHS Affiliated', desc: 'Premier Health Science University.' },
-                             { title: 'PCI Recognized', desc: 'Approved for Pharmacy practice.' },
-                             { title: 'BCU Affiliated', desc: 'Affiliated to Bengaluru City University.' },
-                             { title: 'CBSE Affiliated', desc: 'For school education curriculum.' },
-                             { title: 'KSLU Affiliated', desc: 'Affiliated to Karnataka State Law University.' }
+                             { title: 'Programme information', desc: 'Request current course documentation before applying.' },
+                             { title: 'Admissions guidance', desc: 'Get support for eligibility and application requirements.' },
+                             { title: 'Student support', desc: 'Connect with the appropriate KCGI institution.' },
+                             { title: 'Course selection', desc: 'Explore healthcare, law, management and school education.' },
+                             { title: 'Campus learning', desc: 'Discover facilities and academic resources.' },
+                             { title: 'Updates', desc: 'Contact KCGI for verified current announcements.' },
+                             { title: 'Documentation', desc: 'Programme-specific details are available from Admissions.' }
                            ].map((item, i) => (
                              <div key={i} className="flex gap-4 items-start">
                                 <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0" />
@@ -337,10 +337,10 @@ export const AboutGroup: React.FC = () => {
                      </div>
                      <div className="grid grid-cols-2 gap-4">
                         <div className="aspect-square bg-white rounded-3xl flex items-center justify-center p-8 grayscale">
-                           <img src="https://sjbit.edu.in/wp-content/uploads/2021/07/NAAC-Logo-250x250-1.png" alt="NAAC" className="max-w-full" />
+                           <span className="font-bold text-primary">Programme information</span>
                         </div>
                         <div className="aspect-square bg-white rounded-3xl flex items-center justify-center p-8 grayscale">
-                           <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/All_India_Council_for_Technical_Education_logo.png" alt="AICTE" className="max-w-full" />
+                           <span className="font-bold text-primary">Admissions support</span>
                         </div>
                      </div>
                   </div>

@@ -2,11 +2,12 @@ import React from 'react';
 import { AdmissionsLayout } from '../../components/AdmissionsLayout';
 import { BookOpen, Download, FileText } from 'lucide-react';
 import { INSTITUTIONS } from '../../constants';
+import { Link } from 'react-router-dom';
 
 export const Prospectus: React.FC = () => (
   <AdmissionsLayout 
     title="Digital Prospectus" 
-    subtitle="Download our detailed course guides and institutional brochures for 2026-27." 
+    subtitle="Request the current course guide and programme information for 2026-27."
     icon={BookOpen}
   >
     <div className="space-y-12">
@@ -16,7 +17,7 @@ export const Prospectus: React.FC = () => (
           <h3 className="text-2xl font-serif font-bold text-primary">General Group Prospectus</h3>
           <p className="text-sm text-gray-500 font-medium mt-2">Comprehensive overview of the Karnataka College Group academic universe.</p>
         </div>
-        <button className="bg-secondary text-white px-8 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-primary transition-all shrink-0">Download Now</button>
+        <Link to="/admissions/enquiry" className="bg-secondary text-white px-8 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-primary transition-all shrink-0">Request Guide</Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -24,9 +25,9 @@ export const Prospectus: React.FC = () => (
           <div key={i} className="p-6 bg-white border border-gray-100 rounded-2xl flex justify-between items-center group hover:border-primary transition-all shadow-sm">
             <div>
               <h4 className="font-bold text-primary text-sm">{inst.name}</h4>
-              <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">Brochure 2026-27</p>
+              <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">Request current course guide</p>
             </div>
-            <button className="p-3 bg-gray-50 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all"><Download className="w-5 h-5" /></button>
+            <Link to="/admissions/enquiry" aria-label={`Request a course guide for ${inst.name}`} className="p-3 bg-gray-50 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all"><Download className="w-5 h-5" /></Link>
           </div>
         ))}
       </div>

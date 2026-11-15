@@ -36,6 +36,9 @@ export const InstitutionDetail: React.FC = () => {
         <img 
           src={inst.image} 
           alt={inst.name} 
+          width={1200}
+          height={630}
+          fetchPriority="high"
           className="w-full h-full object-cover transform scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent flex items-end">
@@ -213,9 +216,9 @@ export const InstitutionDetail: React.FC = () => {
                 <Link to="/admissions/enquiry" className="w-full bg-primary text-white py-4 rounded-xl font-bold text-xs hover:bg-secondary transition-all flex items-center justify-center gap-3 uppercase tracking-[0.2em] shadow-xl transform hover:-translate-y-1">
                    Apply Online <ArrowRight className="w-4 h-4" />
                 </Link>
-                <button className="w-full bg-white border-2 border-primary/10 text-primary py-3.5 rounded-xl font-bold text-xs hover:bg-primary hover:text-white transition-all uppercase tracking-[0.2em]">
-                   Download Prospectus
-                </button>
+                <Link to="/admissions/enquiry" className="w-full bg-white border-2 border-primary/10 text-primary py-3.5 rounded-xl font-bold text-xs hover:bg-primary hover:text-white transition-all uppercase tracking-[0.2em] flex justify-center">
+                   Request Course Guide
+                </Link>
               </div>
             </div>
           </div>

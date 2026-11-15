@@ -30,8 +30,8 @@ export const AboutHistory: React.FC = () => (
           },
           { 
             year: '2018', 
-            title: 'Quality & Accreditation', 
-            desc: 'Achieving NAAC Grade "A" accreditation across key institutions, validating our unwavering commitment to global standards of academic infrastructure and quality control.' 
+            title: 'Quality & Academic Development',
+            desc: 'Continued investment in academic processes, facilities and student support across the group.'
           },
           { 
             year: '2022', 

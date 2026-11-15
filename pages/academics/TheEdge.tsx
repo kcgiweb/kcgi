@@ -16,7 +16,7 @@ export const TheEdge: React.FC = () => (
           <div className="space-y-6">
             {[
               { title: 'Global Benchmarking', desc: 'Our curriculum is synced with international standards in Pharmacy and Nursing.' },
-              { title: 'Vibrant Alumni Power', desc: 'Direct mentorship from 50,000+ alumni placed in Fortune 500 companies.' },
+              { title: 'Alumni Connections', desc: 'Opportunities to learn from alumni and professional networks as they are available.' },
               { title: 'Holistic Development', desc: 'Equal emphasis on personality branding, communication, and ethics.' }
             ].map((v, i) => (
               <div key={i} className="flex gap-6 group">

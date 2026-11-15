@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdmissionsLayout } from '../../components/AdmissionsLayout';
-import { FileText, Download } from 'lucide-react';
+import { FileText, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const RequiredDocuments: React.FC = () => (
   <AdmissionsLayout 
@@ -37,9 +38,9 @@ export const RequiredDocuments: React.FC = () => (
           <h4 className="text-xl font-bold text-primary mb-3">Note for Applicants</h4>
           <p className="text-sm text-gray-500 leading-relaxed font-medium">Please bring 3 sets of attested photocopies of all original documents. Original documents will be retained by the institution until university approval.</p>
         </div>
-        <button className="flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all">
-          Download PDF Checklist <Download className="w-4 h-4" />
-        </button>
+        <Link to="/admissions/enquiry" className="flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all">
+          Request Course Checklist <Send className="w-4 h-4" />
+        </Link>
       </div>
     </div>
   </AdmissionsLayout>

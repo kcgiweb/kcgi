@@ -59,10 +59,16 @@ const link = (href: string, text: string) => `<a href="${esc(href)}">${esc(text)
 
 const siteNav = (): string => {
   const main: [string, string][] = [
-    ['/', 'Home'], ['/about', 'About'], ['/academics', 'Academics'], ['/admissions', 'Admissions 2026-27'],
-    ['/facilities', 'Facilities'], ['/placements', 'Placements'], ['/contact', 'Contact'],
+    ['/', 'Home'],
+    ['/admissions', 'Admissions 2026-27'],
+    ['/academics', 'Courses & Academics'],
+    ['/admissions/fees', 'Fees Structure'],
+    ['/facilities', 'Campus Facilities'],
+    ['/placements', 'Placements'],
+    ['/contact', 'Contact Us'],
+    ['/about', 'About the Group'],
   ];
-  return `<nav aria-label="Site"><ul>${main.map(([h, t]) => `<li>${link(h, t)}</li>`).join('')}</ul></nav>`;
+  return `<nav aria-label="Site Navigation"><ul>${main.map(([h, t]) => `<li>${link(h, t)}</li>`).join('')}</ul></nav>`;
 };
 
 const institutionsList = () =>
@@ -110,7 +116,14 @@ const bodyContent = (seo: ResolvedSeo): string => {
 const render = (template: string, seo: ResolvedSeo) =>
   template
     .replace('<!--seo-head-->', headTags(seo))
-    .replace('<!--seo-body-->', bodyContent(seo));
+    .replace('<!--seo-body-->', bodyContent(seo))
+    // Homepage LCP: start fetching the hero image before the JS bundle runs.
+    .replace('</head>', seo.institution
+      ? `  <link rel="preload" as="image" href="${seo.institution.image}" fetchpriority="high">
+</head>`
+      : seo.path === '/'
+      ? '  <link rel="preload" as="image" href="/assets/images/opt/hero-1200.webp" imagesrcset="/assets/images/opt/hero-640.webp 640w, /assets/images/opt/hero-1200.webp 1200w" imagesizes="100vw" fetchpriority="high">\n</head>'
+      : '</head>');
 
 const outFileFor = (outDir: string, routePath: string) =>
   routePath === '/' ? path.join(outDir, 'index.html') : path.join(outDir, `${routePath.slice(1)}.html`);

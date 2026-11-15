@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdmissionsLayout } from '../../components/AdmissionsLayout';
 import { Award, Star, Trophy } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Scholarships: React.FC = () => (
   <AdmissionsLayout 
@@ -13,15 +14,15 @@ export const Scholarships: React.FC = () => (
         {[
           { 
             icon: Star, 
-            title: 'Merit Scholarship', 
-            desc: 'Up to 50% fee waiver for students scoring above 90% in board examinations.',
+            title: 'Merit-based support',
+            desc: 'Ask Admissions about currently available merit-based support and its eligibility criteria.',
             iconBg: 'bg-[#F1EBED]',
             iconColor: 'text-primary'
           },
           { 
             icon: Trophy, 
-            title: 'Sports Excellence', 
-            desc: 'Dedicated grants and flexible schedules for State and National level athletes.',
+            title: 'Student support options',
+            desc: 'Ask Admissions about current support options and the documents required for consideration.',
             iconBg: 'bg-[#F1EBED]',
             iconColor: 'text-primary'
           }
@@ -39,7 +40,7 @@ export const Scholarships: React.FC = () => (
       <div className="bg-gray-50 p-10 rounded-[3rem] border border-gray-100 text-center max-w-2xl mx-auto">
         <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mb-4">How to Apply</p>
         <p className="text-base text-customText leading-relaxed mb-8">Scholarship applications are reviewed during the admission process. Please submit your relevant certificates and marksheets to the scholarship cell.</p>
-        <button className="bg-primary text-white px-10 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all">Download Scholarship Form</button>
+        <Link to="/admissions/enquiry" className="inline-block bg-primary text-white px-10 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all">Ask About Scholarships</Link>
       </div>
     </div>
   </AdmissionsLayout>

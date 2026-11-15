@@ -21,26 +21,10 @@ import { INSTITUTIONS } from '../constants';
 import { HOME_FAQ } from '../seo/config';
 
 export const Home: React.FC = () => {
-  const partnerLogos = [
-    { name: 'Amazon', url: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
-    { name: 'Pfizer', url: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Pfizer_%282021%29.svg' },
-    { name: 'Infosys', url: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg' },
-    { name: 'Deloitte', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRImMsjSVXG4MU9ybpLdoio8DEHTnY-5x8gXr6r4eD8U3Q9NLt5vGQ7wqQ&s=10' },
-    { name: 'TCS', url: 'https://vectorseek.com/wp-content/uploads/2023/08/TCS-Tata-Consultancy-Services-Logo-Vector.svg-.png' },
-    { name: 'Biocon', url: 'https://www.logo.wine/a/logo/Biocon/Biocon-Logo.wine.svg' },
-  ];
-
-  const affiliationLogos = [
-    { name: 'AICTE', url: 'https://upload.wikimedia.org/wikipedia/en/e/eb/All_India_Council_for_Technical_Education_logo.png', desc: 'Approved by AICTE' },
-    { name: 'PCI', url: '/assets/images/opt/pci-logo.webp', desc: 'Recognized by PCI' },
-    { name: 'RGUHS', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTepoRcwGHChReAO7cHODgrBTZGOrC9W--3xQ&s', desc: 'Affiliated to RGUHS' },
-    { name: 'NAAC', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijpghFkMUvYzlQriFzKgsYbDNUM0qaDFetlcNZEO22w&s=10', desc: 'NAAC Accredited Grade A' },
-    { name: 'INC', url: 'https://www.icn.ch/sites/default/files/styles/large/public/2023-05/India_INC%20Logo%20%282%29.png?itok=h5fPElhX', desc: 'Recognized by INC' },
-    { name: 'KSLU', url: 'https://iras-proxy-assets.s3.ap-south-1.amazonaws.com/60942ff751f89d059ff43066/logo/5-7-2021--4-16-35-am-logo.png', desc: 'Affiliated to KSLU' },
-    { name: 'KNC', url: 'https://vidyarthiinstitutions.com/img/affiliations/3.jpg', desc: 'Recognized by KNC' },
-    { name: 'Govt. Karnataka', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSwtz3LdNqfcixXpoz5U1GVZMkrGoZEN8pg&s', desc: 'Govt. of Karnataka' },
-    { name: 'BCU', url: 'https://i.pinimg.com/736x/2f/f6/27/2ff6272871bc45a24cc576502342a9bd.jpg', desc: 'Affiliated to BCU' },
-    { name: 'CBSE', url: 'https://i.pinimg.com/736x/e2/da/ae/e2daaec4c90b8633c90b554b6e205620.jpg', desc: 'Affiliated to CBSE' },
+  const academicSupport = [
+    { title: 'Career preparation', text: 'Guidance, skill development and placement support are available through the institution.' },
+    { title: 'Programme guidance', text: 'Admissions can share the current eligibility, duration, fee and document requirements for each course.' },
+    { title: 'Student support', text: 'Speak with the campus team for verified information before making an admission decision.' },
   ];
 
   const heroVideoUrl = "/assets/videos/Welcome-to-Karnataka-College-Group-of-Institutions-_-Where-Education-Meets-Excellence_riipez_lvqzli.mp4";
@@ -66,11 +50,14 @@ export const Home: React.FC = () => {
       <section className="relative h-[65vh] md:h-screen w-full overflow-hidden bg-black">
         {/* The hero video is ~54 MB: only stream it on larger screens without Data Saver. */}
         <img
-          src="/assets/images/og/kcgi-og.jpg"
+          src="/assets/images/opt/hero-1200.webp"
+          srcSet="/assets/images/opt/hero-640.webp 640w, /assets/images/opt/hero-1200.webp 1200w"
+          sizes="100vw"
           alt="Karnataka College Group of Institutions campus gate, Yelahanka, Bengaluru"
           width={1200}
           height={630}
           fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         />
         {showHeroVideo && (
@@ -80,7 +67,7 @@ export const Home: React.FC = () => {
             loop
             playsInline
             preload="none"
-            poster="/assets/images/og/kcgi-og.jpg"
+            poster="/assets/images/opt/hero-1200.webp"
             className="absolute inset-0 w-full h-full object-cover opacity-90"
           >
             <source src={heroVideoUrl} type="video/mp4" />
@@ -165,7 +152,7 @@ export const Home: React.FC = () => {
             </div>
             <div className="lg:w-1/2 relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                <img src="/assets/images/opt/homeabout.webp" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
+                <img src="/assets/images/opt/homeabout.webp" loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Institutional Campus" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl z-0" />
               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0" />
@@ -193,6 +180,10 @@ export const Home: React.FC = () => {
                   <img
                     src={inst.image}
                     alt={inst.name}
+                    loading="lazy"
+                    decoding="async"
+                    width={600}
+                    height={520}
                     className="w-full h-full object-cover transform transition-transform duration-[2s] ease-out group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
@@ -254,16 +245,17 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Partners Marquee */}
-      <section className="bg-gray-50 py-24 overflow-hidden border-t border-b border-gray-100">
-        <div className="text-center mb-16 px-6">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Our Recruitment Partners</h2>
-        </div>
-        <div className="flex w-full">
-          <div className="flex animate-marquee whitespace-nowrap items-center">
-            {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((logo, idx) => (
-              <div key={idx} className="mx-12 md:mx-20 flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
-                <img src={logo.url} alt={logo.name} className="h-10 md:h-12 w-auto object-contain max-w-[160px]" />
+      <section className="bg-gray-50 py-24 border-t border-b border-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Career and Admission Support</h2>
+            <p className="mt-4 text-black font-bold">Clear, current information matters when choosing a college. Our team can guide you through the next step.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {academicSupport.map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                <p className="text-black leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
@@ -290,25 +282,16 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Affiliations & Approvals Section */}
+      {/* Programme information section */}
       <section className="py-24 bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Recognitions & Standards</h2>
-            <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">Affiliations & Approvals</h3>
-            <p className="mt-4 text-black font-bold">Our institutions are recognized and approved by India's premier governing bodies, ensuring global academic validity.</p>
+            <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Before You Apply</h2>
+            <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">Programme Information</h3>
+            <p className="mt-4 text-black font-bold">Approvals, affiliations, eligibility and fees differ by institution and programme. Request the current official document from Admissions.</p>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
-            {affiliationLogos.map((logo, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-3xl border border-gray-100 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
-                <div className="h-20 w-full flex items-center justify-center mb-5">
-                  <img src={logo.url} alt={logo.name} className="max-h-full max-w-full object-contain transition-all duration-500 group-hover:scale-105" />
-                </div>
-                <h4 className="text-sm font-bold text-primary mb-1">{logo.name}</h4>
-                <p className="text-xs text-black font-black uppercase tracking-wider">{logo.desc}</p>
-              </div>
-            ))}
+          <div className="flex justify-center">
+            <Link to="/admissions/enquiry" className="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary transition-colors">Request programme documents</Link>
           </div>
         </div>
       </section>

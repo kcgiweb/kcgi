@@ -67,7 +67,7 @@ export const HOME_FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'Which universities and boards are KCGI institutions affiliated to?',
-    a: 'Depending on the course, KCGI institutions are affiliated to Rajiv Gandhi University of Health Sciences (RGUHS), Karnataka State Law University (KSLU), Bengaluru City University, the Karnataka PU Board and CBSE. Pharmacy is PCI approved and Nursing is INC and KNC recognised.',
+    a: 'Approval, affiliation and board information differs by institution and programme. Contact KCGI Admissions for the current official document for the course you are considering.',
   },
   {
     q: 'How do I apply for admission at KCGI?',
@@ -133,7 +133,7 @@ export const ROUTES: Record<string, PageSeo> = {
   '/admissions/eligibility': { title: 'Eligibility Criteria for All Courses | KCGI Admissions', description: 'Eligibility for B.Pharm, D.Pharm, B.Sc Nursing, GNM, BPT, LL.B, MBA, BBA, BCA, B.Ed and PU admission at KCGI Bengaluru.', label: 'Eligibility', priority: 0.7 },
   '/admissions/documents': { title: 'Documents Required for Admission | KCGI Bengaluru', description: 'Checklist of documents needed for admission at KCGI, including RGUHS, BCU and KSLU course requirements.', label: 'Documents Required', priority: 0.6 },
   '/admissions/enquiry': { title: 'Admission Enquiry | KCGI Bengaluru', description: 'Send an admission enquiry to Karnataka College Group of Institutions. Our counsellors will call you back about courses, fees and eligibility.', label: 'Enquiry', priority: 0.7 },
-  '/admissions/prospectus': { title: 'Download Prospectus 2026-27 | KCGI Bengaluru', description: 'Download the KCGI prospectus for 2026-27 with programmes, facilities and admission details for all 11 institutions.', label: 'Prospectus', priority: 0.6 },
+  '/admissions/prospectus': { title: 'Request Course Guide 2026-27 | KCGI Bengaluru', description: 'Request the current KCGI course guide for programme details, facilities and admission information for 2026-27.', label: 'Course Guide', priority: 0.6 },
   '/admissions/international': { title: 'International & Out-of-State Admissions | KCGI Bengaluru', description: 'Admission guidance for international students and students from Kerala, Andhra Pradesh, Telangana and other states at KCGI Bengaluru.', label: 'International Admissions', priority: 0.6 },
   '/admissions/fees': { title: 'KCGI Fees Structure 2026-27 | Course-wise Fee Enquiry', description: 'How fees work at Karnataka College Group of Institutions (KCGI), Bengaluru: tuition, lab, library and exam fees by course and quota. Request a course-wise fee breakup.', label: 'Fees Structure', priority: 0.7 },
   '/admissions/scholarships': { title: 'Scholarships & Financial Aid | KCGI Bengaluru', description: 'Merit, need-based and government scholarships available to students at Karnataka College Group of Institutions.', label: 'Scholarships', priority: 0.6 },
@@ -142,7 +142,7 @@ export const ROUTES: Record<string, PageSeo> = {
   // Other
   '/placements': { title: 'KCGI Placements & Recruiters | Karnataka College Group, Bengaluru', description: 'Training and placements at KCGI: hospital, pharma and corporate recruiters, internships and career support.', label: 'Placements', priority: 0.7 },
   '/facilities': { title: 'KCGI Campus Facilities, Hostel & Transport | Yelahanka', description: 'Labs, library, separate hostels, transport, medical and sports facilities on the KCGI campus in Yelahanka, Bengaluru.', label: 'Facilities', priority: 0.7 },
-  '/naac': { title: 'NAAC Accreditation | KCGI Bengaluru', description: 'NAAC accreditation details, IQAC and quality documents for Karnataka College Group of Institutions.', label: 'NAAC', priority: 0.4 },
+  '/naac': { title: 'Quality & Academic Information | KCGI Bengaluru', description: 'Request verified programme-specific approval, affiliation, eligibility and fee information from Karnataka College Group of Institutions.', label: 'Quality Information', priority: 0.4 },
   '/news': { title: 'KCGI News & Events | Karnataka College Group of Institutions', description: 'Latest news, events, fests, seminars and achievements from Karnataka College Group of Institutions.', label: 'News & Events', priority: 0.5, changefreq: 'weekly' },
   '/contact': { title: 'KCGI Contact Number & Address | Yelahanka, Bengaluru', description: 'Contact Karnataka College Group of Institutions: 33/2 Hegde Nagar Main Rd, Yelahanka, Bengaluru 560064. Call 080808 33000 or email info@kcgiedu.org.', label: 'Contact', h1: 'Contact KCGI', priority: 0.8 },
   '/privacy-policy': { title: 'Privacy Policy | KCGI Bengaluru', description: 'How Karnataka College Group of Institutions collects, uses and protects personal data from enquiries, applications and payments.', label: 'Privacy Policy', priority: 0.2, changefreq: 'yearly' },
@@ -164,35 +164,17 @@ const SECTION_LABELS: Record<string, string> = {
   institution: 'Institutions',
 };
 
-const approvalsFor = (inst: Institution): string => {
-  switch (inst.id) {
-    case 'pharmacy': return 'PCI approved, RGUHS affiliated';
-    case 'nursing': return 'INC & KNC recognised, RGUHS affiliated';
-    case 'physiotherapy':
-    case 'allied-health':
-    case 'paramedical': return 'RGUHS affiliated';
-    case 'law': return 'KSLU affiliated';
-    case 'management':
-    case 'management-science':
-    case 'education': return 'Bengaluru City University affiliated';
-    case 'public-school': return 'CBSE affiliated';
-    case 'pu-college': return 'Karnataka PU Board';
-    default: return '';
-  }
-};
-
 const courseList = (inst: Institution, max = 5) =>
   inst.courses.slice(0, max).map(c => c.name).join(', ');
 
 export const institutionSeo = (inst: Institution): PageSeo => {
-  const approvals = approvalsFor(inst);
   // Fit as many course names as possible into ~70 characters.
   const title = [3, 2, 1]
     .map(n => `${inst.name}, Bangalore | ${courseList(inst, n)} Admissions 2026`)
     .find(t => t.length <= 75) ?? `${inst.name}, Bangalore | Admissions 2026`;
   const description =
-    `${inst.name}, a KCGI institution in Yelahanka, Bengaluru${approvals ? ` (${approvals})` : ''}. ` +
-    `Courses: ${courseList(inst, 6)}. Admissions open for 2026-27. Call 080808 33000.`;
+    `${inst.name}, a KCGI institution in Yelahanka, Bengaluru. ` +
+    `Courses: ${courseList(inst, 6)}. Request current eligibility, fees and programme documents from Admissions.`;
   return {
     title: title.length > 75 ? `${inst.name}, Bangalore | Admissions 2026` : title,
     description: description.length > 170 ? description.slice(0, 167).replace(/[ ,.]+\S*$/, '') + '…' : description,
@@ -226,8 +208,8 @@ export const organizationSchema = () => ({
   '@context': 'https://schema.org',
   '@type': ['EducationalOrganization', 'CollegeOrUniversity'],
   '@id': ORG_ID,
-  name: SITE_NAME,
-  alternateName: [SITE_SHORT_NAME, 'KCGI Bangalore', 'KCGI Bengaluru', 'KCGI Yelahanka', 'Karnataka College Bangalore'],
+  name: `KCGI - ${SITE_NAME}`,
+  alternateName: [SITE_SHORT_NAME, SITE_NAME, 'KCGI Bangalore', 'KCGI Bengaluru', 'KCGI Yelahanka', 'Karnataka College Bangalore'],
   description: ROUTES['/'].description,
   legalName: ORG.legalName,
   url: `${SITE_URL}/`,
@@ -259,10 +241,69 @@ export const websiteSchema = () => ({
   '@type': 'WebSite',
   '@id': WEBSITE_ID,
   url: `${SITE_URL}/`,
-  name: SITE_NAME,
-  alternateName: [SITE_SHORT_NAME, 'KCGI Bangalore'],
+  name: SITE_SHORT_NAME,
+  alternateName: [SITE_NAME, `${SITE_SHORT_NAME} Bangalore`, `${SITE_SHORT_NAME} Bengaluru`],
   publisher: { '@id': ORG_ID },
   inLanguage: 'en-IN',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/academics?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+});
+
+/** Schema to signal top-level navigation sitelinks to Googlebot */
+export const siteNavigationSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'KCGI Primary Navigation',
+  itemListElement: [
+    {
+      '@type': 'SiteNavigationElement',
+      position: 1,
+      name: 'Admissions 2026-27',
+      description: 'Apply online, eligibility criteria, document requirements and admission procedures at KCGI.',
+      url: `${SITE_URL}/admissions`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 2,
+      name: 'Courses & Academics',
+      description: 'Explore undergraduate, postgraduate and diploma courses across 11 KCGI institutions.',
+      url: `${SITE_URL}/academics`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 3,
+      name: 'Fees Structure',
+      description: 'Course-wise fees information, payment terms and fee enquiries for academic year 2026-27.',
+      url: `${SITE_URL}/admissions/fees`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 4,
+      name: 'Campus Facilities',
+      description: 'Central library, high-tech laboratories, separate hostels, sports and transport facilities.',
+      url: `${SITE_URL}/facilities`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 5,
+      name: 'Placements & Recruiters',
+      description: 'Hospital affiliations, corporate recruiters, student training and placement track record.',
+      url: `${SITE_URL}/placements`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 6,
+      name: 'Contact & Campus Location',
+      description: 'Campus address in Yelahanka, Bengaluru, admissions helpline, phone numbers and map directions.',
+      url: `${SITE_URL}/contact`,
+    },
+  ],
 });
 
 export const institutionSchema = (inst: Institution) => {
@@ -383,7 +424,7 @@ export const resolveSeo = (rawPath: string): ResolvedSeo => {
   const crumbs = found ? buildCrumbs(canonicalPath, inst) : [];
 
   const jsonLd: object[] = [];
-  if (canonicalPath === '/') jsonLd.push(organizationSchema(), websiteSchema(), faqSchema());
+  if (canonicalPath === '/') jsonLd.push(organizationSchema(), websiteSchema(), siteNavigationSchema(), faqSchema());
   if (inst) jsonLd.push(institutionSchema(inst));
   if (crumbs.length > 1) jsonLd.push(breadcrumbSchema(crumbs));
 

@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, ExternalLi
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
-  const logoUrl = "/assets/images/logo.webp";
+  const logoUrl = "/assets/images/logo-480.webp";
   const externalMapsLink = "https://www.google.com/maps/place/Karnataka+College+Group+of+Institutions/@13.0860698,77.6355606,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae183352e8af21:0xa842e197d612053f!8m2!3d13.0860698!4d77.6355606!16s%2Fg%2F11l244r1vl?entry=ttu";
 
   return (
@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
               <img 
                 src={logoUrl} 
                 alt="Karnataka College Group of Institutions"
-                width={904}
-                height={239}
+                width={480}
+                height={127}
                 loading="lazy"
                 className="h-16 w-auto"
               />
@@ -28,20 +28,21 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               {[
-                { Icon: Facebook, href: "https://facebook.com/Kcgiedu" },
-                { Icon: Instagram, href: "https://instagram.com/Kcgiedu" },
-                { Icon: Twitter, href: "https://twitter.com/Kcgiedu" },
-                { Icon: Linkedin, href: "https://linkedin.com/company/kcgiedu" },
+                { Icon: Facebook, href: "https://facebook.com/Kcgiedu", label: "KCGI on Facebook" },
+                { Icon: Instagram, href: "https://instagram.com/Kcgiedu", label: "KCGI on Instagram" },
+                { Icon: Twitter, href: "https://twitter.com/Kcgiedu", label: "KCGI on X (Twitter)" },
+                { Icon: Linkedin, href: "https://linkedin.com/company/kcgiedu", label: "KCGI on LinkedIn" },
                 { Icon: (props: any) => (
                   <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.14 1 12 1 12s0 3.86.46 5.58a2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.86 23 12 23 12s0-3.86-.46-5.58z" />
                     <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
                   </svg>
-                ), href: "https://youtube.com/@kcgiedu?si=5nI63pg8UhxbekMg" }
-              ].map(({ Icon, href }, i) => (
+                ), href: "https://youtube.com/@kcgiedu?si=5nI63pg8UhxbekMg", label: "KCGI on YouTube" }
+              ].map(({ Icon, href, label }, i) => (
                 <a 
                   key={i} 
                   href={href} 
+                  aria-label={label}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center hover:bg-secondary text-primary hover:text-white transition-all"
@@ -56,24 +57,24 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-primary font-bold uppercase tracking-wider mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm font-bold">
-              <li><Link to="/" className="text-black hover:text-secondary transition-colors">Home</Link></li>
-              <li><Link to="/about" className="text-black hover:text-secondary transition-colors">About the Group</Link></li>
-              <li><Link to="/admissions" className="text-black hover:text-secondary transition-colors">Admissions</Link></li>
+              <li><Link to="/admissions" className="text-black hover:text-secondary transition-colors">Admissions 2026-27</Link></li>
+              <li><Link to="/academics" className="text-black hover:text-secondary transition-colors">Courses &amp; Academics</Link></li>
+              <li><Link to="/admissions/fees" className="text-black hover:text-secondary transition-colors">Fees Structure</Link></li>
+              <li><Link to="/facilities" className="text-black hover:text-secondary transition-colors">Campus Facilities</Link></li>
               <li><Link to="/placements" className="text-black hover:text-secondary transition-colors">Placements</Link></li>
-              <li><Link to="/contact" className="text-black hover:text-secondary transition-colors">Campus Map</Link></li>
+              <li><Link to="/contact" className="text-black hover:text-secondary transition-colors">Contact Us</Link></li>
+              <li><Link to="/about" className="text-black hover:text-secondary transition-colors">About KCGI</Link></li>
             </ul>
           </div>
 
-          {/* Accreditations */}
+          {/* Academic information */}
           <div>
-            <h4 className="text-primary font-bold uppercase tracking-wider mb-6">Accreditations</h4>
+            <h4 className="text-primary font-bold uppercase tracking-wider mb-6">Academic Information</h4>
             <ul className="space-y-4 text-sm font-bold">
-              <li className="text-black">Approved by AICTE & PCI</li>
-              <li className="text-black">Affiliated to RGUHS, KSLU & BCU</li>
-              <li className="text-black">CBSE Affiliated</li>
-              <li className="text-black">Recognized by Govt of Karnataka</li>
-              <li className="text-black">NAAC Accredited Grade 'A'</li>
-              <li className="text-black">NMC Recognized</li>
+              <li className="text-black">11 institutions on one Bengaluru campus</li>
+              <li className="text-black">Healthcare, law, management and school education</li>
+              <li className="text-black">Programme-specific documents available from Admissions</li>
+              <li><Link to="/academics" className="text-primary hover:text-secondary transition-colors">Explore courses and institutions</Link></li>
             </ul>
           </div>
 

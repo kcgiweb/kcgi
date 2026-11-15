@@ -252,10 +252,10 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 h-16 md:h-24 flex items-center justify-between relative">
         <Link to="/" className="flex items-center relative z-[110]">
           <img 
-            src="/assets/images/logo.webp"
+            src="/assets/images/logo-480.webp"
             alt="Karnataka College Group of Institutions logo"
-            width={904}
-            height={239}
+            width={480}
+            height={127}
             fetchPriority="high"
             className={`h-10 md:h-14 lg:h-16 w-auto transition-all drop-shadow-md`}
           />
@@ -297,7 +297,7 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden p-2 relative z-[110]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="lg:hidden p-2 relative z-[110]" aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <X className="w-6 h-6 text-primary"/> : <Menu className={`w-6 h-6 ${isHome && !isScrolled ? 'text-white' : 'text-primary'}`}/>}
         </button>
       </div>
