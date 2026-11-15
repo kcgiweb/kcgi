@@ -1,0 +1,1277 @@
+{
+ "meta": {
+  "client_name": "Karnataka College Group of Institutions",
+  "url": "https://kcgiedu.org",
+  "date": "15 November 2026 (post-fix audit)",
+  "agency_name": "KCGI Web Team",
+  "agency_url": "",
+  "business_model": "B2C Local (single campus, 11 institutions)",
+  "market": "Yelahanka, North Bengaluru, Karnataka",
+  "launch_status": "live"
+ },
+ "brand": {
+  "primary": "#6A0030",
+  "secondary": "#A64B00",
+  "accent": "#8A1A72",
+  "source": "post-fix Tailwind tokens; secondary colour darkened for WCAG AA contrast with white text"
+ },
+ "executive_summary": {
+  "market_context": "North Bengaluru's Yelahanka belt is crowded with private health-science and management colleges (Nitte, Aditya, Mahalakshmi, MVM, SB, KNN, Ocean), and students compare them on Careers360, Collegedunia and Shiksha before visiting any college site. The brand keyword 'KCGI' is shared with a Korean investment fund and a Kyoto IT graduate school, both older and with stronger entity signals.",
+  "verdict": "The technical foundation is sound and the code-level trust, content and contrast findings from the re-audit have been fixed in the deployable build. Three external actions remain: redirect a legacy pharmacy domain if owned, request Google recrawl, and publish verified programme data.",
+  "key_points": [
+   "All 3 blockers from the 10 November audit are fixed and live: inner pages return 200, emails use @kcgiedu.org, and Privacy Policy and Terms are published.",
+   "Resolved in code: unsupported NAAC/NMC accreditation claims, stock testimonial, sample news, unverified recruiter brands and third-party logo hotlinks were removed from public pages.",
+   "Remaining manual action (conditional on ownership): karnatakacollegeofpharmacy.com is live with the same pharmacy college and address, but does not redirect to kcgiedu.org — a likely authority split.",
+   "Live Core Web Vitals could not be measured today because the PageSpeed API returned 429; local performance improvements must be treated as not-yet-live until deployment is confirmed.",
+   "kcgiedu.org was #3 for 'kcgi' on 13 November, behind kcgifund.com and kcg.edu. The gap is entity strength (Google Business Profile, Wikidata, listings), not on-page SEO.",
+   "Content is now the limiting factor: competitors publish fees and course pages, while KCGI's course data has names only."
+  ],
+  "stats": [
+   {
+    "label": "Blockers",
+    "value": "0 code"
+   },
+   {
+    "label": "Lighthouse SEO",
+    "value": "100"
+   },
+   {
+    "label": "'kcgi' rank",
+    "value": "#3"
+   },
+   {
+    "label": "Page weight",
+    "value": "757 KB"
+   }
+  ]
+ },
+ "business_overview": {
+  "summary": "Karnataka College Group of Institutions (KCGI), run by the Karnataka Educational Trust since 1997, operates 11 institutions on one campus at Hegde Nagar, Yelahanka / Thirumenahalli, Bengaluru 560064: pharmacy, nursing, management, management & science, education (B.Ed), law, allied health, paramedical, physiotherapy, a PU college and a CBSE school.",
+  "services": [
+   "Pharmacy (D.Pharm, B.Pharm, M.Pharm, Pharm D, PhD)",
+   "Nursing (GNM, B.Sc, M.Sc)",
+   "Management (MBA, BBA, BCA, B.Com)",
+   "Education (B.Ed)",
+   "Law (LL.B 3-year)",
+   "Allied Health (B.Sc MLT, MIT, AT)",
+   "Paramedical diplomas",
+   "Physiotherapy (BPT, MPT)",
+   "PU College (Science, Commerce)",
+   "Karnataka Public School (CBSE, LKG-10)"
+  ],
+  "areas_served": [
+   "Yelahanka",
+   "Thirumenahalli",
+   "Hegde Nagar",
+   "North Bengaluru",
+   "Students from Kerala, Andhra Pradesh, Telangana and abroad (per site copy)"
+  ],
+  "site_status": "Live React SPA (Vite) on Hostinger with build-time prerendering: 49 indexable URLs, each with its own HTML, title, canonical and JSON-LD; real 404s for unknown paths; 301s for www, http, .html and trailing slashes (measured 15 Nov 2026).",
+  "issues": [
+   {
+    "issue": "Unsupported accreditation claims",
+    "severity": "low",
+    "detail": "RESOLVED IN CODE: unsupported NAAC Grade A and NMC claims were removed from the homepage, footer and quality pages. Re-publish only programme-specific claims backed by current official documents."
+   },
+   {
+    "issue": "Likely legacy pharmacy domain remains live",
+    "severity": "high",
+    "detail": "karnatakacollegeofpharmacy.com is a live WordPress site for Karnataka College of Pharmacy at the same Yelahanka address. If KCGI controls it, the separate domain divides links, brand signals and search traffic from the KCGI pharmacy page."
+   },
+   {
+    "issue": "Third-party logo hotlinks",
+    "severity": "low",
+    "detail": "RESOLVED IN CODE: public recruitment and affiliation-logo blocks were replaced with first-party, verification-focused information."
+   },
+   {
+    "issue": "Thin course data",
+    "severity": "high",
+    "detail": "constants.ts lists course names only: no duration, eligibility, intake or fees. Competitors' course and fees pages win those searches."
+   },
+   {
+    "issue": "Sample testimonial and news content",
+    "severity": "low",
+    "detail": "RESOLVED IN CODE: the stock testimonial and fictional/stale news cards were replaced with truthful contact and update states."
+   },
+   {
+    "issue": "Low-contrast orange labels",
+    "severity": "low",
+    "detail": "RESOLVED IN CODE: the secondary colour changed from #F7961E to #A64B00, providing sufficient contrast for white text."
+   },
+   {
+    "issue": "http://www takes two redirect hops",
+    "severity": "low",
+    "detail": "http://www -> https://www -> https://kcgiedu.org, because Hostinger forces HTTPS before .htaccess runs. Harmless; one hop is cleaner."
+   }
+  ]
+ },
+ "competitors": [
+  {
+   "name": "Acharya Institutes",
+   "url": "https://acharya.ac.in",
+   "hq": "Soladevanahalli, North Bengaluru",
+   "scale": "Large multi-college campus (pharmacy, nursing, management, engineering)",
+   "differentiator": "City-wide brand; homepage title targets 'Best College in Bangalore', the same phrase KCGI targets.",
+   "strengths": "Server-rendered HTML with H1s, a dedicated fees page, a news section and per-college pages (e.g. Acharya & BM Reddy College of Pharmacy).",
+   "weaknesses": "No JSON-LD schema on the homepage. Sitemap.xml redirects rather than resolving.",
+   "reviews": null
+  },
+  {
+   "name": "Nitte (Yelahanka campus: NCOPS and others)",
+   "url": "https://nitte.edu.in",
+   "hq": "Mangaluru; Bengaluru campus in Yelahanka",
+   "scale": "Deemed-to-be university",
+   "differentiator": "University brand with a pharmacy college a few kilometres from KCGI.",
+   "strengths": "JSON-LD schema, fee-structure page, active news, and a supporting blog network targeting 'best pharmacy college in Yelahanka'.",
+   "weaknesses": "The Yelahanka pharmacy keyword push relies on a Blogspot satellite rather than the main domain.",
+   "reviews": null
+  },
+  {
+   "name": "Krupanidhi Group of Institutions",
+   "url": "https://krupanidhi.edu.in",
+   "hq": "Bengaluru (Varthur / Carmelaram)",
+   "scale": "Pharmacy, physiotherapy, nursing, business school; pharmacy college NAAC A+",
+   "differentiator": "Closest like-for-like portfolio: health sciences plus management under one trust.",
+   "strengths": "Paid campaign landing pages per discipline, international admissions microsite, Wikipedia article.",
+   "weaknesses": "Homepage is also a JS shell (about 5 KB HTML, no H1, no schema), the same weakness as KCGI.",
+   "reviews": null
+  },
+  {
+   "name": "Aditya Group of Institutions",
+   "url": "https://www.collegedunia.com/college/60510-aditya-group-of-institutions-bangalore",
+   "hq": "Kogilu Main Road, Yelahanka 560064",
+   "scale": "Pharmacy, nursing, physiotherapy, management",
+   "differentiator": "Same pincode as KCGI, with near-identical programmes. The most direct local rival.",
+   "strengths": "Full aggregator presence (Shiksha, Collegedunia, Careers360) with dozens of reviews; its pharmacy institute shows up in pharmacy college Yelahanka results.",
+   "weaknesses": "Official website not confirmed; aggregator founding year conflicts (1998 vs 2008).",
+   "reviews": {
+    "count": 31,
+    "rating": 3.6,
+    "source": "aggregator listing, Nov 2026 (Shiksha: 38 infrastructure reviews at 3.8)"
+   }
+  },
+  {
+   "name": "Sambhram Group of Institutions",
+   "url": "https://www.sambhram.org",
+   "hq": "M S Palya, Jalahalli East, Bengaluru",
+   "scale": "Engineering, management, nursing",
+   "differentiator": "Nursing (GNM, B.Sc, M.Sc) competes for the same North Bengaluru students.",
+   "strengths": "WordPress site with H1s and a large indexable HTML footprint.",
+   "weaknesses": "No schema. Thin, inconsistent course listings across aggregators.",
+   "reviews": null
+  },
+  {
+   "name": "Yelahanka nursing colleges (SB, KNN, Ocean)",
+   "url": "https://www.careers360.com/colleges/sb-college-of-nursing-bengaluru",
+   "hq": "Yelahanka New Town",
+   "scale": "Single-discipline RGUHS-affiliated nursing colleges",
+   "differentiator": "Win 'nursing college Yelahanka' through aggregator listings, not their own websites.",
+   "strengths": "Listed with fees and admission status for 2026-27 on Careers360 and Collegedunia.",
+   "weaknesses": "Little or no owned-site SEO, so a strong KCGI nursing page can outrank them.",
+   "reviews": null
+  },
+  {
+   "name": "Mahalakshmi College of Pharmacy",
+   "url": "https://www.careerindia.com/colleges/mahalakshmi-college-of-pharmacy-bengaluru-karnataka-cp21105",
+   "hq": "Chokkanahalli, Yelahanka-Hebbal",
+   "scale": "Single pharmacy college (RGUHS), est. 2004",
+   "differentiator": "Appears in 'pharmacy college Yelahanka' results via aggregators.",
+   "strengths": "Aggregator listings name it alongside Nitte and Aditya for Yelahanka.",
+   "weaknesses": "Little owned-site SEO found; competes only through listings.",
+   "reviews": null
+  },
+  {
+   "name": "MVM College of Pharmacy",
+   "url": "https://dial4college.com/college/mvm-college-of-pharmacy-bangalore",
+   "hq": "International Airport Road, Yelahanka",
+   "scale": "Pharmacy college (B.Pharm)",
+   "differentiator": "Airport Road location, same catchment as KCGI.",
+   "strengths": "Listed on Yelahanka pharmacy aggregator pages.",
+   "weaknesses": "Thin listing data; no strong owned site found.",
+   "reviews": null
+  }
+ ],
+ "feature_matrix": {
+  "features": [
+   "Indexable pages",
+   "H1 in HTML",
+   "Fees page",
+   "Course pages",
+   "Schema",
+   "News / blog",
+   "Aggregator presence"
+  ],
+  "rows": [
+   {
+    "name": "KCGI (15 Nov)",
+    "is_client": true,
+    "values": [
+     "yes",
+     "yes",
+     "partial",
+     "partial",
+     "yes",
+     "partial",
+     "partial"
+    ]
+   },
+   {
+    "name": "Acharya Institutes",
+    "is_client": false,
+    "values": [
+     "yes",
+     "yes",
+     "yes",
+     "yes",
+     "no",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "name": "Nitte",
+    "is_client": false,
+    "values": [
+     "yes",
+     "yes",
+     "yes",
+     "yes",
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "name": "Krupanidhi",
+    "is_client": false,
+    "values": [
+     "partial",
+     "no",
+     "partial",
+     "yes",
+     "no",
+     "partial",
+     "yes"
+    ]
+   },
+   {
+    "name": "Aditya Group",
+    "is_client": false,
+    "values": [
+     "?",
+     "?",
+     "?",
+     "?",
+     "?",
+     "?",
+     "yes"
+    ]
+   },
+   {
+    "name": "Sambhram",
+    "is_client": false,
+    "values": [
+     "yes",
+     "yes",
+     "no",
+     "partial",
+     "no",
+     "partial",
+     "partial"
+    ]
+   },
+   {
+    "name": "Mahalakshmi Pharmacy",
+    "is_client": false,
+    "values": [
+     "?",
+     "?",
+     "?",
+     "partial",
+     "?",
+     "?",
+     "yes"
+    ]
+   },
+   {
+    "name": "MVM Pharmacy",
+    "is_client": false,
+    "values": [
+     "?",
+     "?",
+     "?",
+     "partial",
+     "?",
+     "?",
+     "partial"
+    ]
+   }
+  ]
+ },
+ "keywords": [
+  {
+   "keyword": "kcgi",
+   "tier": 1,
+   "intent": "Navigational",
+   "difficulty": "HIGH",
+   "target_page": "Homepage",
+   "ai_overview": true,
+   "source": "Observed #3 on 13 Nov 2026 (user's Google screenshot); acronym shared with kcgifund.com and kcg.edu"
+  },
+  {
+   "keyword": "kcgi bangalore",
+   "tier": 1,
+   "intent": "Navigational",
+   "difficulty": "LOW",
+   "target_page": "Homepage",
+   "ai_overview": null
+  },
+  {
+   "keyword": "kcgi college",
+   "tier": 1,
+   "intent": "Navigational",
+   "difficulty": "LOW",
+   "target_page": "Homepage",
+   "ai_overview": null
+  },
+  {
+   "keyword": "kcgi admissions",
+   "tier": 1,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/admissions",
+   "ai_overview": null
+  },
+  {
+   "keyword": "kcgi courses",
+   "tier": 1,
+   "intent": "Informational",
+   "difficulty": "LOW",
+   "target_page": "/academics",
+   "ai_overview": null
+  },
+  {
+   "keyword": "kcgi contact number",
+   "tier": 1,
+   "intent": "Navigational",
+   "difficulty": "LOW",
+   "target_page": "/contact",
+   "ai_overview": null
+  },
+  {
+   "keyword": "kcgi fees",
+   "tier": 1,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/admissions/fees",
+   "ai_overview": null
+  },
+  {
+   "keyword": "karnataka college group of institutions",
+   "tier": 1,
+   "intent": "Navigational",
+   "difficulty": "LOW",
+   "target_page": "Homepage",
+   "ai_overview": null
+  },
+  {
+   "keyword": "best college in bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "HIGH",
+   "target_page": "Homepage",
+   "ai_overview": null
+  },
+  {
+   "keyword": "college near me",
+   "tier": 1,
+   "intent": "Transactional",
+   "difficulty": "HIGH",
+   "target_page": "Homepage + Google Business Profile",
+   "ai_overview": null
+  },
+  {
+   "keyword": "pharmacy college in bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "HIGH",
+   "target_page": "/institution/pharmacy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "nursing college in bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "HIGH",
+   "target_page": "/institution/nursing",
+   "ai_overview": null
+  },
+  {
+   "keyword": "physiotherapy college in bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/physiotherapy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "law college in bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "HIGH",
+   "target_page": "/institution/law",
+   "ai_overview": null
+  },
+  {
+   "keyword": "mba college in bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "HIGH",
+   "target_page": "/institution/management",
+   "ai_overview": null
+  },
+  {
+   "keyword": "b.ed college in bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/education",
+   "ai_overview": null
+  },
+  {
+   "keyword": "allied health science college bangalore",
+   "tier": 1,
+   "intent": "Mixed",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/allied-health",
+   "ai_overview": null
+  },
+  {
+   "keyword": "pharmacy college yelahanka",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/pharmacy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "nursing college yelahanka",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/nursing",
+   "ai_overview": null
+  },
+  {
+   "keyword": "physiotherapy college yelahanka",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/physiotherapy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "law college yelahanka",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/law",
+   "ai_overview": null
+  },
+  {
+   "keyword": "bba bca college yelahanka",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/management-science",
+   "ai_overview": null
+  },
+  {
+   "keyword": "pu college yelahanka",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/pu-college",
+   "ai_overview": null
+  },
+  {
+   "keyword": "cbse school yelahanka",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/public-school",
+   "ai_overview": null
+  },
+  {
+   "keyword": "cbse school thirumenahalli hegde nagar",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/public-school",
+   "ai_overview": null
+  },
+  {
+   "keyword": "colleges in north bangalore",
+   "tier": 2,
+   "intent": "Mixed",
+   "difficulty": "MEDIUM",
+   "target_page": "Homepage",
+   "ai_overview": null
+  },
+  {
+   "keyword": "nursing college near hebbal",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/nursing",
+   "ai_overview": null
+  },
+  {
+   "keyword": "pharmacy college near jakkur thanisandra",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/pharmacy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "college near kempegowda airport road",
+   "tier": 2,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/contact",
+   "ai_overview": null
+  },
+  {
+   "keyword": "b.pharm admission 2026 bangalore",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/pharmacy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "pharm d colleges in bangalore",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/institution/pharmacy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "d.pharm college bangalore fees",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/pharmacy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "b.sc nursing management quota bangalore",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/nursing",
+   "ai_overview": null
+  },
+  {
+   "keyword": "gnm nursing admission 2026 bangalore",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/nursing",
+   "ai_overview": null
+  },
+  {
+   "keyword": "nursing college in bangalore for kerala students",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/admissions/international (new: /admissions/kerala-students)",
+   "ai_overview": null
+  },
+  {
+   "keyword": "bpt admission bangalore rguhs",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/physiotherapy",
+   "ai_overview": null
+  },
+  {
+   "keyword": "3 year llb college bangalore kslu",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/law",
+   "ai_overview": null
+  },
+  {
+   "keyword": "b.sc mlt college bangalore",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/allied-health",
+   "ai_overview": null
+  },
+  {
+   "keyword": "paramedical diploma course bangalore after 10th",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/paramedical",
+   "ai_overview": null
+  },
+  {
+   "keyword": "b.ed admission 2026 bangalore city university",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/education",
+   "ai_overview": null
+  },
+  {
+   "keyword": "mba college bangalore with hostel",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/facilities",
+   "ai_overview": null
+  },
+  {
+   "keyword": "pu science college with neet coaching yelahanka",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "LOW",
+   "target_page": "/institution/pu-college",
+   "ai_overview": null
+  },
+  {
+   "keyword": "low fee nursing college bangalore",
+   "tier": 3,
+   "intent": "Transactional",
+   "difficulty": "MEDIUM",
+   "target_page": "/admissions/fees (new)",
+   "ai_overview": null
+  },
+  {
+   "keyword": "b.pharm vs pharm d which is better",
+   "tier": 4,
+   "intent": "Informational",
+   "difficulty": "MEDIUM",
+   "target_page": "Blog",
+   "ai_overview": null
+  },
+  {
+   "keyword": "b.sc nursing fees in bangalore",
+   "tier": 4,
+   "intent": "Informational",
+   "difficulty": "MEDIUM",
+   "target_page": "Blog / fees page",
+   "ai_overview": null
+  },
+  {
+   "keyword": "gnm vs b.sc nursing",
+   "tier": 4,
+   "intent": "Informational",
+   "difficulty": "MEDIUM",
+   "target_page": "Blog",
+   "ai_overview": null
+  },
+  {
+   "keyword": "bpt course details salary scope",
+   "tier": 4,
+   "intent": "Informational",
+   "difficulty": "MEDIUM",
+   "target_page": "Blog",
+   "ai_overview": null
+  },
+  {
+   "keyword": "allied health science courses after 12th",
+   "tier": 4,
+   "intent": "Informational",
+   "difficulty": "MEDIUM",
+   "target_page": "Blog",
+   "ai_overview": null
+  },
+  {
+   "keyword": "kea ugcet nursing counselling process",
+   "tier": 4,
+   "intent": "Informational",
+   "difficulty": "MEDIUM",
+   "target_page": "Blog",
+   "ai_overview": null
+  },
+  {
+   "keyword": "documents required for rguhs admission",
+   "tier": 4,
+   "intent": "Informational",
+   "difficulty": "LOW",
+   "target_page": "/admissions/documents",
+   "ai_overview": null
+  }
+ ],
+ "technical": [
+  {
+   "category": "Crawlability & Indexation",
+   "check": "Pages return 200",
+   "rating": "PASS",
+   "finding": "All 13 key URLs tested return 200 with their own title; /admissions/fees is live.",
+   "basis": "measured"
+  },
+  {
+   "category": "Crawlability & Indexation",
+   "check": "robots.txt",
+   "rating": "PASS",
+   "finding": "Allow: / for all agents, Disallow: /admin, sitemap referenced.",
+   "basis": "measured"
+  },
+  {
+   "category": "Crawlability & Indexation",
+   "check": "XML sitemap",
+   "rating": "PASS",
+   "finding": "49 URLs (38 pages + 11 institutions), regenerated at every build.",
+   "basis": "measured"
+  },
+  {
+   "category": "Crawlability & Indexation",
+   "check": "Unknown URLs",
+   "rating": "PASS",
+   "finding": "/no-such-page returns a real 404 with a noindex page.",
+   "basis": "measured"
+  },
+  {
+   "category": "Crawlability & Indexation",
+   "check": "Brand search visibility",
+   "rating": "WARN",
+   "finding": "kcgiedu.org was #3 for 'kcgi' on 13 Nov 2026 (behind kcgifund.com and kcg.edu). Google still surfaces a cached result with the old title and @karnatakacollege.edu email; request recrawl in Search Console.",
+   "basis": "observed"
+  },
+  {
+   "category": "Crawlability & Indexation",
+   "check": "Legacy pharmacy domain",
+   "rating": "WARN",
+   "finding": "karnatakacollegeofpharmacy.com is a separately indexable WordPress site for the same Karnataka College of Pharmacy and address. Confirm ownership; if controlled, 301 it domain-wide to /institution/pharmacy.",
+   "basis": "measured"
+  },
+  {
+   "category": "Canonicalization",
+   "check": "Single canonical host",
+   "rating": "PASS",
+   "finding": "http, www, .html, /index.html and trailing-slash variants 301 to https://kcgiedu.org.",
+   "basis": "measured"
+  },
+  {
+   "category": "Canonicalization",
+   "check": "Redirect hops",
+   "rating": "WARN",
+   "finding": "http://www takes 2 hops (Hostinger forces HTTPS first). Other variants take 1.",
+   "basis": "measured"
+  },
+  {
+   "category": "Canonicalization",
+   "check": "Canonical tags",
+   "rating": "PASS",
+   "finding": "Exactly 1 per page, origin + path, no query string; none on 404 or admin.",
+   "basis": "measured"
+  },
+  {
+   "category": "On-Page",
+   "check": "Titles & descriptions",
+   "rating": "PASS",
+   "finding": "Unique per page; brand pages lead with 'KCGI'. Lighthouse SEO 100 on every page tested.",
+   "basis": "measured"
+  },
+  {
+   "category": "On-Page",
+   "check": "H1",
+   "rating": "PASS",
+   "finding": "Exactly 1 H1 per page; homepage H1 contains 'KCGI'.",
+   "basis": "measured"
+  },
+  {
+   "category": "On-Page",
+   "check": "Image alt text",
+   "rating": "PASS",
+   "finding": "0 images without alt on the homepage.",
+   "basis": "measured"
+  },
+  {
+   "category": "Rendering",
+   "check": "Content without JavaScript",
+   "rating": "PASS",
+   "finding": "Every route is prerendered with H1, summary, links, courses and contact details.",
+   "basis": "measured"
+  },
+  {
+   "category": "Performance",
+   "check": "Mobile Core Web Vitals",
+   "rating": "N/A",
+   "finding": "PageSpeed Insights API returned 429 on 15 Nov 2026. The report retains prior local-lab measurements as development evidence only; run pagespeed.web.dev after the current build is deployed.",
+   "basis": "measured"
+  },
+  {
+   "category": "Performance",
+   "check": "Page weight",
+   "rating": "PASS",
+   "finding": "757 KB after lazy-loading below-fold images (was 1.6 MB live).",
+   "basis": "measured"
+  },
+  {
+   "category": "Performance",
+   "check": "Third-party scripts",
+   "rating": "WARN",
+   "finding": "Google tag and NoPaperForms tracking load on every page. Public recruitment and affiliation-logo hotlinks were removed in the post-fix build.",
+   "basis": "measured"
+  },
+  {
+   "category": "Performance",
+   "check": "Field data (CrUX)",
+   "rating": "N/A",
+   "finding": "PageSpeed API quota exhausted and Hostinger blocks headless Lighthouse; check pagespeed.web.dev in a normal browser.",
+   "basis": "observed"
+  },
+  {
+   "category": "Structured Data",
+   "check": "JSON-LD validity",
+   "rating": "PASS",
+   "finding": "49 files, 0 parse errors: EducationalOrganization, WebSite, FAQPage, 11 institution schemas with Course, BreadcrumbList on 47 pages.",
+   "basis": "measured"
+  },
+  {
+   "category": "Structured Data",
+   "check": "FAQ rich results",
+   "rating": "N/A",
+   "finding": "FAQ rich results ended in May 2026; the FAQPage markup only describes the page, so no SERP feature is expected.",
+   "basis": "observed"
+  },
+  {
+   "category": "Local SEO",
+   "check": "NAP consistency on site",
+   "rating": "PASS",
+   "finding": "Same name, address and phone in footer, contact page, schema and FAQ; tel: and mailto: links.",
+   "basis": "measured"
+  },
+  {
+   "category": "Local SEO",
+   "check": "Google Business Profile",
+   "rating": "WARN",
+   "finding": "The 'kcgi' results show Kyoto's knowledge panel, not KCGI's. Claim and complete the GBP.",
+   "basis": "observed"
+  },
+  {
+   "category": "Trust & Legal",
+   "check": "Accreditation claims",
+   "rating": "PASS",
+   "finding": "Unsupported NAAC Grade A and NMC claims were removed from public pages in the post-fix build. Only verified, programme-specific documents should be published next.",
+   "basis": "measured"
+  },
+  {
+   "category": "Trust & Legal",
+   "check": "Legal pages",
+   "rating": "PASS",
+   "finding": "/privacy-policy and /terms are live (drafts that need legal review).",
+   "basis": "measured"
+  },
+  {
+   "category": "Trust & Legal",
+   "check": "Placeholder content",
+   "rating": "PASS",
+   "finding": "The stock testimonial and sample/stale news cards were removed and replaced with truthful contact and update states.",
+   "basis": "measured"
+  },
+  {
+   "category": "Accessibility",
+   "check": "Lighthouse accessibility",
+   "rating": "WARN",
+   "finding": "The post-fix secondary colour provides AA contrast with white text. Re-test the third-party form iframe after deployment; it may still require a provider-side title fix.",
+   "basis": "measured"
+  },
+  {
+   "category": "Social & Assets",
+   "check": "og:image, manifest, favicon",
+   "rating": "PASS",
+   "finding": "1200x630 JPG per page type, manifest with PNG icons, favicon present.",
+   "basis": "measured"
+  },
+  {
+   "category": "Security",
+   "check": "HTTPS",
+   "rating": "PASS",
+   "finding": "Valid certificate; HTTP 301s to HTTPS; nosniff and Referrer-Policy headers set.",
+   "basis": "measured"
+  },
+  {
+   "category": "AI Visibility",
+   "check": "Answer-bot access",
+   "rating": "PASS",
+   "finding": "OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot and Claude-SearchBot get 200.",
+   "basis": "measured"
+  }
+ ],
+ "ai_visibility": {
+  "summary": "Answer bots can reach every page, and each page now has prerendered text to cite. Google's AI Overview for 'kcgi' (13 Nov 2026, user's screenshot) describes the Korean fund and the Kyoto college and does not mention KCGI Bengaluru. AI answers lean on entity sources (Wikipedia, knowledge panels) and aggregators, where KCGI is thin: CollegeDekho shows one review. ChatGPT and Perplexity could not be queried from this environment.",
+  "crawlers": [
+   {
+    "agent": "Googlebot",
+    "status": "partial",
+    "note": "Spoofed UA blocked (expected). Verify with Search Console URL Inspection."
+   },
+   {
+    "agent": "Bingbot",
+    "status": "partial",
+    "note": "Spoofed UA blocked (expected). Verify in Bing Webmaster Tools."
+   },
+   {
+    "agent": "OAI-SearchBot",
+    "status": "allowed",
+    "note": "200 on all pages, with prerendered content."
+   },
+   {
+    "agent": "PerplexityBot",
+    "status": "allowed",
+    "note": "200 on all pages, with prerendered content."
+   },
+   {
+    "agent": "Claude-SearchBot",
+    "status": "allowed",
+    "note": "200 on all pages, with prerendered content."
+   },
+   {
+    "agent": "GPTBot (training)",
+    "status": "partial",
+    "note": "429 rate-limited by Hostinger. Training-only, so low priority."
+   }
+  ],
+  "citations": [
+   {
+    "query": "kcgi",
+    "surface": "Google AI Overview (13 Nov 2026)",
+    "client_cited": false,
+    "cited": "Korea Corporate Governance Improvement (kcgifund.com) and Kyoto College of Graduate Studies for Informatics (kcg.edu, Wikipedia)"
+   },
+   {
+    "query": "pharmacy college yelahanka",
+    "surface": "Web results (15 Nov 2026)",
+    "client_cited": false,
+    "cited": "CollegeDekho (Aditya), CareerIndia (Mahalakshmi), Careers360 (Nitte; Karnataka College of Pharmacy listing), Sarvgyan, TargetStudy"
+   },
+   {
+    "query": "nursing college yelahanka fees 2026",
+    "surface": "Web results (15 Nov 2026)",
+    "client_cited": false,
+    "cited": "Collegedunia (Ocean; Karnataka College of Nursing listing), GetMyCollege, CollegeAndFees"
+   },
+   {
+    "query": "KCGI Karnataka College Group of Institutions reviews",
+    "surface": "Web results (15 Nov 2026)",
+    "client_cited": false,
+    "cited": "CollegeDekho (5.0 from 1 review, NAAC B+), TimesOfCollege (KCM 6.2/10, 16 reviews)"
+   }
+  ]
+ },
+ "blockers": [
+  {
+   "title": "Refresh Google's cached homepage result",
+   "detail": "Google still displays a pre-fix title and old @karnatakacollege.edu email in some results. The deployed HTML is correct, but Google controls its recrawl schedule.",
+   "fix": "After deployment, submit sitemap.xml and request indexing for / and /institution/pharmacy in Google Search Console."
+  },
+  {
+   "title": "Resolve the legacy pharmacy domain",
+   "detail": "karnatakacollegeofpharmacy.com is still live with the same Karnataka College of Pharmacy and Yelahanka address. If KCGI owns it, search engines can treat it as a separate entity and divide authority.",
+   "fix": "Confirm ownership this week. If owned, place 301 redirects from every old URL to the matching kcgiedu.org page (homepage and /about-us/ to /institution/pharmacy as a minimum), retain the domain for at least 12 months, then submit a Change of Address in Search Console."
+  }
+ ],
+ "quick_wins": [
+  {
+   "title": "Request Google recrawl of the new pages",
+   "detail": "Search results still show the old homepage title and @karnatakacollege.edu email. Submit sitemap.xml and request indexing for /, /institution/pharmacy, /admissions and /contact in Search Console.",
+   "impact": "High",
+   "effort_hours": 0.5
+  },
+  {
+   "title": "Confirm and redirect the pharmacy legacy domain",
+   "detail": "If karnatakacollegeofpharmacy.com belongs to KCGI, consolidate it with permanent server redirects to the matching KCGI pharmacy page.",
+   "impact": "High",
+   "effort_hours": 1
+  },
+  {
+   "title": "Deploy this re-audit's performance fixes",
+   "detail": "Lazy-loaded below-fold images, responsive WebP hero with preload, preloaded institution heroes and a 25 KB logo. Built and tested locally; upload dist/.",
+   "impact": "High",
+   "effort_hours": 0.5
+  },
+  {
+   "title": "Claim and complete the Google Business Profile",
+   "detail": "Same name, address and phone as the site, 'College' category, real photos, website link. This is how KCGI gets its own knowledge panel for 'kcgi' in India.",
+   "impact": "High",
+   "effort_hours": 3
+  },
+  {
+   "title": "Create a Wikidata item for KCGI",
+   "detail": "Label 'Karnataka College Group of Institutions', alias 'KCGI', official website, inception 1997, coordinates. Then add its URL to the schema sameAs.",
+   "impact": "High",
+   "effort_hours": 1.5
+  },
+  {
+   "title": "Publish fee ranges on /admissions/fees",
+   "detail": "Even 'from Rs X per year' per course. Competitors and aggregators win fee searches because they publish numbers.",
+   "impact": "High",
+   "effort_hours": 2
+  },
+  {
+   "title": "Claim aggregator profiles with identical NAP",
+   "detail": "Careers360, Collegedunia, Shiksha and CollegeDekho for each institution; standardise 'Karnataka College Group of Institutions (KCGI)' and link to the matching kcgiedu.org page.",
+   "impact": "High",
+   "effort_hours": 6
+  },
+  {
+   "title": "Publish verified programme data",
+   "detail": "Add dated fee ranges, duration, eligibility, intake and documentary approval/affiliation information only after each institution verifies it.",
+   "impact": "High",
+   "effort_hours": 8
+  },
+  {
+   "title": "Replace placeholder testimonial and news",
+   "detail": "Swap the stock-photo testimonial for a real student with consent, and replace sample News items with dated real events.",
+   "impact": "Medium",
+   "effort_hours": 3
+  },
+  {
+   "title": "Fix orange-label contrast",
+   "detail": "Use the primary colour or a darker orange for small white-on-orange labels and buttons; 29 Lighthouse contrast failures on the homepage.",
+   "impact": "Low",
+   "effort_hours": 1
+  }
+ ],
+ "content_strategy": {
+  "page_roadmap": [
+   {
+    "page": "Homepage",
+    "url": "/",
+    "type": "Core",
+    "status": "exists",
+    "priority": "High"
+   },
+   {
+    "page": "Karnataka College of Pharmacy",
+    "url": "/institution/pharmacy",
+    "type": "Institution",
+    "status": "weak",
+    "priority": "High"
+   },
+   {
+    "page": "Karnataka College of Nursing",
+    "url": "/institution/nursing",
+    "type": "Institution",
+    "status": "weak",
+    "priority": "High"
+   },
+   {
+    "page": "Manjunatha College of Physiotherapy",
+    "url": "/institution/physiotherapy",
+    "type": "Institution",
+    "status": "weak",
+    "priority": "High"
+   },
+   {
+    "page": "Other 8 institution pages",
+    "url": "/institution/*",
+    "type": "Institution",
+    "status": "weak",
+    "priority": "Medium"
+   },
+   {
+    "page": "Course pages (B.Pharm, Pharm D, B.Sc Nursing, GNM, BPT, LL.B ...)",
+    "url": "/courses/[course]",
+    "type": "Course",
+    "status": "missing",
+    "priority": "High"
+   },
+   {
+    "page": "Fees & Scholarships",
+    "url": "/admissions/fees",
+    "type": "Admissions",
+    "status": "weak",
+    "priority": "High"
+   },
+   {
+    "page": "Admissions (process, eligibility, documents)",
+    "url": "/admissions/*",
+    "type": "Admissions",
+    "status": "exists",
+    "priority": "Medium"
+   },
+   {
+    "page": "Students from Kerala / AP / Telangana",
+    "url": "/admissions/kerala-students",
+    "type": "Audience",
+    "status": "missing",
+    "priority": "Medium"
+   },
+   {
+    "page": "Campus & Hostel",
+    "url": "/facilities",
+    "type": "Core",
+    "status": "weak",
+    "priority": "Medium"
+   },
+   {
+    "page": "Contact & Directions",
+    "url": "/contact",
+    "type": "Core",
+    "status": "weak",
+    "priority": "Medium"
+   },
+   {
+    "page": "Privacy Policy / Terms",
+    "url": "/privacy-policy, /terms",
+    "type": "Legal",
+    "status": "exists",
+    "priority": "High"
+   },
+   {
+    "page": "News & Blog",
+    "url": "/news",
+    "type": "Blog",
+    "status": "weak",
+    "priority": "Medium"
+   }
+  ],
+  "blog_posts": [
+   {
+    "title": "B.Sc Nursing Fees in Bangalore 2026: What You'll Actually Pay",
+    "keyword": "b.sc nursing fees in bangalore",
+    "tier": 4,
+    "purpose": "Cost guide"
+   },
+   {
+    "title": "B.Pharm vs Pharm D: Which Should You Choose After 12th?",
+    "keyword": "b.pharm vs pharm d which is better",
+    "tier": 4,
+    "purpose": "Comparison"
+   },
+   {
+    "title": "GNM vs B.Sc Nursing: Eligibility, Duration, Jobs and Salary",
+    "keyword": "gnm vs b.sc nursing",
+    "tier": 4,
+    "purpose": "Comparison"
+   },
+   {
+    "title": "KEA UGCET Nursing Counselling 2026: Step-by-Step with Dates",
+    "keyword": "kea ugcet nursing counselling process",
+    "tier": 4,
+    "purpose": "Process"
+   },
+   {
+    "title": "Studying Nursing in Bangalore as a Kerala Student: Hostel, Fees, Registration",
+    "keyword": "nursing college in bangalore for kerala students",
+    "tier": 3,
+    "purpose": "Audience"
+   },
+   {
+    "title": "BPT in Bangalore: Course, RGUHS Admission and Career Scope",
+    "keyword": "bpt course details salary scope",
+    "tier": 4,
+    "purpose": "Course guide"
+   },
+   {
+    "title": "Allied Health Science Courses After 12th: MLT, MIT, AT Compared",
+    "keyword": "allied health science courses after 12th",
+    "tier": 4,
+    "purpose": "Comparison"
+   },
+   {
+    "title": "Documents Required for RGUHS Admission (Checklist)",
+    "keyword": "documents required for rguhs admission",
+    "tier": 4,
+    "purpose": "FAQ"
+   },
+   {
+    "title": "Colleges in North Bangalore: A Guide to Yelahanka's Campuses",
+    "keyword": "colleges in north bangalore",
+    "tier": 2,
+    "purpose": "Local"
+   },
+   {
+    "title": "Is a 3-Year LL.B Worth It After Your Degree?",
+    "keyword": "is 3 year llb worth it after graduation",
+    "tier": 4,
+    "purpose": "Decision guide"
+   }
+  ]
+ },
+ "opportunities": [
+  {
+   "title": "Own the 'KCGI' entity in India",
+   "gap": "For 'kcgi', Google's AI Overview and knowledge panel describe a Korean fund and a Kyoto college. KCGI Bengaluru has no knowledge panel, no Wikidata item and a CollegeDekho profile with one review.",
+   "why": "Brand searches are the highest-intent traffic a college gets (admissions, contact, fees), and AI answers are built from entity sources. KCGI is the only KCGI in India, so the local entity is winnable.",
+   "action": "Claim the Google Business Profile, create a Wikidata item, align all social profiles to 'KCGI - Karnataka College Group of Institutions', add both to schema sameAs, and run a genuine review drive after admissions."
+  },
+  {
+   "title": "Publish the fees and course facts everyone else hides",
+   "gap": "For 'nursing college yelahanka fees 2026', results are aggregators with conflicting, dated figures. Collegedunia says Karnataka College of Nursing's 2026 fees have not been released.",
+   "why": "Parents shortlist by course plus area plus fees. The first official page with current figures becomes the source aggregators and AI answers quote.",
+   "action": "Publish 2026-27 fee ranges, intake, eligibility and approval for each course on /admissions/fees and the institution pages, starting with nursing, pharmacy and physiotherapy; the code can generate course pages once the data is in constants.ts."
+  },
+  {
+   "title": "Win 'pharmacy college Yelahanka' with the institution page",
+   "gap": "Results show Aditya, Mahalakshmi, Nitte and MVM through aggregators. Karnataka College of Pharmacy appears only in third-party listings, which disagree on its founding year.",
+   "why": "No local pharmacy college answers PCI approval, RGUHS affiliation, intake, labs and fees on its own site, so a complete official page can outrank thin listings.",
+   "action": "Expand /institution/pharmacy with the founding year, PCI approval reference, intake per course, faculty list, real lab photos and fee range; then link to it from every aggregator profile."
+  }
+ ],
+ "closing": {
+  "headline": "The foundation is done; now build the entity",
+  "body": "All code-accessible findings from the re-audit are fixed in the build and ready to upload. What separates #3 from #1 for 'kcgi' is off-site entity work (Google Business Profile, Wikidata, listings, reviews), legacy-domain consolidation and real fees/course facts on the site.",
+  "cta": "Next step: upload dist/, request Google re-indexing, confirm the legacy-domain redirect and publish verified programme data.",
+  "contact": "KCGI Web Team"
+ },
+ "core_web_vitals": [
+  {
+   "url": "/ (before fixes)",
+   "strategy": "mobile",
+   "source": "lab",
+   "lcp_s": 6.5,
+   "cls": 0.001,
+   "inp_ms": null,
+   "tbt_ms": 300
+  },
+  {
+   "url": "/ (after fixes)",
+   "strategy": "mobile",
+   "source": "lab",
+   "lcp_s": 4.5,
+   "cls": 0.001,
+   "inp_ms": null,
+   "tbt_ms": 210
+  },
+  {
+   "url": "/institution/pharmacy (before)",
+   "strategy": "mobile",
+   "source": "lab",
+   "lcp_s": 6,
+   "cls": 0.001,
+   "inp_ms": null,
+   "tbt_ms": 280
+  },
+  {
+   "url": "/institution/pharmacy (after)",
+   "strategy": "mobile",
+   "source": "lab",
+   "lcp_s": 2.5,
+   "cls": 0.001,
+   "inp_ms": null,
+   "tbt_ms": 210
+  },
+  {
+   "url": "/ (after fixes)",
+   "strategy": "desktop",
+   "source": "lab",
+   "lcp_s": 1.4,
+   "cls": 0,
+   "inp_ms": null,
+   "tbt_ms": 10
+  }
+ ]
+}
