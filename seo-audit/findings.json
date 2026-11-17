@@ -2,7 +2,7 @@
  "meta": {
   "client_name": "Karnataka College Group of Institutions",
   "url": "https://kcgiedu.org",
-  "date": "15 November 2026 (re-audit)",
+  "date": "17 November 2026 (re-audit, after fixes)",
   "agency_name": "KCGI Web Team",
   "agency_url": "",
   "business_model": "B2C Local (single campus, 11 institutions)",
@@ -17,30 +17,30 @@
  },
  "executive_summary": {
   "market_context": "North Bengaluru's Yelahanka belt is crowded with private health-science and management colleges (Nitte, Aditya, Mahalakshmi, MVM, SB, KNN, Ocean), and students compare them on Careers360, Collegedunia and Shiksha before visiting any college site. The brand keyword 'KCGI' is shared with a Korean investment fund and a Kyoto IT graduate school, both older and with stronger entity signals.",
-  "verdict": "Five days after the fixes went live, the technical foundation is sound: kcgiedu.org ranks #3 for 'kcgi', every page tested scores 100 for Lighthouse SEO, and 1 blocker remains: unverified accreditation claims on the homepage and footer.",
+  "verdict": "Every error in the 15 November report that can be fixed in code is now fixed: 0 blockers remain, Lighthouse SEO is 100 and accessibility is 100 on the key pages, and what's left is off-site entity work and real fee and course data.",
   "key_points": [
-   "All 3 blockers from the 10 November audit are fixed and live: inner pages return 200, emails use @kcgiedu.org, and Privacy Policy and Terms are published.",
-   "1 new blocker: the site claims 'NAAC Accredited Grade A' and 'NMC Recognized', while CollegeDekho lists NAAC B+ and NMC only covers medical colleges.",
-   "This re-audit fixed mobile performance in code: homepage weight 1.6 MB to 757 KB, homepage LCP 6.5 s to 4.5 s, institution pages 6.0 s to about 2.5-3.0 s (lab, local build).",
-   "kcgiedu.org was #3 for 'kcgi' on 13 November, behind kcgifund.com and kcg.edu. The gap is entity strength (Google Business Profile, Wikidata, listings), not on-page SEO.",
-   "Content is now the limiting factor: competitors publish fees and course pages, while KCGI's course data has names only."
+   "0 blockers: the unverified 'NAAC Grade A' and 'NMC Recognized' claims are removed from the homepage, footer, history and NAAC pages (live).",
+   "No third-party images remain: logos are self-hosted or shown as text (live), and stock photos on 6 pages are replaced with KCGI's own campus photos (this build, not yet uploaded).",
+   "Accessibility rose from 80 to 100 on the homepage, institution and placements pages: labelled buttons and links, a titled enquiry form, deeper orange for small text and a valid heading order.",
+   "Mobile load: homepage LCP 6.5 s to about 3.3 s and page weight 1.6 MB to under 800 KB; institution pages now serve 640 px photos to phones (lab, local build).",
+   "Still open, and not fixable in code: Google Business Profile, Wikidata, aggregator profiles, published fee ranges, and real news and testimonials."
   ],
   "stats": [
    {
     "label": "Blockers",
-    "value": "1"
+    "value": "0"
    },
    {
     "label": "Lighthouse SEO",
     "value": "100"
    },
    {
-    "label": "'kcgi' rank",
-    "value": "#3"
+    "label": "Accessibility",
+    "value": "100"
    },
    {
-    "label": "Page weight",
-    "value": "757 KB"
+    "label": "'kcgi' rank",
+    "value": "#3"
    }
   ]
  },
@@ -68,34 +68,24 @@
   "site_status": "Live React SPA (Vite) on Hostinger with build-time prerendering: 49 indexable URLs, each with its own HTML, title, canonical and JSON-LD; real 404s for unknown paths; 301s for www, http, .html and trailing slashes (measured 15 Nov 2026).",
   "issues": [
    {
-    "issue": "Unverified accreditation claims",
-    "severity": "blocker",
-    "detail": "Homepage and footer say 'NAAC Accredited Grade A' and 'NMC Recognized'. CollegeDekho lists NAAC B+; NMC regulates medical colleges, which KCGI doesn't run."
-   },
-   {
-    "issue": "Logos hotlinked from third parties",
+    "issue": "Thin course and fee data",
     "severity": "high",
-    "detail": "Affiliation and recruiter logos load from Google image thumbnails, Pinterest, vectorseek and another college's site (vidyarthiinstitutions.com). They can break or change at any time."
+    "detail": "Courses list names only (no duration, eligibility, intake or fees), and /admissions/fees has the policy but no amounts. Needs data from KCGI."
    },
    {
-    "issue": "Thin course data",
+    "issue": "No Google Business Profile or Wikidata entity",
     "severity": "high",
-    "detail": "constants.ts lists course names only: no duration, eligibility, intake or fees. Competitors' course and fees pages win those searches."
+    "detail": "For 'kcgi', Google shows Kyoto's knowledge panel. KCGI has no knowledge panel or Wikidata item yet (off-site)."
    },
    {
-    "issue": "Placeholder content",
+    "issue": "Unverified claims elsewhere in copy",
     "severity": "medium",
-    "detail": "The Placements testimonial uses a stock photo; News & Events uses Unsplash images and sample items."
-   },
-   {
-    "issue": "Low-contrast orange labels",
-    "severity": "low",
-    "detail": "White text on the brand orange (#F7961E) fails WCAG contrast in 29 places on the homepage (Lighthouse)."
+    "detail": "Some pages still state numbers KCGI should confirm, e.g. 'students from over 20+ countries' (International) and '50,000+' alumni (About > Overview) and the '25-acre campus' (About)."
    },
    {
     "issue": "http://www takes two redirect hops",
     "severity": "low",
-    "detail": "http://www -> https://www -> https://kcgiedu.org, because Hostinger forces HTTPS before .htaccess runs. Harmless; one hop is cleaner."
+    "detail": "Hostinger forces HTTPS before .htaccess runs. Turn off Force HTTPS in hPanel (the .htaccess already redirects) to get one hop."
    }
   ]
  },
@@ -794,21 +784,21 @@
    "category": "Performance",
    "check": "Mobile LCP (homepage)",
    "rating": "WARN",
-   "finding": "4.5 s after this audit's fixes (was 6.5 s). Lab test of the local build, simulated slow 4G.",
+   "finding": "About 3.3 s (was 6.5 s). Institution pages vary 2.4-4.5 s between runs on this machine. Lab, local build, simulated slow 4G.",
    "basis": "measured"
   },
   {
    "category": "Performance",
    "check": "Page weight",
    "rating": "PASS",
-   "finding": "757 KB after lazy-loading below-fold images (was 1.6 MB live).",
+   "finding": "Under 800 KB on the homepage; institution photos served at 640 px to phones (about 30 KB instead of 120 KB).",
    "basis": "measured"
   },
   {
    "category": "Performance",
    "check": "Third-party scripts",
    "rating": "WARN",
-   "finding": "Google tag (178 KB) and NoPaperForms tracking load on every page; logos hotlinked from 8 external hosts.",
+   "finding": "Google tag (178 KB) and NoPaperForms tracking load on every page. Both are needed; all third-party images are gone.",
    "basis": "measured"
   },
   {
@@ -849,10 +839,9 @@
   {
    "category": "Trust & Legal",
    "check": "Accreditation claims",
-   "rating": "FAIL",
-   "finding": "'NAAC Grade A' and 'NMC Recognized' are unverified; CollegeDekho lists NAAC B+.",
-   "basis": "observed",
-   "blocker": true
+   "rating": "PASS",
+   "finding": "Unverified 'NAAC Grade A' and 'NMC Recognized' removed site-wide; only 'NAAC Accredited' remains, pending the certificate details.",
+   "basis": "measured"
   },
   {
    "category": "Trust & Legal",
@@ -864,15 +853,15 @@
   {
    "category": "Trust & Legal",
    "check": "Placeholder content",
-   "rating": "WARN",
-   "finding": "Stock-photo testimonial on Placements; Unsplash images and sample items on News.",
-   "basis": "observed"
+   "rating": "PASS",
+   "finding": "Stock testimonial and sample news removed; stock photos replaced with KCGI campus photos on 6 pages.",
+   "basis": "measured"
   },
   {
    "category": "Accessibility",
    "check": "Lighthouse accessibility",
-   "rating": "WARN",
-   "finding": "89 mobile / 95 desktop after fixes (was 80). Remaining: orange-label contrast and an untitled third-party form iframe.",
+   "rating": "PASS",
+   "finding": "100 on home, institution and placements pages; 100 on news after the last fix (local build, mobile).",
    "basis": "measured"
   },
   {
@@ -958,17 +947,11 @@
    }
   ]
  },
- "blockers": [
-  {
-   "title": "Remove or prove the accreditation claims",
-   "detail": "The homepage and footer claim 'NAAC Accredited Grade A' and 'NMC Recognized'. CollegeDekho lists NAAC B+, and NMC only recognises medical colleges. An inaccurate accreditation claim is a regulatory and trust risk, and conflicting facts weaken Google's and AI answers' confidence in the entity.",
-   "fix": "Confirm the real NAAC grade, year and which institution holds it. Show only documented approvals (with institution and year) in pages/Home.tsx (affiliationLogos) and components/Footer.tsx, and drop NMC."
-  }
- ],
+ "blockers": [],
  "quick_wins": [
   {
-   "title": "Deploy this re-audit's performance fixes",
-   "detail": "Lazy-loaded below-fold images, responsive WebP hero with preload, preloaded institution heroes and a 25 KB logo. Built and tested locally; upload dist/.",
+   "title": "Upload this build",
+   "detail": "Self-hosted photos on 6 pages, titled enquiry form, accessibility fixes and 640 px institution photos for phones. Built and checked locally; upload dist/.",
    "impact": "High",
    "effort_hours": 0.5
   },
@@ -997,22 +980,22 @@
    "effort_hours": 6
   },
   {
-   "title": "Self-host the affiliation and recruiter logos",
-   "detail": "Replace 13 hotlinked images (Google thumbnails, Pinterest, another college's site) with official files in public/assets/images/opt/.",
+   "title": "Add the NAAC certificate details",
+   "detail": "Once confirmed, show which institution holds NAAC accreditation, with grade, cycle and year, on /naac. Until then the site says only 'NAAC Accredited'.",
    "impact": "Medium",
-   "effort_hours": 2
-  },
-  {
-   "title": "Replace placeholder testimonial and news",
-   "detail": "Swap the stock-photo testimonial for a real student with consent, and replace sample News items with dated real events.",
-   "impact": "Medium",
-   "effort_hours": 3
-  },
-  {
-   "title": "Fix orange-label contrast",
-   "detail": "Use the primary colour or a darker orange for small white-on-orange labels and buttons; 29 Lighthouse contrast failures on the homepage.",
-   "impact": "Low",
    "effort_hours": 1
+  },
+  {
+   "title": "Confirm or remove remaining number claims",
+   "detail": "'Students from over 20+ countries', the '50,000+' alumni figure and the '25-acre campus' need a source, or should be reworded.",
+   "impact": "Medium",
+   "effort_hours": 1
+  },
+  {
+   "title": "Turn off Force HTTPS in hPanel",
+   "detail": "The .htaccess already redirects http and www to https://kcgiedu.org in one hop; Hostinger's own redirect adds a second hop for http://www.",
+   "impact": "Low",
+   "effort_hours": 0.25
   }
  ],
  "content_strategy": {
@@ -1193,14 +1176,14 @@
   }
  ],
  "closing": {
-  "headline": "The foundation is done; now build the entity",
-  "body": "Every blocker from the first audit is fixed and live, and this re-audit's performance and accessibility fixes are built and ready to upload. What separates #3 from #1 for 'kcgi' is off-site entity work (Google Business Profile, Wikidata, listings, reviews) plus real fees and course facts on the site.",
-  "cta": "Next step: correct the accreditation claims, upload dist/, then claim the Google Business Profile and create the Wikidata item this week.",
+  "headline": "The site is ready; the rest is entity and content",
+  "body": "Every code-side issue from the audits is fixed: 0 blockers, Lighthouse SEO 100 and accessibility 100 on the key pages, no third-party images and faster mobile pages. What separates #3 from #1 for 'kcgi' now is off-site entity work (Google Business Profile, Wikidata, listings, reviews) plus real fees and course facts on the site.",
+  "cta": "Next step: upload dist/, then claim the Google Business Profile and create the Wikidata item this week.",
   "contact": "KCGI Web Team"
  },
  "core_web_vitals": [
   {
-   "url": "/ (before fixes)",
+   "url": "/ (10 Nov, before)",
    "strategy": "mobile",
    "source": "lab",
    "lcp_s": 6.5,
@@ -1209,13 +1192,13 @@
    "tbt_ms": 300
   },
   {
-   "url": "/ (after fixes)",
+   "url": "/ (17 Nov, after)",
    "strategy": "mobile",
    "source": "lab",
-   "lcp_s": 4.5,
+   "lcp_s": 3.3,
    "cls": 0.001,
    "inp_ms": null,
-   "tbt_ms": 210
+   "tbt_ms": 280
   },
   {
    "url": "/institution/pharmacy (before)",
@@ -1230,19 +1213,28 @@
    "url": "/institution/pharmacy (after)",
    "strategy": "mobile",
    "source": "lab",
+   "lcp_s": 3,
+   "cls": 0.001,
+   "inp_ms": null,
+   "tbt_ms": 280
+  },
+  {
+   "url": "/placements (after)",
+   "strategy": "mobile",
+   "source": "lab",
    "lcp_s": 2.5,
    "cls": 0.001,
    "inp_ms": null,
-   "tbt_ms": 210
+   "tbt_ms": 330
   },
   {
-   "url": "/ (after fixes)",
-   "strategy": "desktop",
+   "url": "/news (after)",
+   "strategy": "mobile",
    "source": "lab",
-   "lcp_s": 1.4,
-   "cls": 0,
+   "lcp_s": 2,
+   "cls": 0.001,
    "inp_ms": null,
-   "tbt_ms": 10
+   "tbt_ms": 340
   }
  ]
 }

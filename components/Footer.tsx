@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-primary font-bold uppercase tracking-wider mb-6">Quick Links</h4>
+            <h2 className="text-primary font-bold uppercase tracking-wider mb-6 text-base">Quick Links</h2>
             <ul className="space-y-4 text-sm font-bold">
               <li><Link to="/admissions" className="text-black hover:text-secondary transition-colors">Admissions 2026-27</Link></li>
               <li><Link to="/academics" className="text-black hover:text-secondary transition-colors">Courses &amp; Academics</Link></li>
@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
 
           {/* Academic information */}
           <div>
-            <h4 className="text-primary font-bold uppercase tracking-wider mb-6">Academic Information</h4>
+            <h2 className="text-primary font-bold uppercase tracking-wider mb-6 text-base">Academic Information</h2>
             <ul className="space-y-4 text-sm font-bold">
               <li className="text-black">11 institutions on one Bengaluru campus</li>
               <li className="text-black">Healthcare, law, management and school education</li>
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-primary font-bold uppercase tracking-wider mb-6">Bengaluru Campus</h4>
+            <h2 className="text-primary font-bold uppercase tracking-wider mb-6 text-base">Bengaluru Campus</h2>
             <ul className="space-y-4 text-sm font-bold">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary flex-shrink-0" />
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
                     href={externalMapsLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-xs font-black uppercase tracking-widest text-secondary mt-2 flex items-center gap-1"
+                    className="text-xs font-black uppercase tracking-widest text-[#A35400] mt-2 flex items-center gap-1"
                   >
                     Get Directions <ExternalLink className="w-3 h-3" />
                   </a>

@@ -28,7 +28,7 @@ export const InternationalAdmissions: React.FC = () => (
           </div>
         </div>
         <div className="aspect-square bg-gray-100 rounded-[4rem] overflow-hidden shadow-2xl relative">
-          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="International Students" />
+          <img src="/assets/images/opt/separate-hostels.webp" loading="lazy" className="w-full h-full object-cover" alt="Separate student hostels at KCGI, Yelahanka" />
           <div className="absolute inset-0 bg-primary/20" />
         </div>
       </div>

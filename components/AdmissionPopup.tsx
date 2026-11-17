@@ -61,7 +61,7 @@ export const AdmissionPopup: React.FC = () => {
         <div className="flex-1 p-8 md:p-12 overflow-y-auto max-h-[90vh]">
           <div className="mb-8">
             <h3 className="text-2xl font-serif font-bold text-primary">Admission Enquiry</h3>
-            <p className="text-gray-500 text-sm mt-1 font-medium">Quick enrollment support for 2026 session.</p>
+            <p className="text-gray-600 text-sm mt-1 font-medium">Quick enrollment support for 2026 session.</p>
           </div>
 
           <NoPaperFormsWidget />

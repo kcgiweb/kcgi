@@ -49,7 +49,7 @@ export const Admissions: React.FC = () => {
       <div className="relative h-[45vh] min-h-[350px] bg-primary overflow-hidden flex items-center">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1600" 
+            src="/assets/images/opt/sla-8705-ccmafe.webp" 
             className="w-full h-full object-cover opacity-20" 
             alt="Campus Admission" 
           />

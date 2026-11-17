@@ -6,7 +6,7 @@ import { INSTITUTIONS } from '../constants';
 export const NotFound: React.FC = () => (
   <div className="pt-32 pb-24 min-h-screen bg-white">
     <div className="container mx-auto px-6 max-w-3xl text-center">
-      <p className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">Error 404</p>
+      <p className="text-[#A35400] font-bold uppercase tracking-widest text-xs mb-4">Error 404</p>
       <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Page not found</h1>
       <p className="text-lg text-black mb-10">
         The page you are looking for has moved or no longer exists. Try one of these instead:

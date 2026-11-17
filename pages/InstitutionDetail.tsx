@@ -35,6 +35,8 @@ export const InstitutionDetail: React.FC = () => {
       <div className="relative h-[35vh] md:h-[48vh] min-h-[280px] overflow-hidden">
         <img 
           src={inst.image} 
+          srcSet={`${inst.image.replace('.webp', '-640.webp')} 640w, ${inst.image} 1300w`}
+          sizes="100vw"
           alt={inst.name} 
           width={1200}
           height={630}

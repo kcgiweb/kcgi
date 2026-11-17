@@ -21,7 +21,7 @@ export const AboutSocial: React.FC = () => (
           </ul>
         </div>
         <div className="aspect-video rounded-[3rem] overflow-hidden shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="CSR Health Camp" />
+          <img src="/assets/images/opt/medical-facilities.webp" loading="lazy" className="w-full h-full object-cover" alt="Medical facilities at the KCGI campus, Yelahanka" />
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@ export const AboutUsMain: React.FC = () => {
     <div className="pt-24 min-h-screen bg-white">
       {/* Header & Breadcrumb */}
       <div className="bg-primary py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-[url('/assets/images/opt/homeabout.webp')] bg-cover bg-center opacity-10 mix-blend-overlay" />
         <div className="container mx-auto px-6 relative z-10 text-white">
           <nav className="flex items-center gap-2 text-white/60 text-xs font-bold uppercase tracking-widest mb-6">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>

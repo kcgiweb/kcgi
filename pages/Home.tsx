@@ -86,7 +86,7 @@ export const Home: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4 leading-tight">
               Legacy of Excellence
             </h2>
-            <h3 className="text-secondary font-bold uppercase tracking-widest text-xs mb-6">
+            <h3 className="text-[#A35400] font-bold uppercase tracking-widest text-xs mb-6">
               Shaping Minds for Decades
             </h3>
             <p className="text-lg text-black leading-relaxed font-bold">
@@ -166,7 +166,7 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-3">Our Vibrant Ecosystem</h2>
-            <h3 className="text-secondary font-bold uppercase tracking-widest text-xs">11 Premier Institutions</h3>
+            <h3 className="text-[#A35400] font-bold uppercase tracking-widest text-xs">11 Premier Institutions</h3>
             <p className="mt-6 text-base text-black font-bold">Explore our diverse academic units catering to healthcare, law, management, and schooling.</p>
           </div>
 
@@ -179,6 +179,8 @@ export const Home: React.FC = () => {
                 <div className="absolute inset-0 w-full h-full">
                   <img
                     src={inst.image}
+                    srcSet={`${inst.image.replace('.webp', '-640.webp')} 640w, ${inst.image} 1300w`}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     alt={inst.name}
                     loading="lazy"
                     decoding="async"
@@ -220,7 +222,7 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-2">Academic Streams</h2>
-            <h3 className="text-secondary font-bold uppercase tracking-widest text-xs">Nurturing Professional Talent</h3>
+            <h3 className="text-[#A35400] font-bold uppercase tracking-widest text-xs">Nurturing Professional Talent</h3>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
             {programCategories.map((prog, idx) => (
@@ -233,7 +235,6 @@ export const Home: React.FC = () => {
               </Link>
             ))}
             <div className="col-span-2 lg:col-span-2 bg-gradient-to-br from-primary to-accent1 p-10 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center text-white group overflow-hidden relative">
-              <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
               <GraduationCap className="w-12 h-12 text-secondary mb-5 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
               <h4 className="text-2xl font-bold mb-3 relative z-10">Global Recognition</h4>
               <p className="text-base opacity-90 mb-6 max-w-sm relative z-10 font-bold">Degrees that open doors worldwide. Join thousands of successful alumni.</p>
@@ -286,7 +287,7 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Before You Apply</h2>
+            <h2 className="text-[#A35400] font-bold uppercase tracking-widest text-xs mb-3">Before You Apply</h2>
             <h3 className="text-3xl md:text-5xl font-serif font-bold text-primary">Programme Information</h3>
             <p className="mt-4 text-black font-bold">Approvals, affiliations, eligibility and fees differ by institution and programme. Request the current official document from Admissions.</p>
           </div>
@@ -300,7 +301,7 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-white border-t border-gray-100" aria-labelledby="kcgi-faq">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <p className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">About KCGI</p>
+            <p className="text-[#A35400] font-bold uppercase tracking-widest text-xs mb-3">About KCGI</p>
             <h2 id="kcgi-faq" className="text-3xl md:text-5xl font-serif font-bold text-primary">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-4">

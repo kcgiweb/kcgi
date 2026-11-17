@@ -13,7 +13,15 @@ export const NoPaperFormsWidget: React.FC = () => {
     s.src = "https://widgets.in4.nopaperforms.com/emwgts.js";
     document.body.appendChild(s);
 
+    // The widget injects an untitled iframe; give it an accessible name.
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('.npf_wgts iframe:not([title])').forEach(f =>
+        f.setAttribute('title', 'KCGI admission enquiry form'));
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
     return () => {
+      observer.disconnect();
       // Clean up script on unmount to avoid cluttering document.body in SPA
       if (document.body.contains(s)) {
         document.body.removeChild(s);

@@ -119,7 +119,7 @@ const render = (template: string, seo: ResolvedSeo) =>
     .replace('<!--seo-body-->', bodyContent(seo))
     // Homepage LCP: start fetching the hero image before the JS bundle runs.
     .replace('</head>', seo.institution
-      ? `  <link rel="preload" as="image" href="${seo.institution.image}" fetchpriority="high">
+      ? `  <link rel="preload" as="image" href="${seo.institution.image}" imagesrcset="${seo.institution.image.replace('.webp', '-640.webp')} 640w, ${seo.institution.image} 1300w" imagesizes="100vw" fetchpriority="high">
 </head>`
       : seo.path === '/'
       ? '  <link rel="preload" as="image" href="/assets/images/opt/hero-1200.webp" imagesrcset="/assets/images/opt/hero-640.webp 640w, /assets/images/opt/hero-1200.webp 1200w" imagesizes="100vw" fetchpriority="high">\n</head>'

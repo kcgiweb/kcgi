@@ -53,7 +53,7 @@ export const Academics: React.FC = () => {
       <div className="relative h-[40vh] min-h-[300px] bg-primary overflow-hidden flex items-center">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1600" 
+            src="/assets/images/opt/central-library.webp" 
             className="w-full h-full object-cover opacity-20" 
             alt="Library" 
           />

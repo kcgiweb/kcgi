@@ -50,7 +50,6 @@ export const Research: React.FC = () => (
       </div>
 
       <div className="bg-primary p-12 md:p-20 rounded-[4rem] text-white flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
         <div className="lg:w-1/2 relative z-10">
           <h3 className="text-3xl font-serif font-bold text-secondary mb-6">Annual Research Expo</h3>
           <p className="text-lg opacity-80 leading-relaxed mb-8">Every academic year, the group hosts a mega research symposium where students from all 10 institutions present their posters and experimental findings to industry veterans.</p>

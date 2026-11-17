@@ -32,7 +32,7 @@ export const TheEdge: React.FC = () => (
         <div className="relative">
            <div className="aspect-square bg-secondary/5 absolute inset-10 rounded-full animate-pulse" />
            <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative z-10 border-8 border-white">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="Student Success" />
+              <img src="/assets/images/opt/advanced-laboratories.webp" loading="lazy" className="w-full h-full object-cover" alt="Advanced laboratories at KCGI, Bengaluru" />
            </div>
         </div>
       </div>
